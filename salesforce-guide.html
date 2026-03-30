@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Courses Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 161, 224, 0.1) 0%, rgba(0, 99, 157, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header i {
+            font-size: 4rem;
+            color: #00A1E0;
+            margin-bottom: 1rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #00A1E0;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00A1E0 0%, #0091D0 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--clr-text-main);
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .step-card li:last-child { border-bottom: none; }
+        .step-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00A1E0;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 161, 224, 0.1) 0%, rgba(0, 99, 157, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #00A1E0;
+        }
+        .highlight-box.info {
+            border-left-color: #00A5FF;
+            background: rgba(0, 165, 255, 0.1);
+        }
+        .highlight-box.success {
+            border-left-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-text-main);
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+        .highlight-box ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        .highlight-box li {
+            border-bottom: none;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        .highlight-box li::before {
+            content: '•';
+            color: #00A1E0;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th, .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: var(--clr-surface-light);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td { color: var(--clr-text-muted); }
+        .platforms-table a {
+            color: #00A1E0;
+            text-decoration: none;
+        }
+        .platforms-table a:hover { text-decoration: underline; }
+        .bonus-box {
+            background: linear-gradient(135deg, #00A1E0 0%, #0091D0 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 { color: #00A1E0; margin-bottom: 1rem; }
+        .quick-tips ul { list-style: none; padding: 0; }
+        .quick-tips li { padding: 0.5rem 0; color: var(--clr-text-main); }
+        .quick-tips li::before { content: '→ '; color: #00A1E0; }
+        @media (max-width: 768px) {
+            .guide-header h1 { font-size: 1.8rem; }
+            .step-card { padding: 1.5rem; }
+            .platforms-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <i class="fa-solid fa-cloud"></i>
+                <h1>Salesforce Courses Enrollment Guide</h1>
+                <p>Learn CRM, cloud computing, and admin skills</p>
+            </div>
+
+            <div class="bonus-box" style="margin-bottom: 2rem;">
+                <h3>☁️ Enroll in Salesforce Courses Today</h3>
+            </div>
+            
+            <!-- Trailhead -->
+            <div class="step-card">
+                <div class="step-number">1️⃣</div>
+                <h2>Salesforce Trailhead (Best Free Option)</h2>
+                <p><strong>The official free learning platform</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit trailhead.code</li>
+                    <li>Create a free account</li>
+                    <li>Choose your learning path</li>
+                    <li>Complete superbadges</li>
+                    <li>Earn points and badges</li>
+                </ul>
+                <div class="highlight-box success">
+                    <h4>💡 Popular Trails:</h4>
+                    <ul>
+                        <li>Administrator Beginner</li>
+                        <li>Developer Beginner</li>
+                        <li>Platform App Builder</li>
+                        <li>Salesforce Fundamentals</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Trailhead Playground -->
+            <div class="step-card">
+                <div class="step-number">2️⃣</div>
+                <h2>Practice with Trailhead Playground</h2>
+                <p><strong>Free hands-on environment</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Complete Trailhead modules</li>
+                    <li>Open Trailhead Playground</li>
+                    <li>Practice in real org environment</li>
+                    <li>Complete hands-on challenges</li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>💡 How to Get:</h4>
+                    <p>Each Trailhead module provides a playground org for free</p>
+                </div>
+            </div>
+            
+            <!-- Salesforce Certifications -->
+            <div class="step-card">
+                <div class="step-number">3️⃣</div>
+                <h2>Salesforce Certifications (Paid)</h2>
+                <p><strong>Get industry-recognized credentials</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Study on Trailhead</li>
+                    <li>Take practice exams</li>
+                    <li>Register for certification exam</li>
+                    <li>Pass and earn your credential</li>
+                </ul>
+                <div class="highlight-box">
+                    <h4>⚠️ Note:</h4>
+                    <p>Exams cost $200-$300 each, but study materials are free</p>
+                </div>
+            </div>
+            
+            <!-- Udemy/Coursera -->
+            <div class="step-card">
+                <div class="step-number">4️⃣</div>
+                <h2>Salesforce on Udemy & Coursera</h2>
+                <p><strong>Alternative learning options</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Search <strong>"Salesforce"</strong> courses</li>
+                    <li>Filter by rating</li>
+                    <li>Enroll in paid courses</li>
+                    <li>Follow structured curriculum</li>
+                </ul>
+            </div>
+            
+            <!-- Salesforce Events -->
+            <div class="step-card">
+                <div class="step-number">5️⃣</div>
+                <h2>Salesforce User Groups & Events</h2>
+                <p><strong>Community learning</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Find local SalesforceUG</li>
+                    <li>Attend meetups and webinars</li>
+                    <li>Network with professionals</li>
+                    <li>Learn from real experiences</li>
+                </ul>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Tips</h3>
+                <ul>
+                    <li>Trailhead - Best free learning resource</li>
+                    <li>Start with Admin Beginner trail</li>
+                    <li>Earn superbadges for hands-on validation</li>
+                    <li>Join Salesforce community for support</li>
+                    <li>Use free Trailhead Playground for practice</li>
+                    <li>Consider Salesforce certification for career</li>
+                </ul>
+            </div>
+            
+            <!-- Resources Table -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Resources</h2>
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Trailhead</strong></td>
+                            <td>Free learning platform</td>
+                            <td><a href="https://trailhead.code" target="_blank">trailhead.code</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trailhead Playground</strong></td>
+                            <td>Free practice org</td>
+                            <td><a href="https://login.salesforce.com/" target="_blank">login.salesforce.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Salesforce Help</strong></td>
+                            <td>Documentation</td>
+                            <td><a href="https://help.salesforce.com" target="_blank">help.salesforce.com ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>SalesforceOhana</strong></td>
+                            <td>Community</td>
+                            <td><a href="https://trailhead.salesforce.com/en/community" target="_blank">trailhead.salesforce.com/en/community</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-trophy"></i> Start Your Salesforce Journey!</h3>
+                <p><strong>Trailhead offers the best free learning experience - earn badges and climb the trail!</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

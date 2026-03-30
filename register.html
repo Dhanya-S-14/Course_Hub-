@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .auth-container {
+            background: var(--clr-surface);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            width: 100%;
+            max-width: 480px;
+            border: 1px solid var(--clr-border);
+            box-shadow: var(--shadow-lg);
+            animation: fadeInUp 0.6s ease-out;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .auth-header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .auth-header p {
+            color: var(--clr-text-muted);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--clr-text-main);
+        }
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--clr-border);
+            border-radius: var(--radius-md);
+            background: var(--clr-bg);
+            color: var(--clr-text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: all var(--transition-smooth);
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--clr-primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+        }
+        .btn-auth {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        .auth-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--clr-text-muted);
+        }
+        .auth-footer a {
+            color: var(--clr-primary);
+            font-weight: 600;
+        }
+        .quotes-section {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--clr-border);
+        }
+        .quotes-title {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--clr-text-muted);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .quote-card {
+            background: var(--clr-surface-light);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--clr-border);
+        }
+        .quote-text {
+            font-style: italic;
+            color: var(--clr-text-main);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+        .quote-author {
+            color: var(--clr-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        .logo-link i {
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-container">
+            <a href="index.html" class="logo-link">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>CourseHub</span>
+            </a>
+            
+            <div class="auth-header">
+                <h1 class="text-gradient">Create Account</h1>
+                <p>Join thousands of learners worldwide</p>
+            </div>
+            
+            <form id="registerForm">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-auth">
+                    <i class="fa-solid fa-user-plus"></i> Register
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                Already have an account? <a href="login.html">Login here</a>
+            </div>
+            
+            <div class="quotes-section">
+                <p class="quotes-title">Daily Inspiration</p>
+                <div class="quote-card">
+                    <p class="quote-text" id="quoteText">"Education is the passport to the future, for tomorrow belongs to those who prepare for it today."</p>
+                    <p class="quote-author" id="quoteAuthor">— Malcolm X</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const quotes = [
+            { text: '"Education is the passport to the future, for tomorrow belongs to those who prepare for it today."', author: '— Malcolm X' },
+            { text: '"The roots of education are bitter, but the fruit is sweet."', author: '— Aristotle' },
+            { text: '"Live as if you were to die tomorrow. Learn as if you were to live forever."', author: '— Mahatma Gandhi' },
+            { text: '"Education is not the filling of a pail, but the lighting of a fire."', author: '— William Butler Yeats' },
+            { text: '"The more that you read, the more things you will know. The more that you learn, the more places you\'ll go."', author: '— Dr. Seuss' },
+            { text: '"An investment in knowledge pays the best interest."', author: '— Benjamin Franklin' },
+            { text: '"The mind is not a vessel to be filled, but a fire to be kindled."', author: '— Plutarch' },
+            { text: '"Education is the most powerful weapon which you can use to change the world."', author: '— Nelson Mandela' },
+            { text: '"Learning is not attained by chance, it must be sought for with ardor and attended to with diligence."', author: '— Abigail Adams' },
+            { text: '"The beautiful thing about learning is that no one can take it away from you."', author: '— B.B. King' }
+        ];
+        
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById('quoteText').textContent = randomQuote.text;
+        document.getElementById('quoteAuthor').textContent = randomQuote.author;
+        
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            console.log("Form data:", { name, email, password });
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+                
+                const data = await response.json();
+                console.log('Server response:', data);
+                
+                if (response.ok) {
+                    localStorage.setItem('currentUser', JSON.stringify(data.user));
+                    alert('Registration successful! Redirecting to home...');
+                    window.location.href = 'index.html';
+                } else {
+                    alert(data.error || 'Registration failed!');
+                }
+            } catch (err) {
+                console.error('Fetch error:', err);
+                alert('Error connecting to server: ' + err.message);
+            }
+        });
+    </script>
+</body>
+</html>

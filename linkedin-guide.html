@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Learning Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 123, 182, 0.2) 0%, rgba(10, 102, 194, 0.2) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header i {
+            font-size: 4rem;
+            color: #0A66C2;
+            margin-bottom: 1rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: #0A66C2;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0A66C2 0%, #0077B5 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .step-card li:last-child {
+            border-bottom: none;
+        }
+        .step-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0A66C2;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(10, 102, 194, 0.2) 0%, rgba(0, 123, 182, 0.2) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #0A66C2;
+        }
+        .highlight-box.success {
+            border-left-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .highlight-box.info {
+            border-left-color: #0A66C2;
+            background: rgba(10, 102, 194, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        .highlight-box p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .intro-box {
+            background: linear-gradient(135deg, rgba(10, 102, 194, 0.15) 0%, rgba(0, 123, 182, 0.15) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .intro-box p {
+            color: var(--clr-text-main);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+        .free-section {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(10, 102, 194, 0.2) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border: 2px dashed #0A66C2;
+        }
+        .free-section h3 {
+            color: #0A66C2;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 {
+            color: #0A66C2;
+            margin-bottom: 1rem;
+        }
+        .quick-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+        .quick-tips li {
+            padding: 0.5rem 0;
+            color: var(--clr-text-main);
+        }
+        .quick-tips li::before {
+            content: '→ ';
+            color: #0A66C2;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th,
+        .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: var(--clr-surface-light);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td {
+            color: var(--clr-text-muted);
+        }
+        .platforms-table a {
+            color: #0A66C2;
+            text-decoration: none;
+        }
+        .platforms-table a:hover {
+            text-decoration: underline;
+        }
+        .bonus-box {
+            background: linear-gradient(135deg, #0A66C2 0%, #0077B5 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        @media (max-width: 768px) {
+            .guide-header h1 {
+                font-size: 1.8rem;
+            }
+            .step-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <i class="fa-brands fa-linkedin"></i>
+                <h1>LinkedIn Learning Enrollment Guide</h1>
+                <p>Step-by-step guide to access free courses on LinkedIn Learning</p>
+            </div>
+
+            <!-- Introduction -->
+            <div class="intro-box">
+                <p><strong>LinkedIn Learning</strong> offers several free access options in 2026. The main methods include <strong>monthly unlocks</strong>, <strong>trials</strong>, <strong>promotional hubs</strong>, and <strong>library partnerships</strong>.</p>
+            </div>
+            
+            <!-- Free Access Info -->
+            <div class="free-section">
+                <h3><i class="fa-solid fa-star"></i> How to Get FREE Access</h3>
+                
+                <!-- Monthly Free Unlocks -->
+                <div class="highlight-box info" style="margin-bottom: 1rem;">
+                    <h4><i class="fa-solid fa-calendar"></i> Monthly Free Unlocks</h4>
+                    <p>All LinkedIn members can <strong>unlock up to 10 courses per month</strong> for 24-hour access each!</p>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--clr-text-muted);">
+                        <li>Browse recommendations from homepage</li>
+                        <li>Search for courses or view from profiles/feed</li>
+                        <li>Click <strong>"Share this course"</strong> or <strong>"Unlock"</strong> on the right side</li>
+                        <li>No trial needed!</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem;"><strong>Note:</strong> Courses auto-expire after 24 hours - plan binge-watching accordingly!</p>
+                </div>
+                
+                <!-- Free Trial -->
+                <div class="highlight-box success">
+                    <h4><i class="fa-solid fa-rocket"></i> Free Trial (1 Month)</h4>
+                    <p>Sign up for a <strong>1-month Premium trial</strong> to access the full <strong>25,000+ course library</strong>.</p>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--clr-text-muted);">
+                        <li>Cancel before billing to avoid charges</li>
+                        <li>Ideal for CS students targeting AI/Python courses during trial</li>
+                        <li>Download certificates upon completion</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h2>Create a LinkedIn Account</h2>
+                <ul>
+                    <li>Go to <strong>linkedin.com</strong></li>
+                    <li>Click <strong>Sign Up</strong></li>
+                    <li>Enter your email and create a password</li>
+                    <li>Or sign up with Google/Apple</li>
+                    <li>Complete your profile (optional but recommended)</li>
+                </ul>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h2>Start Your Free Trial</h2>
+                <ul>
+                    <li>Go to <strong>linkedin.com/learning</strong></li>
+                    <li>Click on any course to start</li>
+                    <li>You'll be prompted to start <strong>1-month free trial</strong></li>
+                    <li>Enter payment info (required for trial)</li>
+                    <li><strong>Cancel anytime before trial ends to avoid charges</strong></li>
+                </ul>
+                <div class="highlight-box warning">
+                    <h4><i class="fa-solid fa-exclamation-triangle"></i> Important</h4>
+                    <p>Set a reminder to cancel before the trial ends if you don't want to continue!</p>
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h2>Explore Free Collections</h2>
+                <p>LinkedIn offers various free course collections:</p>
+                <ul>
+                    <li><strong>Promotional Hubs</strong> - Rotating free courses like "Time Management" or "Mindfulness"</li>
+                    <li><strong>Job Skills Collection</strong> - Free courses for career development</li>
+                    <li><strong>Productivity Collection</strong> - Time management and tools</li>
+                    <li><strong>Learning Paths</strong> - Structured curriculum</li>
+                    <li>Check <strong>linkedin.com/learning/topics</strong> for all available course categories</li>
+                </ul>
+            </div>
+            
+            <!-- Library Access -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-building-columns"></i></div>
+                <h2>Library & University Access</h2>
+                <p>Free access through partnerships:</p>
+                <ul>
+                    <li><strong>Public Libraries</strong> - Many libraries worldwide provide free LinkedIn Learning logins</li>
+                    <li><strong>Indian Libraries</strong> - Some state digital programs in Uttar Pradesh, Tamil Nadu offer free access</li>
+                    <li><strong>University Partnerships</strong> - Check your campus portal for free access</li>
+                    <li><strong>Viva Learning</strong> - Some organizations integrate free LinkedIn courses</li>
+                </ul>
+                <div class="highlight-box info" style="margin-top: 1rem;">
+                    <h4><i class="fa-solid fa-info-circle"></i> For Students</h4>
+                    <p>Check your university/college portal for LinkedIn Learning partnerships - many institutions offer free access through campus licenses!</p>
+                </div>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h2>Start Learning</h2>
+                <ul>
+                    <li>Search for courses by skill or topic</li>
+                    <li>Watch video lessons at your pace</li>
+                    <li>Download certificates upon completion</li>
+                    <li>Add certificates to your LinkedIn profile</li>
+                    <li>Track your learning progress</li>
+                </ul>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Tips</h3>
+                <ul>
+                    <li>Unlock up to 10 courses monthly for free (24-hour access each)</li>
+                    <li>Start 1-month trial for full library access - cancel before billing</li>
+                    <li>Check university portal for free campus access</li>
+                    <li>Plan your learning - courses expire after 24 hours of unlocking</li>
+                    <li>Download certificates to add to your LinkedIn profile</li>
+                    <li>Use mobile app for learning on-the-go</li>
+                    <li>Explore learning paths for structured curriculum</li>
+                </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Resources</h2>
+                
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>LinkedIn Learning</strong></td>
+                            <td>Main learning platform (25,000+ courses)</td>
+                            <td><a href="https://www.linkedin.com/learning/" target="_blank">linkedin.com/learning ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>LinkedIn Learning</strong></td>
+                            <td>Main learning platform</td>
+                            <td><a href="https://www.linkedin.com/learning/" target="_blank">linkedin.com/learning</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Business Skills</strong></td>
+                            <td>Career development courses</td>
+                            <td><a href="https://www.linkedin.com/learning/topics/business" target="_blank">Business Skills</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Technology Skills</strong></td>
+                            <td>Tech & IT courses</td>
+                            <td><a href="https://www.linkedin.com/learning/topics/technology" target="_blank">Technology Skills</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Creative Skills</strong></td>
+                            <td>Design & creative courses</td>
+                            <td><a href="https://www.linkedin.com/learning/topics/creative" target="_blank">Creative Skills</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Bonus Box -->
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-fire"></i> Pro Tip!</h3>
+                <p><strong>Sign up for the 1-month free trial, download the courses you want, and cancel before the trial ends!</strong></p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Preparation | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --clr-bg: #f8fafc;
+            --clr-surface: #ffffff;
+            --clr-surface-light: #f1f5f9;
+            --clr-primary: #6366f1;
+            --clr-text-main: #1e293b;
+            --clr-text-muted: #64748b;
+            --clr-border: #e2e8f0;
+            --clr-service: #0ea5e9;
+            --clr-product: #f97316;
+            --clr-easy: #10b981;
+            --clr-medium: #f59e0b;
+            --clr-hard: #ef4444;
+            --gradient-brand: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            --gradient-service: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            --gradient-product: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--clr-bg); color: var(--clr-text-main); line-height: 1.6; }
+        .navbar { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--clr-border); padding: 1rem 2rem; }
+        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.5rem; font-weight: 800; text-decoration: none; color: var(--clr-text-main); }
+        .logo i { background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 2rem; color: var(--clr-text-main); text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        .back-btn:hover { background: var(--clr-primary); border-color: var(--clr-primary); color: white; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+        .hero-section { text-align: center; margin-bottom: 3rem; animation: fadeInUp 0.8s ease-out; }
+        @keyframes fadeInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .hero-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 0 40px rgba(16, 185, 129, 0.4); }
+        .hero-icon i { font-size: 2.5rem; color: white; }
+        .hero-section h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-section p { font-size: 1rem; color: var(--clr-text-muted); }
+
+        .toggle-section { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; animation: fadeInUp 0.8s ease-out 0.2s backwards; }
+        .toggle-btn { padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; border: 2px solid transparent; font-size: 1rem; }
+        .toggle-btn.service { background: var(--clr-surface); border-color: var(--clr-service); color: var(--clr-service); }
+        .toggle-btn.service.active { background: var(--clr-service); color: white; box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4); }
+        .toggle-btn.product { background: var(--clr-surface); border-color: var(--clr-product); color: var(--clr-product); }
+        .toggle-btn.product.active { background: var(--clr-product); color: white; box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4); }
+
+        .comparison-table { background: var(--clr-surface); border-radius: 1rem; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid var(--clr-border); animation: fadeInUp 0.8s ease-out 0.3s backwards; overflow-x: auto; }
+        .comparison-table h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; text-align: center; }
+
+        .placement-repo-section { animation: fadeInUp 0.8s ease-out 0.15s backwards; margin-bottom: 2rem; }
+        .golden-ticket-wrapper { position: relative; padding: 4px; background: linear-gradient(135deg, #ffd700, #ffb700, #ffec8b, #ffd700, #ffb700, #ffec8b, #ffd700); background-size: 300% 300%; animation: goldenBorder 4s ease infinite; border-radius: 24px; }
+        @keyframes goldenBorder { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        .placement-repo-card { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border-radius: 20px; padding: 2rem; color: #1a1a2e; position: relative; overflow: hidden; }
+        .placement-repo-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, transparent 50%, rgba(255,215,0,0.05) 100%); pointer-events: none; }
+        .placement-repo-card::after { content: ''; position: absolute; top: -100%; left: -100%; width: 300%; height: 300%; background: linear-gradient(45deg, transparent 45%, rgba(255,215,0,0.08) 50%, transparent 55%); animation: ticketShine 6s ease-in-out infinite; }
+        @keyframes ticketShine { 0%, 100% { transform: translateX(-33%) translateY(-33%); } 50% { transform: translateX(0%) translateY(0%); } }
+        .repo-ticket-notch { position: absolute; width: 30px; height: 30px; background: var(--clr-bg); border-radius: 50%; top: 50%; transform: translateY(-50%); }
+        .repo-ticket-notch.left { left: -15px; }
+        .repo-ticket-notch.right { right: -15px; }
+        .repo-ticket-notch::before { content: ''; position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px; background: linear-gradient(135deg, #ffd700, #ffb700); border-radius: 50%; }
+        .repo-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #ffd700, #ffb700); padding: 0.5rem 1.2rem; border-radius: 50px; font-size: 0.8rem; font-weight: 800; color: #1a1a2e; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(255,215,0,0.4); text-transform: uppercase; letter-spacing: 2px; }
+        .repo-badge i { font-size: 0.9rem; }
+        .placement-repo-content { position: relative; z-index: 1; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .repo-icon { width: 100px; height: 100px; background: linear-gradient(135deg, #ffd700, #ffb700); border-radius: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 10px 30px rgba(255,215,0,0.4); border: 3px solid rgba(255,255,255,0.2); }
+        .repo-icon i { font-size: 3.5rem; color: #1a1a2e; }
+        .repo-info { flex: 1; min-width: 280px; }
+        .repo-info h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.75rem; color: #1a1a2e; text-shadow: 0 0 30px rgba(255,215,0,0.3); }
+        .repo-info p { font-size: 1rem; color: #1a1a2e; margin-bottom: 1rem; line-height: 1.6; font-weight: 500; }
+        .repo-stats { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .repo-stat { display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; color: #1a1a2e; font-weight: 600; }
+        .repo-stat i { color: #1a1a2e; font-size: 1.1rem; }
+        .repo-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: linear-gradient(135deg, #ffd700, #ffb700); color: #1a1a2e; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.1rem; font-weight: 800; text-decoration: none; transition: all 0.3s ease; border: none; cursor: pointer; box-shadow: 0 8px 30px rgba(255,215,0,0.5); flex-shrink: 0; text-transform: uppercase; letter-spacing: 1px; }
+        .repo-btn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 12px 40px rgba(255,215,0,0.7); }
+        .repo-btn i { font-size: 1.3rem; }
+        .repo-features { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+        .repo-feature { background: rgba(255,215,0,0.15); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; color: #1a1a2e; border: 1px solid rgba(255,215,0,0.3); font-weight: 600; }
+        .comparison-table table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .comparison-table th, .comparison-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--clr-border); font-size: 0.9rem; }
+        .comparison-table th { background: var(--clr-surface-light); font-weight: 600; }
+        .comparison-table .service-col { color: var(--clr-service); font-weight: 600; }
+        .comparison-table .product-col { color: var(--clr-product); font-weight: 600; }
+        .badge-easy { background: rgba(16, 185, 129, 0.15); color: var(--clr-easy); padding: 0.2rem 0.5rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+        .badge-medium { background: rgba(245, 158, 11, 0.15); color: var(--clr-medium); padding: 0.2rem 0.5rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+        .badge-hard { background: rgba(239, 68, 68, 0.15); color: var(--clr-hard); padding: 0.2rem 0.5rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+
+        .companies-section { animation: fadeInUp 0.8s ease-out 0.4s backwards; }
+        .companies-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center; }
+        .section-badge { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-left: 0.5rem; }
+        .section-badge.service { background: rgba(14, 165, 233, 0.15); color: var(--clr-service); }
+        .section-badge.product { background: rgba(249, 115, 22, 0.15); color: var(--clr-product); }
+
+        .companies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .companies-grid-product, .companies-grid-service { grid-template-columns: repeat(3, 1fr); }
+        
+        .company-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .company-name { font-size: 1.1rem; font-weight: 700; color: var(--clr-text-main); }
+        .difficulty-meter { display: flex; gap: 0.25rem; }
+        .difficulty-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--clr-border); }
+        .difficulty-dot.filled.easy { background: var(--clr-easy); }
+        .difficulty-dot.filled.medium { background: var(--clr-medium); }
+        .difficulty-dot.filled.hard { background: var(--clr-hard); }
+        
+        .difficulty-label { font-size: 0.75rem; font-weight: 600; margin-top: 0.25rem; }
+        .difficulty-label.easy { color: var(--clr-easy); }
+        .difficulty-label.medium { color: var(--clr-medium); }
+        .difficulty-label.hard { color: var(--clr-hard); }
+        
+        .company-section { margin-bottom: 0.75rem; }
+        .company-section h4 { font-size: 0.8rem; font-weight: 600; color: var(--clr-text-main); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem; }
+        .company-section h4 i { color: var(--clr-primary); font-size: 0.85rem; }
+        .company-section ul { list-style: none; padding: 0; margin: 0; }
+        .company-section li { font-size: 0.75rem; color: var(--clr-text-muted); padding: 0.15rem 0; padding-left: 1rem; position: relative; }
+        .company-section li::before { content: '•'; position: absolute; left: 0; color: var(--clr-primary); font-weight: bold; }
+        
+        .company-logo { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .company-logo i { font-size: 1.5rem; color: white; }
+        .company-logo .fa-p { font-family: serif; font-weight: bold; font-size: 1.3rem; }
+        
+        .company-info { display: flex; flex-direction: column; gap: 0.25rem; }
+        
+        .pattern-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+        .pattern-tag { background: var(--clr-surface-light); padding: 0.2rem 0.5rem; border-radius: 50px; font-size: 0.7rem; font-weight: 500; color: var(--clr-text-muted); }
+        .pattern-tag.important { background: rgba(239, 68, 68, 0.15); color: var(--clr-hard); }
+        
+        .prep-btn { width: 100%; padding: 0.6rem; background: linear-gradient(135deg, var(--clr-product) 0%, #fb923c 100%); color: white; border: none; border-radius: 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: all 0.3s ease; margin-top: auto; }
+        .prep-btn:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4); }
+        .prep-btn i { font-size: 0.9rem; }
+        
+        .badge-easy { background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.7rem; font-weight: 600; }
+        .badge-medium { background: rgba(245, 158, 11, 0.15); color: #f59e0b; padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.7rem; font-weight: 600; }
+        .badge-hard { background: rgba(239, 68, 68, 0.15); color: #ef4444; padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.7rem; font-weight: 600; }
+        .badge-easy-medium { background: rgba(16, 185, 129, 0.1) linear-gradient(90deg, rgba(16, 185, 129, 0.15) 50%, rgba(245, 158, 11, 0.15) 50%); color: #10b981; padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.7rem; font-weight: 600; }
+        
+        .product-card { background: var(--clr-surface); border-radius: 16px; padding: 1.25rem; border: 1px solid var(--clr-border); transition: all 0.3s ease; display: flex; flex-direction: column; max-height: 380px; overflow: hidden; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15); border-color: var(--clr-product); }
+        
+        .product-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .product-card .company-section h4 i { color: var(--clr-product); }
+        .product-card .company-section li::before { color: var(--clr-product); }
+        .product-card .pattern-tag.important { background: rgba(249, 115, 22, 0.15); color: var(--clr-product); }
+        
+        .service-card { background: var(--clr-surface); border-radius: 16px; padding: 1.25rem; border: 1px solid var(--clr-border); border-left: 4px solid var(--clr-service); transition: all 0.3s ease; display: flex; flex-direction: column; max-height: 380px; overflow: hidden; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15); border-color: var(--clr-service); }
+        
+        .service-card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .service-card .company-section h4 i { color: var(--clr-service); }
+        .service-card .company-section li::before { color: var(--clr-service); }
+        .service-card .pattern-tag.important { background: rgba(14, 165, 233, 0.15); color: var(--clr-service); }
+        
+        .prep-btn.service-btn { background: linear-gradient(135deg, var(--clr-service) 0%, #06b6d4 100%); }
+        .prep-btn.service-btn:hover { box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4); }
+        
+        @media (max-width: 1200px) {
+            .companies-grid-product, .companies-grid-service { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .companies-grid-product, .companies-grid-service { grid-template-columns: 1fr; }
+            .product-card, .service-card { max-height: none; }
+            .placement-repo-content { flex-direction: column; text-align: center; }
+            .repo-info { text-align: center; }
+            .repo-stats { justify-content: center; }
+            .repo-features { justify-content: center; }
+            .repo-btn { width: 100%; justify-content: center; }
+            .repo-ticket-notch { display: none; }
+        }
+        .company-section p, .company-section ul { font-size: 0.85rem; color: var(--clr-text-muted); }
+        .company-section ul { list-style: none; padding-left: 0; }
+        .company-section li { padding: 0.25rem 0; padding-left: 1rem; position: relative; }
+        .company-section li::before { content: '•'; position: absolute; left: 0; color: var(--clr-primary); }
+        
+        .pattern-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+        .pattern-tag { background: var(--clr-surface-light); padding: 0.3rem 0.6rem; border-radius: 50px; font-size: 0.75rem; font-weight: 500; color: var(--clr-text-muted); }
+        .pattern-tag.important { background: rgba(239, 68, 68, 0.15); color: var(--clr-hard); }
+        .most-asked { background: linear-gradient(135deg, #f97316 0%, #fb923c 100%); color: white; padding: 0.3rem 0.6rem; border-radius: 50px; font-size: 0.7rem; font-weight: 700; margin-left: auto; }
+
+        .prep-strategy { background: var(--clr-surface-light); border-radius: 0.75rem; padding: 1rem; margin-top: 1rem; }
+        .prep-strategy h4 { font-size: 0.9rem; font-weight: 600; color: var(--clr-primary); margin-bottom: 0.5rem; }
+        .prep-strategy ul { font-size: 0.8rem; color: var(--clr-text-muted); list-style: none; }
+        .prep-strategy li { padding: 0.25rem 0; display: flex; align-items: center; gap: 0.5rem; }
+        .prep-strategy li i { color: var(--clr-easy); font-size: 0.75rem; }
+
+        .aptitude-section { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border-radius: 1rem; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid var(--clr-border); }
+        .aptitude-section h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: var(--clr-text-main); display: flex; align-items: center; gap: 0.5rem; }
+        .aptitude-section h3 i { color: var(--clr-primary); }
+        .aptitude-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
+        .aptitude-item { background: var(--clr-surface); border-radius: 0.75rem; padding: 1rem; text-align: center; }
+        .aptitude-item i { font-size: 1.5rem; color: var(--clr-primary); margin-bottom: 0.5rem; }
+        .aptitude-item span { font-size: 0.85rem; font-weight: 600; color: var(--clr-text-main); }
+
+        .communication-section { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%); border-radius: 1rem; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid var(--clr-border); }
+        .communication-section h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: var(--clr-text-main); display: flex; align-items: center; gap: 0.5rem; }
+        .communication-section h3 i { color: var(--clr-easy); }
+        .comm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+        .comm-item { background: var(--clr-surface); border-radius: 0.75rem; padding: 1rem; text-align: center; }
+        .comm-item.high { border: 2px solid var(--clr-easy); }
+        .comm-item.high span { color: var(--clr-easy); font-weight: 700; }
+        .comm-item i { font-size: 1.5rem; color: var(--clr-text-muted); margin-bottom: 0.5rem; }
+        .comm-item span { font-size: 0.85rem; font-weight: 600; }
+
+        footer { text-align: center; padding: 2rem; color: var(--clr-text-muted); font-size: 0.9rem; border-top: 1px solid var(--clr-border); margin-top: 2rem; }
+        footer .logo { justify-content: center; margin-bottom: 1rem; }
+
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 1.5rem; }
+            .toggle-section { flex-direction: column; align-items: center; }
+            .companies-grid { grid-template-columns: 1fr; }
+        }
+
+        /* TCS Modal Styles */
+        .tcs-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1rem;
+            overflow-y: auto;
+        }
+        .tcs-modal-overlay.active { display: flex; }
+        .tcs-modal {
+            background: white;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlide 0.4s ease;
+        }
+        @keyframes modalSlide {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .tcs-modal-header {
+            background: linear-gradient(135deg, #0052a5 0%, #0076ce 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .tcs-modal-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .tcs-modal-header p { opacity: 0.9; font-size: 1rem; }
+        .tcs-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .tcs-modal-close:hover { background: rgba(255,255,255,0.3); }
+        .tcs-modal-body { padding: 2rem; }
+        .tcs-section {
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .tcs-section h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--clr-text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--clr-primary);
+        }
+        .tcs-section h3 i { color: var(--clr-primary); }
+        .round-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--clr-primary);
+        }
+        .round-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--clr-primary);
+            margin-bottom: 0.5rem;
+        }
+        .round-card ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem; }
+        .round-card li { font-size: 0.85rem; color: var(--clr-text-muted); padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+        .round-card li::before { content: '✓'; position: absolute; left: 0; color: var(--clr-easy); font-weight: bold; }
+        .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .topic-item {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(139,92,246,0.1) 100%);
+            border-radius: 10px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .topic-item i { font-size: 1.5rem; color: var(--clr-primary); }
+        .topic-item span { font-size: 0.9rem; font-weight: 600; color: var(--clr-text-main); }
+        .must-prep { background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(5,150,105,0.1) 100%); border-left: 4px solid var(--clr-easy); }
+        .must-prep li::before { content: '✅' !important; color: var(--clr-easy); }
+        .not-required { background: linear-gradient(135deg, rgba(239,68,68,0.1) 0%, rgba(220,38,38,0.1) 100%); border-left: 4px solid var(--clr-hard); }
+        .not-required li::before { content: '❌' !important; color: var(--clr-hard); }
+        .pdf-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .pdf-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--clr-surface);
+            border: 1px solid var(--clr-border);
+            border-radius: 12px;
+            padding: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .pdf-link:hover { border-color: var(--clr-primary); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(99,102,241,0.2); }
+        .pdf-link i { font-size: 2rem; color: #ef4444; }
+        .pdf-link div { flex: 1; }
+        .pdf-link strong { display: block; color: var(--clr-text-main); font-size: 0.9rem; }
+        .pdf-link span { font-size: 0.8rem; color: var(--clr-text-muted); }
+        .insight-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 1.25rem; border-left: 4px solid #f59e0b; }
+        .insight-box strong { color: #92400e; }
+        .insight-box p { color: #78350f; font-size: 0.9rem; }
+        .difficulty-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .difficulty-easy { background: rgba(16,185,129,0.2); color: #059669; }
+        .difficulty-medium { background: rgba(245,158,11,0.2); color: #d97706; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>CourseHub</span>
+            </a>
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero-section">
+            <div class="hero-icon">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <h1>Company Preparation Guide</h1>
+            <p>Know what to prepare for Service-Based vs Product-Based companies</p>
+        </section>
+
+        <div class="placement-repo-section">
+            <div class="golden-ticket-wrapper">
+                <div class="repo-ticket-notch left"></div>
+                <div class="repo-ticket-notch right"></div>
+                <a href="https://github.com/anushka23g/Complete-Placement-Preparation" target="_blank" class="placement-repo-card">
+                    <div class="repo-badge">
+                        <i class="fa-solid fa-ticket"></i> Golden Ticket
+                    </div>
+                    <div class="placement-repo-content">
+                        <div class="repo-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="repo-info">
+                            <h3>Your Complete Placement Journey Awaits! 🚀</h3>
+                            <p>From DSA to Aptitude, Interview Prep to Offer Letters - Everything you need in one place. Follow this comprehensive roadmap to land your dream job!</p>
+                            <div class="repo-stats">
+                                <span class="repo-stat"><i class="fa-solid fa-code"></i> DSA Guide</span>
+                                <span class="repo-stat"><i class="fa-solid fa-brain"></i> Aptitude</span>
+                                <span class="repo-stat"><i class="fa-solid fa-comments"></i> Interview Prep</span>
+                                <span class="repo-stat"><i class="fa-solid fa-book"></i> Subjects</span>
+                            </div>
+                            <div class="repo-features">
+                                <span class="repo-feature">🔥 500+ Problems</span>
+                                <span class="repo-feature">📚 Complete Syllabus</span>
+                                <span class="repo-feature">💡 Interview Tips</span>
+                                <span class="repo-feature">✅ Resume Building</span>
+                            </div>
+                        </div>
+                        <div class="repo-btn">
+                            <i class="fa-brands fa-github"></i>
+                            View on GitHub
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="toggle-section">
+            <button class="toggle-btn service active" onclick="toggleView('service')">
+                <i class="fa-solid fa-building"></i> Service-Based
+            </button>
+            <button class="toggle-btn product" onclick="toggleView('product')">
+                <i class="fa-solid fa-rocket"></i> Product-Based
+            </button>
+        </div>
+
+        <div class="comparison-table" id="comparisonTable">
+            <h3><i class="fa-solid fa-scale-balanced"></i> Service vs Product Comparison</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th class="service-col">Service-Based</th>
+                        <th class="product-col">Product-Based</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Difficulty</strong></td>
+                        <td><span class="badge-easy">Easy-Medium</span></td>
+                        <td><span class="badge-hard">Medium-Hard</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aptitude</strong></td>
+                        <td>⭐ Very Important</td>
+                        <td>Less Important</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DSA</strong></td>
+                        <td>Basic</td>
+                        <td><span class="badge-hard">Advanced 🔥</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Salary</strong></td>
+                        <td>3-8 LPA</td>
+                        <td>10-40+ LPA 💰</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interviews</strong></td>
+                        <td>2-3 Rounds</td>
+                        <td>4-6 Rounds</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Communication</strong></td>
+                        <td><span class="badge-hard">VERY HIGH ⚠️</span></td>
+                        <td>Important</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Service Based Companies -->
+        <div class="companies-section" id="serviceSection">
+            <h2>
+                <i class="fa-solid fa-building"></i> Service-Based Companies
+                <span class="section-badge service">Easy-Medium</span>
+            </h2>
+            <div class="companies-grid companies-grid-service">
+                <div class="company-card service-card">
+                    <div class="service-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #0076CE 0%, #004C99 100%);">
+                            <span style="color: white; font-weight: bold; font-size: 1rem;">TCS</span>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Tata Consultancy</span>
+                            <span class="badge badge-easy">Easy</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Aptitude Test</li>
+                            <li>Coding (Easy)</li>
+                            <li>Technical + HR</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Arrays</span>
+                        <span class="pattern-tag">Strings</span>
+                        <span class="pattern-tag">Aptitude</span>
+                    </div>
+                    <button class="prep-btn service-btn" onclick="window.location.href='tcs-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+
+                <!-- TCS Detailed Strategy Modal -->
+                <div class="tcs-modal-overlay" id="tcsModal">
+                    <div class="tcs-modal">
+                        <div class="tcs-modal-header">
+                            <button class="tcs-modal-close" onclick="closeTCSModal()">&times;</button>
+                            <h2><i class="fa-solid fa-graduation-cap"></i> TCS Selection Guide 2026</h2>
+                            <p>Complete preparation strategy for TCS NQT & Interviews</p>
+                        </div>
+                        <div class="tcs-modal-body">
+                            <!-- Selection Rounds -->
+                            <div class="tcs-section">
+                                <h3><i class="fa-solid fa-clipboard-list"></i> TCS Selection Rounds</h3>
+                                <div class="round-card">
+                                    <h4>📋 Round 1: TCS NQT (Online Test) - MOST IMPORTANT</h4>
+                                    <ul>
+                                        <li>Numerical Ability (Aptitude)</li>
+                                        <li>Verbal Ability</li>
+                                        <li>Reasoning Ability</li>
+                                        <li>Programming Logic</li>
+                                        <li>Coding (2 Questions)</li>
+                                    </ul>
+                                    <p style="margin-top:0.75rem; font-size:0.85rem; color:var(--clr-primary);"><strong>⏱️ ~90+ Questions | ~180 Minutes</strong></p>
+                                </div>
+                                <div class="round-card">
+                                    <h4>📋 Round 2: Technical Interview</h4>
+                                    <ul>
+                                        <li>Basic Coding Questions</li>
+                                        <li>DBMS & SQL</li>
+                                        <li>Operating Systems</li>
+                                        <li>OOP Concepts</li>
+                                        <li>Resume-based Questions</li>
+                                    </ul>
+                                </div>
+                                <div class="round-card">
+                                    <h4>📋 Round 3: HR Interview</h4>
+                                    <ul>
+                                        <li>Tell me about yourself</li>
+                                        <li>Strengths & Weaknesses</li>
+                                        <li>Why TCS?</li>
+                                        <li>Bond Agreement Discussion</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- DSA Patterns -->
+                            <div class="tcs-section">
+                                <h3><i class="fa-solid fa-code"></i> TCS DSA Patterns (Focus Areas)</h3>
+                                <p style="margin-bottom:1rem; font-size:0.9rem; color:var(--clr-text-muted);">TCS focuses on <strong>BASIC LOGIC</strong> - NOT like product companies!</p>
+                                
+                                <div class="round-card must-prep">
+                                    <h4>✅ MUST PREPARE (Easy-Medium)</h4>
+                                    <ul>
+                                        <li><strong>Arrays:</strong> Sum, Max/Min, Frequency count, Searching</li>
+                                        <li><strong>Strings:</strong> Palindrome, Reverse, Count characters</li>
+                                        <li><strong>Basic Math:</strong> Factorial, Prime number, Fibonacci</li>
+                                        <li><strong>Sorting:</strong> Bubble sort, Selection sort</li>
+                                        <li><strong>Recursion:</strong> Factorial, Fibonacci</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="round-card not-required">
+                                    <h4>❌ NOT REQUIRED (Mostly)</h4>
+                                    <ul>
+                                        <li>Dynamic Programming</li>
+                                        <li>Advanced Graphs</li>
+                                        <li>Hard LeetCode Problems</li>
+                                        <li>Complex Data Structures</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="insight-box">
+                                    <strong>💡 REAL INSIGHT from candidates:</strong>
+                                    <p>"Focus on arrays and strings... basic coding is enough for TCS"</p>
+                                </div>
+                            </div>
+
+                            <!-- Aptitude Topics -->
+                            <div class="tcs-section">
+                                <h3><i class="fa-solid fa-brain"></i> Aptitude Topics (VERY IMPORTANT 🔥🔥)</h3>
+                                <div class="topic-grid">
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                        <span>Profit & Loss</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-clock"></i>
+                                        <span>Time & Work</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-route"></i>
+                                        <span>Speed & Distance</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-dice"></i>
+                                        <span>Probability</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-percent"></i>
+                                        <span>Percentages</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-divide"></i>
+                                        <span>Ratio & Proportion</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-hashtag"></i>
+                                        <span>Number Series</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-puzzle-piece"></i>
+                                        <span>Coding-Decoding</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reasoning -->
+                            <div class="tcs-section">
+                                <h3><i class="fa-solid fa-puzzle-piece"></i> Reasoning Ability Topics</h3>
+                                <div class="topic-grid">
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-code"></i>
+                                        <span>Coding-Decoding</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-users"></i>
+                                        <span>Blood Relations</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-chair"></i>
+                                        <span>Seating Arrangement</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-list-ol"></i>
+                                        <span>Number Series</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-lightbulb"></i>
+                                        <span>Analogies</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-shapes"></i>
+                                        <span>Pattern Matching</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Verbal -->
+                            <div class="tcs-section">
+                                <h3><i class="fa-solid fa-book-open"></i> Verbal Ability Topics</h3>
+                                <div class="topic-grid">
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-file-alt"></i>
+                                        <span>Reading Comprehension</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-spell-check"></i>
+                                        <span>Error Correction</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-pen-fancy"></i>
+                                        <span>Sentence Completion</span>
+                                    </div>
+                                    <div class="topic-item">
+                                        <i class="fa-solid fa-fill-drip"></i>
+                                        <span>Fill in the Blanks</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Free Resources -->
+                            <div class="tcs-section">
+                                <h3><i class="fa-solid fa-download"></i> Free PDF & Materials</h3>
+                                <div class="pdf-links">
+                                    <a href="https://www.prepInsta.com/tcs-nqt-syllabus" target="_blank" class="pdf-link">
+                                        <i class="fa-solid fa-file-pdf"></i>
+                                        <div>
+                                            <strong>TCS NQT Full Syllabus PDF</strong>
+                                            <span>Complete syllabus with topics</span>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.prepInsta.com/tcs-nqt-previous-papers" target="_blank" class="pdf-link">
+                                        <i class="fa-solid fa-file-pdf"></i>
+                                        <div>
+                                            <strong>TCS NQT Previous Papers</strong>
+                                            <span>Practice with real questions</span>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.codechef.com/learn" target="_blank" class="pdf-link">
+                                        <i class="fa-solid fa-code"></i>
+                                        <div>
+                                            <strong>CodeChef Practice</strong>
+                                            <span>Arrays, Strings, Math</span>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.indiabix.com/aptitude/questions-and-answers" target="_blank" class="pdf-link">
+                                        <i class="fa-solid fa-brain"></i>
+                                        <div>
+                                            <strong>IndiaBix Aptitude</strong>
+                                            <span>All aptitude topics</span>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.geeksforgeeks.org/tcs-coding-question/" target="_blank" class="pdf-link">
+                                        <i class="fa-solid fa-laptop-code"></i>
+                                        <div>
+                                            <strong>TCS Coding Questions</strong>
+                                            <span>Practice TCS pattern</span>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.prepInsta.com/tcs-nqt-coding-questions" target="_blank" class="pdf-link">
+                                        <i class="fa-solid fa-terminal"></i>
+                                        <div>
+                                            <strong>TCS NQT Coding Sheet</strong>
+                                            <span>Most repeated codes</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Key Tips -->
+                            <div class="tcs-section" style="background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(5,150,105,0.1) 100%);">
+                                <h3 style="border-color: var(--clr-easy);"><i class="fa-solid fa-check-circle" style="color: var(--clr-easy);"></i> Quick Tips for Success</h3>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--clr-border); display: flex; align-items: center; gap: 0.75rem;">
+                                        <span class="difficulty-badge difficulty-easy">1</span>
+                                        <span><strong>Aptitude First:</strong> Focus 60% time on aptitude - it's the elimination round</span>
+                                    </li>
+                                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--clr-border); display: flex; align-items: center; gap: 0.75rem;">
+                                        <span class="difficulty-badge difficulty-easy">2</span>
+                                        <span><strong>Basic DSA:</strong> Arrays & Strings are enough for coding round</span>
+                                    </li>
+                                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--clr-border); display: flex; align-items: center; gap: 0.75rem;">
+                                        <span class="difficulty-badge difficulty-easy">3</span>
+                                        <span><strong>Communication:</strong> Speak clearly - very important for service companies</span>
+                                    </li>
+                                    <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                                        <span class="difficulty-badge difficulty-medium">4</span>
+                                        <span><strong>Practice:</strong> Solve at least 50 aptitude + 30 coding questions</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="company-card service-card">
+                    <div class="service-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #007DC5 0%, #004C99 100%);">
+                            <span style="color: white; font-weight: bold; font-size: 0.9rem;">INFOSYS</span>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Infosys</span>
+                            <span class="badge badge-easy-medium">Easy-Medium</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Aptitude Test</li>
+                            <li>Puzzle Solving</li>
+                            <li>Technical + HR</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Arrays</span>
+                        <span class="pattern-tag">Strings</span>
+                        <span class="pattern-tag">Pseudo Code</span>
+                    </div>
+                    <button class="prep-btn service-btn" onclick="window.location.href='infosys-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+
+                <div class="company-card service-card">
+                    <div class="service-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #5C2D91 0%, #4A1D6E 100%);">
+                            <span style="color: white; font-weight: bold; font-size: 1rem;">Wipro</span>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Wipro</span>
+                            <span class="badge badge-easy">Easy</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Aptitude Test</li>
+                            <li>Coding (Easy)</li>
+                            <li>Technical + HR</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Arrays</span>
+                        <span class="pattern-tag">Strings</span>
+                        <span class="pattern-tag">Sorting</span>
+                    </div>
+                    <button class="prep-btn service-btn" onclick="window.location.href='wipro-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+
+                <div class="company-card service-card">
+                    <div class="service-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #00A0DC 0%, #00759A 100%);">
+                            <span style="color: white; font-weight: bold; font-size: 0.9rem;">HCL</span>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">HCLTech</span>
+                            <span class="badge badge-easy-medium">Easy-Medium</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Aptitude Test</li>
+                            <li>Technical Test</li>
+                            <li>HR Interview</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Arrays</span>
+                        <span class="pattern-tag">Strings</span>
+                        <span class="pattern-tag">Technical MCQ</span>
+                    </div>
+                    <button class="prep-btn service-btn" onclick="window.location.href='hcl-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+
+                <div class="company-card service-card">
+                    <div class="service-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #1B0066 0%, #3B0066 100%);">
+                            <span style="color: white; font-weight: bold; font-size: 0.8rem;">Cognizant</span>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Cognizant</span>
+                            <span class="badge badge-easy">Easy</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Aptitude Test</li>
+                            <li>Technical Test</li>
+                            <li>HR Interview</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Aptitude</span>
+                        <span class="pattern-tag">Reasoning</span>
+                        <span class="pattern-tag">English</span>
+                    </div>
+                    <button class="prep-btn service-btn" onclick="window.location.href='cognizant-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+
+                <div class="company-card service-card">
+                    <div class="service-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #00B0A6 0%, #007A6C 100%);">
+                            <span style="color: white; font-weight: bold; font-size: 0.8rem;">Accenture</span>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Accenture</span>
+                            <span class="badge badge-easy-medium">Easy-Medium</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Aptitude + Logical</li>
+                            <li>Communication</li>
+                            <li>Technical + HR</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Communication ⚠️</span>
+                        <span class="pattern-tag">Aptitude</span>
+                        <span class="pattern-tag">Coding</span>
+                    </div>
+                    <button class="prep-btn service-btn" onclick="window.location.href='accenture-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Based Companies -->
+        <div class="companies-section" id="productSection" style="display: none;">
+            <h2>
+                <i class="fa-solid fa-rocket"></i> Product-Based Companies
+                <span class="section-badge product">Medium-Hard 🔥</span>
+            </h2>
+            <div class="companies-grid companies-grid-product">
+                <div class="company-card product-card">
+                    <div class="product-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #FF9900 0%, #FF6600 100%);">
+                            <i class="fa-brands fa-amazon"></i>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Amazon</span>
+                            <span class="badge badge-hard">Hard</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Coding Test</li>
+                            <li>Technical Rounds</li>
+                            <li>Leadership Round</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Arrays</span>
+                        <span class="pattern-tag important">Sliding Window</span>
+                        <span class="pattern-tag">BST</span>
+                        <span class="pattern-tag">Hashing</span>
+                    </div>
+                    <button class="prep-btn" onclick="window.location.href='amazon-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+
+                <div class="company-card product-card">
+                    <div class="product-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);">
+                            <i class="fa-brands fa-google"></i>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Google</span>
+                            <span class="badge badge-hard">Very Hard</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Coding Round</li>
+                            <li>Algorithm Rounds</li>
+                            <li>Behavioral</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">DP</span>
+                        <span class="pattern-tag important">Graphs</span>
+                        <span class="pattern-tag important">Backtrack</span>
+                        <span class="pattern-tag">Trees</span>
+                    </div>
+                    <button class="prep-btn" onclick="window.location.href='google-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+
+                <div class="company-card product-card">
+                    <div class="product-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #00A4EF 0%, #FFB900 100%);">
+                            <i class="fa-brands fa-microsoft"></i>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Microsoft</span>
+                            <span class="badge badge-medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Online Assessment</li>
+                            <li>Technical Rounds</li>
+                            <li>HR Round</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Trees</span>
+                        <span class="pattern-tag important">Graphs</span>
+                        <span class="pattern-tag">Arrays</span>
+                        <span class="pattern-tag">DP</span>
+                    </div>
+                    <button class="prep-btn" onclick="window.location.href='microsoft-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+
+                <div class="company-card product-card">
+                    <div class="product-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #0081FB 0%, #A033FF 100%);">
+                            <i class="fa-brands fa-meta"></i>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Meta</span>
+                            <span class="badge badge-hard">Hard</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Coding Test</li>
+                            <li>2 Tech Screenings</li>
+                            <li>Onsite</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Arrays</span>
+                        <span class="pattern-tag important">Two Pointers</span>
+                        <span class="pattern-tag important">Sliding Window</span>
+                        <span class="pattern-tag">Linked Lists</span>
+                    </div>
+                    <button class="prep-btn" onclick="window.location.href='meta-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+
+                <div class="company-card product-card">
+                    <div class="product-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);">
+                            <i class="fa-brands fa-apple"></i>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Apple</span>
+                            <span class="badge badge-hard">Hard</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Coding Interview</li>
+                            <li>System Design</li>
+                            <li>Behavioral</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Arrays</span>
+                        <span class="pattern-tag important">Strings</span>
+                        <span class="pattern-tag">Design</span>
+                        <span class="pattern-tag">DP</span>
+                    </div>
+                    <button class="prep-btn" onclick="window.location.href='apple-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+
+                <div class="company-card product-card">
+                    <div class="product-card-header">
+                        <div class="company-logo" style="background: linear-gradient(135deg, #FF0000 0%, #FA0033 100%);">
+                            <i class="fa-solid fa-p"></i>
+                        </div>
+                        <div class="company-info">
+                            <span class="company-name">Adobe</span>
+                            <span class="badge badge-medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h4><i class="fa-solid fa-list-check"></i> Rounds</h4>
+                        <ul>
+                            <li>Online Test</li>
+                            <li>Technical Round</li>
+                            <li>HR Round</li>
+                        </ul>
+                    </div>
+                    <div class="pattern-tags">
+                        <span class="pattern-tag important">Arrays</span>
+                        <span class="pattern-tag important">Binary Search</span>
+                        <span class="pattern-tag">Sorting</span>
+                        <span class="pattern-tag">C++</span>
+                    </div>
+                    <button class="prep-btn" onclick="window.location.href='adobe-prep.html'">
+                        <i class="fa-solid fa-lightbulb"></i> Prep Strategy
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="aptitude-section">
+            <h3><i class="fa-solid fa-brain"></i> Aptitude Focus (VERY HIGH for Service-Based)</h3>
+            <div class="aptitude-grid">
+                <div class="aptitude-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Profit & Loss</span>
+                </div>
+                <div class="aptitude-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Time & Work</span>
+                </div>
+                <div class="aptitude-item">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>Number System</span>
+                </div>
+                <div class="aptitude-item">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <span>Logical Puzzles</span>
+                </div>
+                <div class="aptitude-item">
+                    <i class="fa-solid fa-percentage"></i>
+                    <span>Percentages</span>
+                </div>
+                <div class="aptitude-item">
+                    <i class="fa-solid fa-shapes"></i>
+                    <span>Geometry Basics</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="communication-section">
+            <h3><i class="fa-solid fa-comments"></i> Communication Skills</h3>
+            <div class="comm-grid">
+                <div class="comm-item high">
+                    <i class="fa-solid fa-exclamation-triangle"></i>
+                    <span>VERY HIGH for Service-Based ⚠️</span>
+                </div>
+                <div class="comm-item">
+                    <i class="fa-solid fa-microphone"></i>
+                    <span>Practice Speaking</span>
+                </div>
+                <div class="comm-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Group Discussion</span>
+                </div>
+                <div class="comm-item">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <span>Confidence Matters</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>CourseHub</span>
+        </a>
+        <p>&copy; 2026 CourseHub. Free education for everyone.</p>
+    </footer>
+
+    <script>
+        function toggleView(type) {
+            const serviceBtn = document.querySelector('.toggle-btn.service');
+            const productBtn = document.querySelector('.toggle-btn.product');
+            const serviceSection = document.getElementById('serviceSection');
+            const productSection = document.getElementById('productSection');
+            const table = document.getElementById('comparisonTable');
+
+            if (type === 'service') {
+                serviceBtn.classList.add('active');
+                productBtn.classList.remove('active');
+                serviceSection.style.display = 'block';
+                productSection.style.display = 'none';
+                table.style.display = 'block';
+            } else {
+                productBtn.classList.add('active');
+                serviceBtn.classList.remove('active');
+                serviceSection.style.display = 'none';
+                productSection.style.display = 'block';
+                table.style.display = 'block';
+            }
+        }
+
+        function openTCSModal() {
+            document.getElementById('tcsModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTCSModal() {
+            document.getElementById('tcsModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('tcsModal').addEventListener('click', function(e) {
+            if (e.target === this) closeTCSModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeTCSModal();
+        });
+    </script>
+</body>
+</html>

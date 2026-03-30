@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Preparation Guide 2026 | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --clr-bg: #f8fafc;
+            --clr-surface: #ffffff;
+            --clr-surface-light: #f1f5f9;
+            --clr-primary: #6366f1;
+            --clr-text-main: #1e293b;
+            --clr-text-muted: #64748b;
+            --clr-border: #e2e8f0;
+            --clr-service: #0ea5e9;
+            --clr-easy: #10b981;
+            --clr-medium: #f59e0b;
+            --clr-hard: #ef4444;
+            --gradient-brand: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--clr-bg); color: var(--clr-text-main); line-height: 1.6; }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--clr-border);
+            padding: 1rem 2rem;
+        }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.5rem; font-weight: 800; text-decoration: none; color: var(--clr-text-main); }
+        .logo i { background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: 2rem; color: var(--clr-text-main); text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        .back-btn:hover { background: var(--clr-primary); border-color: var(--clr-primary); color: white; }
+
+        .page-container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #4285F4 0%, #34A853 50%, #FBBC05 100%);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            color: white;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+        .hero-banner h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .hero-banner p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem; }
+        .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat-value { font-size: 2rem; font-weight: 800; }
+        .hero-stat-label { font-size: 0.85rem; opacity: 0.8; }
+
+        .section { margin-bottom: 3rem; }
+        .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .section-icon { width: 50px; height: 50px; background: var(--gradient-brand); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .section-icon i { font-size: 1.5rem; color: white; }
+        .section-title { flex: 1; }
+        .section-title h2 { font-size: 1.5rem; font-weight: 700; color: var(--clr-text-main); }
+        .section-title p { font-size: 0.9rem; color: var(--clr-text-muted); }
+
+        .round-card {
+            background: linear-gradient(135deg, var(--clr-surface) 0%, var(--clr-surface-light) 100%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--clr-border);
+            border-left: 5px solid var(--clr-primary);
+            transition: all 0.3s ease;
+        }
+        .round-card:hover { transform: translateX(5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .round-card.round-1 { border-left-color: #ef4444; }
+        .round-card.round-2 { border-left-color: #f59e0b; }
+        .round-card.round-3 { border-left-color: #10b981; }
+        .round-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .round-number { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 1.2rem; }
+        .round-1 .round-number { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+        .round-2 .round-number { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .round-3 .round-number { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .round-info h3 { font-size: 1.1rem; font-weight: 700; color: var(--clr-text-main); }
+        .round-info span { font-size: 0.85rem; color: var(--clr-text-muted); }
+        .round-topics { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .topic-tag { background: var(--clr-surface-light); padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 0.8rem; font-weight: 500; color: var(--clr-text-muted); }
+
+        .dsa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .dsa-card { border-radius: 16px; padding: 1.5rem; }
+        .dsa-card.must { background: linear-gradient(135deg, rgba(239,68,68,0.1) 0%, rgba(220,38,38,0.05) 100%); border: 1px solid rgba(239,68,68,0.3); }
+        .dsa-card.hard { border-left: 5px solid #ef4444; }
+        .dsa-card h3 { display: flex; align-items: center; gap: 0.75rem; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+        .dsa-card.must h3 { color: #dc2626; }
+        .dsa-list { list-style: none; }
+        .dsa-list li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; font-size: 0.9rem; color: var(--clr-text-muted); border-bottom: 1px solid var(--clr-border); }
+        .dsa-list li:last-child { border-bottom: none; }
+        .dsa-card.must .dsa-list li::before { content: '🔥'; position: absolute; left: 0; }
+
+        .resource-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+        .resource-card { background: var(--clr-surface); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--clr-border); display: flex; align-items: center; gap: 1rem; text-decoration: none; transition: all 0.3s ease; }
+        .resource-card:hover { border-color: var(--clr-primary); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(99,102,241,0.15); }
+        .resource-card i { font-size: 2.5rem; }
+        .resource-card.pdf i { color: #ef4444; }
+        .resource-card.code i { color: #10b981; }
+        .resource-card.github i { color: #333; }
+        .resource-info { flex: 1; }
+        .resource-info strong { display: block; font-size: 1rem; color: var(--clr-text-main); margin-bottom: 0.25rem; }
+        .resource-info span { font-size: 0.85rem; color: var(--clr-text-muted); }
+        .resource-arrow { margin-left: auto; color: var(--clr-text-muted); }
+
+        .difficulty-table { background: var(--clr-surface); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--clr-border); }
+        .difficulty-table table { width: 100%; border-collapse: collapse; }
+        .difficulty-table th, .difficulty-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--clr-border); }
+        .difficulty-table th { background: var(--clr-surface-light); font-weight: 700; }
+        .difficulty-badge { padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .difficulty-hard { background: rgba(239,68,68,0.2); color: #dc2626; }
+        .difficulty-medium { background: rgba(245,158,11,0.2); color: #d97706; }
+
+        .insight-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 16px; padding: 1.5rem; border-left: 5px solid #f59e0b; margin: 2rem 0; }
+        .insight-box h4 { color: #92400e; font-size: 1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .insight-box p { color: #78350f; font-size: 0.95rem; }
+
+        .tips-list { counter-reset: tip-counter; }
+        .tip-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: var(--clr-surface); border-radius: 12px; margin-bottom: 1rem; border: 1px solid var(--clr-border); }
+        .tip-counter { counter-increment: tip-counter; width: 35px; height: 35px; background: var(--gradient-brand); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0; }
+        .tip-counter::before { content: counter(tip-counter); }
+        .tip-content h4 { font-size: 1rem; font-weight: 700; color: var(--clr-text-main); margin-bottom: 0.25rem; }
+        .tip-content p { font-size: 0.9rem; color: var(--clr-text-muted); }
+
+        footer { text-align: center; padding: 3rem 2rem; color: var(--clr-text-muted); border-top: 1px solid var(--clr-border); margin-top: 3rem; }
+        footer .logo { justify-content: center; margin-bottom: 1rem; }
+
+        @media (max-width: 768px) {
+            .hero-banner h1 { font-size: 1.75rem; }
+            .hero-stats { justify-content: center; }
+            .section-header { flex-direction: column; text-align: center; }
+            .dsa-grid { grid-template-columns: 1fr; }
+            .resource-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>CourseHub</span>
+            </a>
+            <a href="jobs.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to Jobs
+            </a>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-rocket"></i> Updated 2026
+                </div>
+                <h1>Google Selection Guide 2026</h1>
+                <p>Complete preparation strategy for Google interviews</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">4-5</div>
+                        <div class="hero-stat-label">Interview Rounds</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">🔴 Hard</div>
+                        <div class="hero-stat-label">Difficulty Level</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">High</div>
+                        <div class="hero-stat-label">Package</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selection Rounds Section -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Google Selection Rounds</h2>
+                    <p>What to expect in the Google hiring process</p>
+                </div>
+            </div>
+
+            <div style="display: grid; gap: 1.5rem;">
+                <div class="round-card round-1">
+                    <div class="round-header">
+                        <div class="round-number">1</div>
+                        <div class="round-info">
+                            <h3>Online Assessment</h3>
+                            <span>Coding test - 2 problems in 90 minutes</span>
+                        </div>
+                    </div>
+                    <div class="round-topics">
+                        <span class="topic-tag">Arrays</span>
+                        <span class="topic-tag">Strings</span>
+                        <span class="topic-tag">Basic DSA</span>
+                    </div>
+                </div>
+
+                <div class="round-card round-2">
+                    <div class="round-header">
+                        <div class="round-number">2-3</div>
+                        <div class="round-info">
+                            <h3>Technical Interviews</h3>
+                            <span>Focus on problem solving & coding</span>
+                        </div>
+                    </div>
+                    <div class="round-topics">
+                        <span class="topic-tag">Dynamic Programming</span>
+                        <span class="topic-tag">Graphs</span>
+                        <span class="topic-tag">Trees</span>
+                        <span class="topic-tag">Complex Problem Solving</span>
+                    </div>
+                </div>
+
+                <div class="round-card round-3">
+                    <div class="round-header">
+                        <div class="round-number">4</div>
+                        <div class="round-info">
+                            <h3>Behavioral Round</h3>
+                            <span>Google Leadership Principles</span>
+                        </div>
+                    </div>
+                    <div class="round-topics">
+                        <span class="topic-tag">Teamwork</span>
+                        <span class="topic-tag">Leadership</span>
+                        <span class="topic-tag">Problem Solving Stories</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DSA Patterns Section -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Google DSA Patterns 🔥</h2>
+                    <p>Focus areas for Google interviews</p>
+                </div>
+            </div>
+
+            <div class="dsa-grid">
+                <div class="dsa-card must">
+                    <h3><i class="fa-solid fa-fire"></i> MUST PREPARE (VERY IMPORTANT)</h3>
+                    <ul class="dsa-list">
+                        <li><strong>Dynamic Programming:</strong> Knapsack, LCS, Edit Distance, DP on Trees</li>
+                        <li><strong>Graphs:</strong> DFS, BFS, Dijkstra, Topological Sort</li>
+                        <li><strong>Trees:</strong> Binary Tree, BST, Tree Traversal</li>
+                        <li><strong>Backtracking:</strong> Subsets, Permutations, N-Queens</li>
+                        <li><strong>Bit Manipulation:</strong> XOR, Bit masking</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <h4><i class="fa-solid fa-lightbulb"></i> REAL INSIGHT:</h4>
+                <p>Google focuses on HARD problem-solving & optimization. They want to see optimal solutions with clean code.</p>
+            </div>
+        </div>
+
+        <!-- Difficulty Comparison -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                    <i class="fa-solid fa-chart-bar"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Product Companies Comparison</h2>
+                    <p>Compare difficulty across product companies</p>
+                </div>
+            </div>
+
+            <div class="difficulty-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Difficulty</th>
+                            <th>Focus Areas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Google</strong></td>
+                            <td><span class="difficulty-badge difficulty-hard">🔴 Hard</span></td>
+                            <td>DP + Graphs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amazon</strong></td>
+                            <td><span class="difficulty-badge difficulty-medium">🟠 Medium</span></td>
+                            <td>Arrays + Patterns</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Meta</strong></td>
+                            <td><span class="difficulty-badge difficulty-medium">🟣 Medium</span></td>
+                            <td>Strings + Optimization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Adobe</strong></td>
+                            <td><span class="difficulty-badge difficulty-medium">🟢 Easy-Medium</span></td>
+                            <td>Basics + Sorting</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Free Resources Section -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-download"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Free DSA Sheets & Resources</h2>
+                    <p>Practice with these free resources</p>
+                </div>
+            </div>
+
+            <div class="resource-grid">
+                <a href="https://github.com/Rajayush2167/Company--Wise--DSA--Materials" target="_blank" class="resource-card github">
+                    <i class="fa-brands fa-github"></i>
+                    <div class="resource-info">
+                        <strong>Company-Wise DSA Materials 🔥</strong>
+                        <span>All-in-one repo with PDFs</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right resource-arrow"></i>
+                </a>
+
+                <a href="https://github.com/nishant-Tiwari24/company-wise-dsa" target="_blank" class="resource-card github">
+                    <i class="fa-brands fa-github"></i>
+                    <div class="resource-info">
+                        <strong>Company-Wise DSA Repo 🔥</strong>
+                        <span>Google problems list</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right resource-arrow"></i>
+                </a>
+
+                <a href="https://leetcode.com/problem-list/?topicSlugs=dynamic-programming&sorting=W3sic29ydmVyIjoic3RhcnRzIiwiZGlzdCI6ImRlc2MiLCJhcHAiOiJsZWV0Y29kZSJ9XQ==" target="_blank" class="resource-card code">
+                    <i class="fa-solid fa-code"></i>
+                    <div class="resource-info">
+                        <strong>LeetCode DP Problems</strong>
+                        <span>Practice Dynamic Programming</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right resource-arrow"></i>
+                </a>
+
+                <a href="https://leetcode.com/problem-list/?topicSlugs=graph&sorting=W3sic29ydmVyIjoic3RhcnRzIiwiZGlzdCI6ImRlc2MiLCJhcHAiOiJsZWV0Y29kZSJ9XQ==" target="_blank" class="resource-card code">
+                    <i class="fa-solid fa-project-diagram"></i>
+                    <div class="resource-info">
+                        <strong>LeetCode Graph Problems</strong>
+                        <span>Practice Graph algorithms</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right resource-arrow"></i>
+                </a>
+
+                <a href="https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-microsoft-amazon-andadobe/" target="_blank" class="resource-card code">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <div class="resource-info">
+                        <strong>GeeksforGeeks Must-Do</strong>
+                        <span>Coding questions for product companies</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right resource-arrow"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Tips Section -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <i class="fa-solid fa-check-circle"></i>
+                </div>
+                <div class="section-title">
+                    <h2>Quick Tips for Success</h2>
+                    <p>Expert advice for Google interviews</p>
+                </div>
+            </div>
+
+            <div class="tips-list">
+                <div class="tip-item">
+                    <div class="tip-counter"></div>
+                    <div class="tip-content">
+                        <h4>Master Dynamic Programming</h4>
+                        <p>DP is the most important topic for Google. Practice at least 100 DP problems from LeetCode.</p>
+                    </div>
+                </div>
+
+                <div class="tip-item">
+                    <div class="tip-counter"></div>
+                    <div class="tip-content">
+                        <h4>Graph Algorithms are Must</h4>
+                        <p>Be comfortable with BFS, DFS, Dijkstra, and graph traversals. Practice 50+ graph problems.</p>
+                    </div>
+                </div>
+
+                <div class="tip-item">
+                    <div class="tip-counter"></div>
+                    <div class="tip-content">
+                        <h4>Solve 300-500 Problems</h4>
+                        <p>Focus on quality over quantity. Solve medium to hard problems from LeetCode Top 100.</p>
+                    </div>
+                </div>
+
+                <div class="tip-item">
+                    <div class="tip-counter"></div>
+                    <div class="tip-content">
+                        <h4>Practice Problem Solving</h4>
+                        <p>Google values problem-solving approach. Explain your thinking before coding.</p>
+                    </div>
+                </div>
+
+                <div class="tip-item">
+                    <div class="tip-counter"></div>
+                    <div class="tip-content">
+                        <h4>Know Time & Space Complexity</h4>
+                        <p>Always analyze time and space complexity. Optimize your solution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>CourseHub</span>
+        </a>
+        <p>&copy; 2026 CourseHub. Free education for everyone.</p>
+    </footer>
+</body>
+</html>

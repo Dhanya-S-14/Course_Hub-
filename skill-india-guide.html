@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill India Courses Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 153, 51, 0.1) 0%, rgba(0, 0, 128, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header .skill-india-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .free-banner {
+            background: linear-gradient(135deg, #FF9933 0%, #FF6600 100%);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .free-banner h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .free-banner p {
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #FF9933;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #FF9933 0%, #FF6600 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--clr-text-main);
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul, .step-card ol {
+            padding-left: 1.5rem;
+        }
+        .step-card li {
+            padding: 0.5rem 0;
+            color: var(--clr-text-main);
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 153, 51, 0.1) 0%, rgba(255, 102, 0, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #FF9933;
+        }
+        .highlight-box.success {
+            border-left-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .highlight-box.info {
+            border-left-color: #0969da;
+            background: rgba(9, 105, 218, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-text-main);
+        }
+        .highlight-box p, .highlight-box li {
+            font-size: 0.95rem;
+            color: var(--clr-text-muted);
+        }
+        .highlight-box ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.5rem;
+        }
+        .highlight-box li {
+            padding: 0.25rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .highlight-box li::before {
+            content: '\2022';
+            position: absolute;
+            left: 0;
+            color: #FF9933;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th, .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: linear-gradient(135deg, #FF9933 0%, #FF6600 100%);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td { color: var(--clr-text-muted); }
+        .platforms-table a {
+            color: #FF6600;
+            text-decoration: none;
+        }
+        .platforms-table a:hover { text-decoration: underline; }
+        .bonus-box {
+            background: linear-gradient(135deg, #FF9933 0%, #FF6600 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 { color: #FF6600; margin-bottom: 1rem; }
+        .quick-tips ul { list-style: none; padding: 0; }
+        .quick-tips li { padding: 0.5rem 0; color: var(--clr-text-main); }
+        .quick-tips li::before { content: '\2192 '; color: #FF6600; }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .skill-item {
+            background: rgba(255, 153, 51, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .skill-item i {
+            font-size: 2rem;
+            color: #FF6600;
+            margin-bottom: 0.5rem;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .cta-section a {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF9933 0%, #FF6600 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        .cta-section a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 153, 51, 0.4);
+        }
+        @media (max-width: 768px) {
+            .guide-header h1 { font-size: 1.8rem; }
+            .step-card { padding: 1.5rem; }
+            .platforms-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <svg class="skill-india-logo" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="#FF9933"/>
+                    <circle cx="50" cy="50" r="35" fill="white"/>
+                    <circle cx="50" cy="50" r="25" fill="#000080"/>
+                    <g transform="translate(50,50)">
+                        <line x1="0" y1="-30" x2="0" y2="-20" stroke="#000080" stroke-width="2"/>
+                        <line x1="0" y1="20" x2="0" y2="30" stroke="#000080" stroke-width="2"/>
+                        <line x1="-30" y1="0" x2="-20" y2="0" stroke="#000080" stroke-width="2"/>
+                        <line x1="20" y1="0" x2="30" y2="0" stroke="#000080" stroke-width="2"/>
+                        <line x1="-21" y1="-21" x2="-14" y2="-14" stroke="#000080" stroke-width="2"/>
+                        <line x1="14" y1="14" x2="21" y2="21" stroke="#000080" stroke-width="2"/>
+                        <line x1="21" y1="-21" x2="14" y2="-14" stroke="#000080" stroke-width="2"/>
+                        <line x1="-14" y1="14" x2="-21" y2="21" stroke="#000080" stroke-width="2"/>
+                    </g>
+                </svg>
+                <h1>Skill India - Complete Enrollment Guide</h1>
+                <p>100% Free Government Courses with Certificate</p>
+            </div>
+
+            <div class="free-banner">
+                <h3><i class="fa-solid fa-award"></i> 100% Free - Government Initiative</h3>
+                <p>Build job-ready skills without spending any money!</p>
+            </div>
+            
+            <!-- About Section -->
+            <div class="step-card">
+                <h2><i class="fa-solid fa-info-circle"></i> About Skill India Mission</h2>
+                <p>Skill India Mission is a Government of India initiative under the Ministry of Skill Development and Entrepreneurship that provides <strong>100% free skill development courses</strong> with government-recognized certificates.</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fa-solid fa-robot"></i>
+                        <p>AI & Digital Skills</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-code"></i>
+                        <p>Programming</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-cloud"></i>
+                        <p>Cloud Computing</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-keyboard"></i>
+                        <p>Data Entry</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-comments"></i>
+                        <p>Communication</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-heartbeat"></i>
+                        <p>Healthcare</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-box success">
+                    <h4>Key Benefits:</h4>
+                    <ul>
+                        <li>Government-recognized certificate</li>
+                        <li>100% Free training (no hidden costs)</li>
+                        <li>Placement support in some courses</li>
+                        <li>Learn anytime, anywhere</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Eligibility Section -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-user-check"></i></div>
+                <h2>Eligibility Requirements</h2>
+                <p><strong>Who can apply?</strong></p>
+                <ul>
+                    <li>Indian citizen</li>
+                    <li>Minimum: 10th or 12th pass (varies by course)</li>
+                    <li>Basic English or Hindi knowledge</li>
+                    <li>Valid mobile number for OTP verification</li>
+                    <li>Aadhaar Card (mandatory for registration)</li>
+                </ul>
+                
+                <div class="highlight-box info">
+                    <h4>Required Documents:</h4>
+                    <ul>
+                        <li>Aadhaar Card (mandatory)</li>
+                        <li>Mobile Number (for OTP)</li>
+                        <li>Email ID</li>
+                        <li>Passport-size photo</li>
+                        <li>Educational certificates</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Online Enrollment -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h2>How to Enroll - Method 1: Online (Best)</h2>
+                <p>Follow these simple steps to enroll in free courses online:</p>
+                <ol>
+                    <li>Go to official portal: <strong>skillindiadigital.gov.in</strong></li>
+                    <li>Click <strong>"Register / Sign Up"</strong></li>
+                    <li>Enter your Name</li>
+                    <li>Enter Mobile Number (you'll receive OTP)</li>
+                    <li>Verify with OTP</li>
+                    <li>Enter Email and create Password</li>
+                    <li>Complete your profile (education, skills)</li>
+                    <li>Browse available courses</li>
+                    <li>Click <strong>"Enroll Now"</strong> on your chosen course</li>
+                    <li>Start learning instantly!</li>
+                </ol>
+                <p><strong>Entire process takes only a few minutes!</strong></p>
+            </div>
+            
+            <!-- Offline Enrollment -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h2>Method 2: Training Center (Offline)</h2>
+                <p>Prefer in-person training? Here's how:</p>
+                <ul>
+                    <li>Visit Skill India website</li>
+                    <li>Click <strong>"Find Training Center"</strong></li>
+                    <li>Enter your location/region</li>
+                    <li>Choose a nearby training center</li>
+                    <li>Visit the center with required documents</li>
+                    <li>Register and attend physical training sessions</li>
+                </ul>
+            </div>
+            
+            <!-- After Enrollment -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-book-reader"></i></div>
+                <h2>After Enrollment</h2>
+                <p>Once enrolled, here's what to do:</p>
+                <ul>
+                    <li>Access courses in your <strong>"My Courses"</strong> dashboard</li>
+                    <li>Watch video lessons</li>
+                    <li>Complete quizzes and assessments</li>
+                    <li>Track your progress</li>
+                    <li>Download certificate after completing the course</li>
+                </ul>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h3 style="color: white; margin-bottom: 1rem;">Ready to Start Learning?</h3>
+                <p style="color: rgba(255,255,255,0.8);">"You don't need money to build skills — start learning free with Skill India today."</p>
+                <a href="https://www.skillindiadigital.gov.in" target="_blank">
+                    <i class="fa-solid fa-external-link-alt"></i> Enroll Free on Skill India
+                </a>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Tips</h3>
+                <ul>
+                    <li>Have Aadhaar ready before starting registration</li>
+                    <li>Use a valid mobile number for OTP verification</li>
+                    <li>Complete your profile for better course recommendations</li>
+                    <li>Start with beginner courses if new to the field</li>
+                    <li>Download certificates after completion - they're valuable!</li>
+                    <li>Check for placement-linked courses for career support</li>
+                </ul>
+            </div>
+            
+            <!-- Resources Table -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Resources</h2>
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Skill India Digital</strong></td>
+                            <td>Main portal for courses</td>
+                            <td><a href="https://www.skillindiadigital.gov.in" target="_blank">skillindiadigital.gov.in</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PMKVY</strong></td>
+                            <td>Pradhan Mantri Kaushal Vikas Yojana</td>
+                            <td><a href="https://www.pmkvyofficial.org" target="_blank">pmkvyofficial.org</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>India Skill Online</strong></td>
+                            <td>Free online learning</td>
+                            <td><a href="https://indiaskill.com" target="_blank">indiaskill.com</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-rocket"></i> Start Your Skill Journey Today!</h3>
+                <p><strong>Skill India offers 100% free courses - no money needed to build your career!</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

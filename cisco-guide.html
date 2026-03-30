@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco Courses Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 172, 98, 0.1) 0%, rgba(0, 133, 76, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header i {
+            font-size: 4rem;
+            color: #0499A0;
+            margin-bottom: 1rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #0499A0;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0499A0 0%, #038B82 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--clr-text-main);
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .step-card li:last-child { border-bottom: none; }
+        .step-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #0499A0;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(4, 153, 160, 0.1) 0%, rgba(3, 139, 130, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #0499A0;
+        }
+        .highlight-box.info {
+            border-left-color: #00A5FF;
+            background: rgba(0, 165, 255, 0.1);
+        }
+        .highlight-box.success {
+            border-left-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .highlight-box.warning {
+            border-left-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-text-main);
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+        .highlight-box ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        .highlight-box li {
+            border-bottom: none;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        .highlight-box li::before {
+            content: '•';
+            color: #0499A0;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th, .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: var(--clr-surface-light);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td { color: var(--clr-text-muted); }
+        .platforms-table a {
+            color: #0499A0;
+            text-decoration: none;
+        }
+        .platforms-table a:hover { text-decoration: underline; }
+        .bonus-box {
+            background: linear-gradient(135deg, #0499A0 0%, #038B82 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 { color: #0499A0; margin-bottom: 1rem; }
+        .quick-tips ul { list-style: none; padding: 0; }
+        .quick-tips li { padding: 0.5rem 0; color: var(--clr-text-main); }
+        .quick-tips li::before { content: '→ '; color: #0499A0; }
+        @media (max-width: 768px) {
+            .guide-header h1 { font-size: 1.8rem; }
+            .step-card { padding: 1.5rem; }
+            .platforms-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <i class="fa-solid fa-network-wired"></i>
+                <h1>Cisco Courses Enrollment Guide</h1>
+                <p>Learn networking, cybersecurity, and IT skills</p>
+            </div>
+
+            <div class="bonus-box" style="margin-bottom: 2rem;">
+                <h3>🔗 Enroll in Cisco Courses Today</h3>
+            </div>
+            
+            <!-- Cisco Networking Academy -->
+            <div class="step-card">
+                <div class="step-number">1️⃣</div>
+                <h2>Cisco Networking Academy (Best Free Option)</h2>
+                <p><strong>The official free learning platform</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit Cisco Networking Academy</li>
+                    <li>Click <strong>"Find a Course"</strong></li>
+                    <li>Create a free account</li>
+                    <li>Enroll in any course</li>
+                    <li>Complete at your own pace</li>
+                </ul>
+                <div class="highlight-box success">
+                    <h4>💡 Popular Free Courses:</h4>
+                    <ul>
+                        <li>Get Connected</li>
+                        <li>Introduction to Cybersecurity</li>
+                        <li>Python Essentials</li>
+                        <li>Networking Basics</li>
+                        <li>Cybersecurity Essentials</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- CCNA Preparation -->
+            <div class="step-card">
+                <div class="step-number">2️⃣</div>
+                <h2>CCNA Exam Preparation</h2>
+                <p><strong>Prepare for Cisco certification</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Complete CCNA course on NetAcad</li>
+                    <li>Use practice exams</li>
+                    <li>Set up home lab for practice</li>
+                    <li>Schedule your exam</li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>💡 Exam Topics:</h4>
+                    <ul>
+                        <li>Network fundamentals</li>
+                        <li>IP connectivity</li>
+                        <li>Security fundamentals</li>
+                        <li>Automation & programmability</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Cybersecurity -->
+            <div class="step-card">
+                <div class="step-number">3️⃣</div>
+                <h2>Cybersecurity Specialization</h2>
+                <p><strong>Learn to protect digital assets</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Take Introduction to Cybersecurity</li>
+                    <li>Complete Cybersecurity Essentials</li>
+                    <li>Enroll in advanced security courses</li>
+                    <li>Earn digital badges</li>
+                </ul>
+            </div>
+            
+            <!-- Udemy/Coursera -->
+            <div class="step-card">
+                <div class="step-number">4️⃣</div>
+                <h2>Cisco Courses on Udemy & Coursera</h2>
+                <p><strong>Alternative learning platforms</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Search <strong>"Cisco"</strong> on Udemy/Coursera</li>
+                    <li>Filter by rating and reviews</li>
+                    <li>Enroll in paid courses</li>
+                    <li>Follow structured curriculum</li>
+                </ul>
+            </div>
+            
+            <!-- Skills for All -->
+            <div class="step-card">
+                <div class="step-number">5️⃣</div>
+                <h2>Cisco Skills for All</h2>
+                <p><strong>New free learning platform</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit Skills for All</li>
+                    <li>Sign up for free</li>
+                    <li>Start with beginner courses</li>
+                    <li>Build toward careers</li>
+                </ul>
+                <div class="highlight-box">
+                    <h4>⚠️ Note:</h4>
+                    <p>Some certification exams may require payment</p>
+                </div>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Tips</h3>
+                <ul>
+                    <li>Cisco NetAcad - Best free networking courses</li>
+                    <li>Complete courses in order: basics to advanced</li>
+                    <li>Earn digital badges to showcase skills</li>
+                    <li>Set up Packet Tracer for hands-on practice</li>
+                    <li>Join Cisco communities for support</li>
+                    <li>Consider CCNA for career advancement</li>
+                </ul>
+            </div>
+            
+            <!-- Resources Table -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Resources</h2>
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cisco NetAcad</strong></td>
+                            <td>Official free courses</td>
+                            <td><a href="https://www.netacad.com" target="_blank">netacad.com ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Skills for All</strong></td>
+                            <td>New free platform</td>
+                            <td><a href="https://skillsforall.com" target="_blank">skillsforall.com ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cisco Learning</strong></td>
+                            <td>Paid certifications</td>
+                            <td><a href="https://learningnetwork.cisco.com" target="_blank">learningnetwork.cisco.com ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Packet Tracer</strong></td>
+                            <td>Network simulation tool</td>
+                            <td><a href="https://skillsforall.com/lab" target="_blank">Free download ↗</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-trophy"></i> Start Your Cisco Learning Journey!</h3>
+                <p><strong>Cisco Networking Academy offers the best free networking education - start there!</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

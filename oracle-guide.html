@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Courses Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(196, 0, 0, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header i {
+            font-size: 4rem;
+            color: #F80000;
+            margin-bottom: 1rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #F80000;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #F80000 0%, #C40000 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--clr-text-main);
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .step-card li:last-child { border-bottom: none; }
+        .step-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #F80000;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(248, 0, 0, 0.1) 0%, rgba(196, 0, 0, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #F80000;
+        }
+        .highlight-box.info {
+            border-left-color: #00A5FF;
+            background: rgba(0, 165, 255, 0.1);
+        }
+        .highlight-box.success {
+            border-left-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-text-main);
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+        .highlight-box ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        .highlight-box li {
+            border-bottom: none;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        .highlight-box li::before {
+            content: '•';
+            color: #F80000;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th, .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: var(--clr-surface-light);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td { color: var(--clr-text-muted); }
+        .platforms-table a {
+            color: #F80000;
+            text-decoration: none;
+        }
+        .platforms-table a:hover { text-decoration: underline; }
+        .bonus-box {
+            background: linear-gradient(135deg, #F80000 0%, #C40000 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 { color: #F80000; margin-bottom: 1rem; }
+        .quick-tips ul { list-style: none; padding: 0; }
+        .quick-tips li { padding: 0.5rem 0; color: var(--clr-text-main); }
+        .quick-tips li::before { content: '→ '; color: #F80000; }
+        @media (max-width: 768px) {
+            .guide-header h1 { font-size: 1.8rem; }
+            .step-card { padding: 1.5rem; }
+            .platforms-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <i class="fa-solid fa-database"></i>
+                <h1>Oracle Courses Enrollment Guide</h1>
+                <p>Learn Oracle database, cloud, and Java technologies</p>
+            </div>
+
+            <div class="bonus-box" style="margin-bottom: 2rem;">
+                <h3>🔶 Enroll in Oracle Courses Today</h3>
+            </div>
+            
+            <!-- Oracle Free Training -->
+            <div class="step-card">
+                <div class="step-number">1️⃣</div>
+                <h2>Oracle Free Training & Certification</h2>
+                <p><strong>Official Oracle learning platform</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit Oracle Free Training</li>
+                    <li>Browse course catalog</li>
+                    <li>Enroll in free courses</li>
+                    <li>Complete learning paths</li>
+                    <li>Take certification exams (some paid)</li>
+                </ul>
+                <div class="highlight-box success">
+                    <h4>💡 Popular Free Courses:</h4>
+                    <ul>
+                        <li>Introduction to Oracle Cloud</li>
+                        <li>SQL Fundamentals</li>
+                        <li>Database Foundations</li>
+                        <li>Java Programming basics</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Oracle LiveLabs -->
+            <div class="step-card">
+                <div class="step-number">2️⃣</div>
+                <h2>Oracle LiveLabs</h2>
+                <p><strong>Free hands-on lab experience</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit livelabs.oracle.com</li>
+                    <li>Select a workshop</li>
+                    <li>Use free Oracle cloud resources</li>
+                    <li>Complete hands-on exercises</li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>💡 What You Get:</h4>
+                    <ul>
+                        <li>Real cloud environment</li>
+                        <li>Step-by-step guides</li>
+                        <li>No credit card required</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Oracle University -->
+            <div class="step-card">
+                <div class="step-number">3️⃣</div>
+                <h2>Oracle University (Paid Options)</h2>
+                <p><strong>Professional certification paths</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit Oracle University</li>
+                    <li>Choose certification track</li>
+                    <li>Purchase learning subscription</li>
+                    <li>Study and schedule exam</li>
+                </ul>
+                <div class="highlight-box">
+                    <h4>⚠️ Note:</h4>
+                    <p>Certifications require payment, but training videos may be available free</p>
+                </div>
+            </div>
+            
+            <!-- edX Oracle -->
+            <div class="step-card">
+                <div class="step-number">4️⃣</div>
+                <h2>Oracle Courses on edX</h2>
+                <p><strong>University-backed Oracle content</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Search <strong>"Oracle"</strong> on edX</li>
+                    <li>Filter for free courses</li>
+                    <li>Enroll and start learning</li>
+                    <li>Earn verified certificate (optional)</li>
+                </ul>
+            </div>
+            
+            <!-- Oracle SQL Practice -->
+            <div class="step-card">
+                <div class="step-number">5️⃣</div>
+                <h2>Oracle SQL & PL/SQL Practice</h2>
+                <p><strong>Free SQL learning resources</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit Oracle's official SQL tutorials</li>
+                    <li>Practice with Oracle Live SQL</li>
+                    <li>Use Oracle XE database at home</li>
+                    <li>Complete hands-on exercises</li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>💡 Free Tools:</h4>
+                    <ul>
+                        <li>Oracle Live SQL - Practice online</li>
+                        <li>Oracle SQL Developer - Free tool</li>
+                        <li>Oracle Database Express Edition - Free download</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Tips</h3>
+                <ul>
+                    <li>Oracle Education - Best starting point</li>
+                    <li>LiveLabs for hands-on experience</li>
+                    <li>Oracle Live SQL for free practice</li>
+                    <li>Start with SQL fundamentals</li>
+                    <li>Get Oracle Cloud free tier account</li>
+                    <li>Earn badges as you complete courses</li>
+                </ul>
+            </div>
+            
+            <!-- Resources Table -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Resources</h2>
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Oracle Free Training</strong></td>
+                            <td>Official free courses</td>
+                            <td><a href="https://www.oracle.com/education/" target="_blank">oracle.com/education</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Oracle LiveLabs</strong></td>
+                            <td>Free hands-on labs</td>
+                            <td><a href="https://livelabs.oracle.com" target="_blank">livelabs.oracle.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Oracle Database</strong></td>
+                            <td>SQL & PL/SQL tutorials</td>
+                            <td><a href="https://www.oracle.com/database/technologies/appdev/sqldeveloper-techniques.html" target="_blank">Oracle SQL Tutorials</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Oracle Cloud Free</strong></td>
+                            <td>Free cloud tier</td>
+                            <td><a href="https://www.oracle.com/cloud/free/" target="_blank">oracle.com/cloud/free</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-trophy"></i> Start Learning Oracle Technologies!</h3>
+                <p><strong>Oracle Education + LiveLabs = Best free learning experience!</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

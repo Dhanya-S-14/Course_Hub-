@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CourseHub | Open Course Catalog</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>CourseHub</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="jobs.html" class="nav-btn nav-btn-jobs" id="jobsBtn" style="display: none;">
+                    <i class="fa-solid fa-briefcase"></i> Get a Job
+                </a>
+                <a href="jobs.html" class="nav-btn nav-btn-jobs" id="jobsBtnLocked" style="display: flex;" onclick="event.preventDefault(); alert('Please login to access Job Preparation Portal!');">
+                    <i class="fa-solid fa-lock"></i> Get a Job
+                </a>
+                <a href="register.html" class="nav-btn nav-btn-outline" id="registerBtn">
+                    <i class="fa-solid fa-user-plus"></i> Register
+                </a>
+                <a href="login.html" class="nav-btn nav-btn-primary" id="loginBtn">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Auto-Slideshow -->
+    <header class="hero">
+        <div class="slideshow-container">
+            <div class="slide active"><img src="first.png" alt="Slide 1"></div>
+            <div class="slide"><img src="second.png" alt="Slide 2"></div>
+            <div class="slide"><img src="third.png" alt="Slide 3"></div>
+            <div class="slide"><img src="fouth.png" alt="Slide 4"></div>
+            <div class="slide"><img src="fifth.png" alt="Slide 5"></div>
+            
+            <div class="slideshow-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            
+            <div class="slideshow-arrows">
+                <button class="arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="arrow next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+        </div>
+        
+        <!-- Login CTA Section (Visible only when NOT logged in) -->
+        <section class="login-cta-section" id="loginCta">
+            <div class="cta-particles">
+                <div class="cta-particle"></div>
+                <div class="cta-particle"></div>
+                <div class="cta-particle"></div>
+                <div class="cta-particle"></div>
+                <div class="cta-particle"></div>
+                <div class="cta-particle"></div>
+            </div>
+            <div class="cta-content">
+                <div class="cta-badge">
+                    <i class="fa-solid fa-star"></i> Premium Access
+                </div>
+                <h2>Unlock <span class="text-gradient">Top Courses</span> Access</h2>
+                <p class="cta-subtitle">Login to your account and get exclusive access to the most popular courses from top platforms</p>
+                
+                <div class="cta-platforms">
+                    <div class="cta-platform">
+                        <i class="fa-brands fa-stripe"></i>
+                        <span>Coursera</span>
+                    </div>
+                    <div class="cta-platform">
+                        <i class="fa-solid fa-play-circle"></i>
+                        <span>Udemy</span>
+                    </div>
+                    <div class="cta-platform">
+                        <i class="fa-brands fa-npm"></i>
+                        <span>NPTEL</span>
+                    </div>
+                    <div class="cta-platform">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <span>Infosys</span>
+                    </div>
+                </div>
+
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <i class="fa-solid fa-trophy"></i>
+                        <div class="feature-text">
+                            <strong>Top Rated Courses</strong>
+                            <span>Access courses rated 4.5+ stars</span>
+                        </div>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fa-solid fa-certificate"></i>
+                        <div class="feature-text">
+                            <strong>Free Certificates</strong>
+                            <span>Earn industry-recognized certificates</span>
+                        </div>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fa-solid fa-infinity"></i>
+                        <div class="feature-text">
+                            <strong>Lifetime Access</strong>
+                            <span>Learn at your own pace forever</span>
+                        </div>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fa-solid fa-users-gear"></i>
+                        <div class="feature-text">
+                            <strong>Expert Instructors</strong>
+                            <span>Learn from industry professionals</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="cta-cta">
+                    <i class="fa-solid fa-arrow-pointer"></i> Click the <strong>Login</strong> button above to get started
+                </p>
+            </div>
+        </section>
+        
+        <!-- Tech Companies Section -->
+        <section class="tech-companies-section" id="techSection">
+            <div class="companies-header">
+                <h2>Top Tech <span class="text-gradient">Companies</span></h2>
+                <p>Learn from industry leaders</p>
+            </div>
+            <div class="companies-grid-new">
+                <div class="company-card-new google-card" onclick="openCompanyModal('Google')">
+                    <div class="card-icon"><i class="fa-brands fa-google"></i></div>
+                    <span class="card-name">Google</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new microsoft-card" onclick="openCompanyModal('Microsoft')">
+                    <div class="card-icon"><i class="fa-brands fa-microsoft"></i></div>
+                    <span class="card-name">Microsoft</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new aws-card" onclick="openCompanyModal('AWS')">
+                    <div class="card-icon"><i class="fa-brands fa-aws"></i></div>
+                    <span class="card-name">Amazon AWS</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new ibm-card" onclick="openCompanyModal('IBM')">
+                    <div class="card-icon"><i class="fa-solid fa-database"></i></div>
+                    <span class="card-name">IBM</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new meta-card" onclick="openCompanyModal('Meta')">
+                    <div class="card-icon"><i class="fa-brands fa-meta"></i></div>
+                    <span class="card-name">Meta</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new cisco-card" onclick="openCompanyModal('Cisco')">
+                    <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <span class="card-name">Cisco</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new oracle-card" onclick="openCompanyModal('Oracle')">
+                    <div class="card-icon"><i class="fa-solid fa-ring"></i></div>
+                    <span class="card-name">Oracle</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new salesforce-card" onclick="openCompanyModal('Salesforce')">
+                    <div class="card-icon"><i class="fa-solid fa-cloud"></i></div>
+                    <span class="card-name">Salesforce</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new linkedin-card" onclick="openCompanyModal('LinkedIn')">
+                    <div class="card-icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <span class="card-name">LinkedIn</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new hp-card" onclick="openCompanyModal('HP')">
+                    <div class="card-icon"><img src="hp_symbol.png" alt="HP" style="width:50px;height:50px;object-fit:contain;"></div>
+                    <span class="card-name">HP</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new tcs-card" onclick="openCompanyModal('TCS')">
+                    <div class="card-icon"><img src="tcs_symbol.png" alt="TCS" style="width:50px;height:50px;object-fit:contain;"></div>
+                    <span class="card-name">TCS</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+                <div class="company-card-new github-card" onclick="openCompanyModal('GitHub')">
+                    <div class="card-icon"><img src="github_symbol.png" alt="GitHub" style="width:50px;height:50px;object-fit:contain;"></div>
+                    <span class="card-name">GitHub</span>
+                    <button class="card-explore">Explore</button>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="#feature-cards" class="btn-explore-now">
+                    Explore How to get Top courses for mostly free  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Skill India Section -->
+        <section class="skill-india-section" id="skillIndiaSection">
+            <!-- Flag Strip -->
+            <div class="india-flag-strip"></div>
+            
+            <div class="skill-india-container">
+                <div class="skill-india-header">
+                    <div class="skill-india-icon">
+                        <img src="skillindia_symbol.png" alt="Skill India" class="skill-india-img">
+                    </div>
+                    <div class="skill-india-title">
+                        <h2>Skill India <span class="govt-badge"><i class="fa-solid fa-award"></i> Government Initiative</span></h2>
+                        <p>100% Free Skill Development Courses with Government Certificate</p>
+                        <div class="govt-certified-line">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Government Certified</span>
+                        </div>
+                    </div>
+                    <button class="how-to-enroll-btn" onclick="openSkillIndiaModal()">
+                        <i class="fa-solid fa-info-circle"></i> How to Enroll
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skill India Modal -->
+        <div id="skillIndiaModal" class="skill-india-modal-overlay">
+            <div class="skill-india-modal-content">
+                <div class="modal-flag-header">
+                    <div class="flag-colors">
+                        <div class="saffron"></div>
+                        <div class="white"></div>
+                        <div class="green"></div>
+                    </div>
+                    <div class="modal-header-content">
+                        <img src="skillindia_symbol.png" alt="Skill India" class="modal-logo">
+                        <h2>Skill India - How to Enroll</h2>
+                        <button class="close-skill-modal" onclick="closeSkillIndiaModal()">&times;</button>
+                    </div>
+                </div>
+                
+                <div class="modal-body-content">
+                    <!-- About Section -->
+                    <div class="modal-section">
+                        <h3><i class="fa-solid fa-info-circle"></i> About Skill India</h3>
+                        <p>Skill India Mission is a Government of India initiative that provides <strong>100% free skill development courses</strong> with certificates.</p>
+                        <div class="skill-tags-modal">
+                            <span>AI & Digital Skills</span>
+                            <span>Programming (C, Java, Python)</span>
+                            <span>Cloud Computing</span>
+                            <span>Data Entry & IT</span>
+                            <span>Communication Skills</span>
+                            <span>Healthcare, Retail</span>
+                        </div>
+                        <ul class="check-list-modal">
+                            <li><i class="fa-solid fa-check-circle"></i> Government-recognized certificate</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Free training (no cost)</li>
+                            <li><i class="fa-solid fa-check-circle"></i> Placement support in some courses</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Eligibility Section -->
+                    <div class="modal-section eligibility-section">
+                        <h3><i class="fa-solid fa-user-check"></i> Eligibility</h3>
+                        <ul class="info-list-modal">
+                            <li><i class="fa-solid fa-passport"></i> Indian citizen</li>
+                            <li><i class="fa-solid fa-graduation-cap"></i> Minimum: 10th / 12th pass (varies by course)</li>
+                            <li><i class="fa-solid fa-language"></i> Basic English or Hindi knowledge</li>
+                            <li><i class="fa-solid fa-mobile-alt"></i> Valid mobile number & Aadhaar</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Required Documents -->
+                    <div class="modal-section documents-section">
+                        <h3><i class="fa-solid fa-file-alt"></i> Required Documents</h3>
+                        <ul class="docs-list">
+                            <li><i class="fa-solid fa-id-card"></i> Aadhaar Card</li>
+                            <li><i class="fa-solid fa-mobile-alt"></i> Mobile Number</li>
+                            <li><i class="fa-solid fa-envelope"></i> Email ID</li>
+                            <li><i class="fa-solid fa-camera"></i> Passport-size photo</li>
+                            <li><i class="fa-solid fa-graduation-cap"></i> Educational details</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- How to Enroll -->
+                    <div class="modal-section enroll-section">
+                        <h3><i class="fa-solid fa-rocket"></i> How to Enroll (Step-by-Step)</h3>
+                        
+                        <div class="enroll-method-modal">
+                            <h4><i class="fa-solid fa-globe"></i> Method 1: Online (Best for you)</h4>
+                            <div class="portal-link">
+                                Go to: <a href="https://www.skillindiadigital.gov.in" target="_blank">skillindiadigital.gov.in</a>
+                            </div>
+                            <ol class="steps-list-modal">
+                                <li>Click <strong>"Register / Sign Up"</strong></li>
+                                <li>Enter: Name</li>
+                                <li>Enter: Mobile number (OTP verification)</li>
+                                <li>Enter: Email & password</li>
+                                <li>Complete profile (education, skills)</li>
+                                <li>Browse courses</li>
+                                <li>Click <strong>"Enroll Now"</strong></li>
+                                <li>Start learning instantly 🎓</li>
+                            </ol>
+                            <p class="note"><i class="fa-solid fa-clock"></i> Entire process takes only a few minutes!</p>
+                        </div>
+                        
+                        <div class="enroll-method-modal">
+                            <h4><i class="fa-solid fa-building"></i> Method 2: Training Center (Offline)</h4>
+                            <ul class="mini-list-modal">
+                                <li>Visit Skill India website</li>
+                                <li>Click <strong>"Find Training Center"</strong></li>
+                                <li>Choose nearby center</li>
+                                <li>Register with documents</li>
+                                <li>Attend training physically</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- After Enrollment -->
+                    <div class="modal-section">
+                        <h3><i class="fa-solid fa-book-reader"></i> After Enrollment</h3>
+                        <ul class="after-list">
+                            <li><i class="fa-solid fa-play-circle"></i> Access courses in <strong>"My Courses"</strong> dashboard</li>
+                            <li><i class="fa-solid fa-video"></i> Watch videos + complete quizzes</li>
+                            <li><i class="fa-solid fa-chart-line"></i> Track progress</li>
+                            <li><i class="fa-solid fa-download"></i> Download certificate after completion 📄</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Benefits -->
+                    <div class="modal-section benefits-section">
+                        <h3><i class="fa-solid fa-trophy"></i> Benefits for Students</h3>
+                        <div class="benefits-grid-modal">
+                            <div class="benefit-modal">
+                                <i class="fa-solid fa-certificate"></i>
+                                <span>Free Government Certificate</span>
+                            </div>
+                            <div class="benefit-modal">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>Job-Ready Skills</span>
+                            </div>
+                            <div class="benefit-modal">
+                                <i class="fa-solid fa-hands-helping"></i>
+                                <span>Internship & Placement Support</span>
+                            </div>
+                            <div class="benefit-modal">
+                                <i class="fa-solid fa-clock"></i>
+                                <span>Learn Anytime, Anywhere</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA -->
+                    <div class="modal-cta">
+                        <p class="cta-highlight"><i class="fa-solid fa-lightbulb"></i> "You don't need money to build skills — start learning free with Skill India today."</p>
+                        <a href="https://www.skillindiadigital.gov.in" target="_blank" class="enroll-link-btn">
+                            <i class="fa-solid fa-external-link-alt"></i> Enroll Free on Skill India
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <h1>Discover the Best <span class="text-gradient">Online Courses</span></h1>
+            <p>Your open platform to search and find learning materials across the web.</p>
+            
+            <div class="search-container">
+                <div class="search-bar">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search for 'Full Stack Development' or 'Data Science'..." autocomplete="off">
+                </div>
+                <div class="search-results-panel" id="searchResultsPanel" style="display: none;">
+                    <div class="search-results-header">
+                        <span id="searchResultCount">0 results found</span>
+                    </div>
+                    <div class="search-results-list" id="searchResultsList">
+                        <!-- Search results appear here -->
+                    </div>
+                    <div class="search-results-footer">
+                        <a href="#" id="viewAllResults">View All Results</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-layout">
+        
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+            <div class="filter-group sticky-filter">
+                <h3>Refine Results</h3>
+                <div class="radio-list">
+                    <label class="custom-radio">
+                        <input type="radio" name="costFilter" value="all" checked>
+                        <span class="radiomark"></span>
+                        <span class="radio-text">All Courses</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="costFilter" value="paid">
+                        <span class="radiomark"></span>
+                        <span class="radio-text">Paid</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="costFilter" value="free">
+                        <span class="radiomark"></span>
+                        <span class="radio-text">Free</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="costFilter" value="free-cert">
+                        <span class="radiomark"></span>
+                        <span class="radio-text">Free with Certificate</span>
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="catalog-content">
+        
+        <!-- Trending Skills Section -->
+        <section class="trending-section">
+            <div class="trending-header">
+                <div class="trending-badge">
+                    <i class="fa-solid fa-fire"></i> Trending Now
+                </div>
+                <h2>Top 10 Future Skills <span class="text-gradient">(2026)</span></h2>
+                <p>Master the most in-demand technologies shaping the future</p>
+            </div>
+            
+            <div class="trending-grid">
+                <div class="trending-card ai-card" data-skill="AI & ML">
+                    <div class="trending-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="trending-content">
+                        <h3>Artificial Intelligence & ML</h3>
+                        <p>Machine learning, deep learning, neural networks</p>
+                        <div class="trending-stats">
+                            <span><i class="fa-solid fa-chart-line"></i> +40% demand</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> 12-35 LPA</span>
+                        </div>
+                    </div>
+                    <div class="trending-glow"></div>
+                </div>
+
+                <div class="trending-card genai-card" data-skill="Generative AI">
+                    <div class="trending-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div class="trending-content">
+                        <h3>Generative AI</h3>
+                        <p>LLMs, ChatGPT, prompt engineering, AI tools</p>
+                        <div class="trending-stats">
+                            <span><i class="fa-solid fa-chart-line"></i> +85% growth</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> 15-50 LPA</span>
+                        </div>
+                    </div>
+                    <div class="trending-glow"></div>
+                </div>
+
+                <div class="trending-card cloud-card" data-skill="Cloud Computing">
+                    <div class="trending-icon">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <div class="trending-content">
+                        <h3>Cloud Computing</h3>
+                        <p>AWS, Azure, GCP, cloud architecture</p>
+                        <div class="trending-stats">
+                            <span><i class="fa-solid fa-chart-line"></i> +35% growth</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> 8-25 LPA</span>
+                        </div>
+                    </div>
+                    <div class="trending-glow"></div>
+                </div>
+
+                <div class="trending-card data-card" data-skill="Data Science">
+                    <div class="trending-icon">
+                        <i class="fa-solid fa-chart-bar"></i>
+                    </div>
+                    <div class="trending-content">
+                        <h3>Data Analytics & Science</h3>
+                        <p>Python, SQL, Tableau, data visualization</p>
+                        <div class="trending-stats">
+                            <span><i class="fa-solid fa-chart-line"></i> +30% demand</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> 6-20 LPA</span>
+                        </div>
+                    </div>
+                    <div class="trending-glow"></div>
+                </div>
+
+                <div class="trending-card fullstack-card" data-skill="Full Stack">
+                    <div class="trending-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="trending-content">
+                        <h3>Full Stack Development</h3>
+                        <p>React, Node.js, MongoDB, REST APIs</p>
+                        <div class="trending-stats">
+                            <span><i class="fa-solid fa-chart-line"></i> +25% growth</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> 5-18 LPA</span>
+                        </div>
+                    </div>
+                    <div class="trending-glow"></div>
+                </div>
+
+                <div class="trending-card cyber-card" data-skill="Cybersecurity">
+                    <div class="trending-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="trending-content">
+                        <h3>Cybersecurity</h3>
+                        <p>Ethical hacking, pen testing, network security</p>
+                        <div class="trending-stats">
+                            <span><i class="fa-solid fa-chart-line"></i> +45% demand</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> 6-22 LPA</span>
+                        </div>
+                    </div>
+                    <div class="trending-glow"></div>
+                </div>
+
+                <div class="trending-card mobile-card" data-skill="Mobile App">
+                    <div class="trending-icon">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <div class="trending-content">
+                        <h3>Mobile App Development</h3>
+                        <p>Flutter, React Native, Android, iOS</p>
+                        <div class="trending-stats">
+                            <span><i class="fa-solid fa-chart-line"></i> +20% growth</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> 6-20 LPA</span>
+                        </div>
+                    </div>
+                    <div class="trending-glow"></div>
+                </div>
+
+                <div class="trending-card devops-card" data-skill="DevOps">
+                    <div class="trending-icon">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <div class="trending-content">
+                        <h3>DevOps & Automation</h3>
+                        <p>Docker, Kubernetes, CI/CD, Jenkins</p>
+                        <div class="trending-stats">
+                            <span><i class="fa-solid fa-chart-line"></i> +32% demand</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> 8-24 LPA</span>
+                        </div>
+                    </div>
+                    <div class="trending-glow"></div>
+                </div>
+
+                <div class="trending-card uiux-card" data-skill="UI/UX">
+                    <div class="trending-icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <div class="trending-content">
+                        <h3>UI/UX Design</h3>
+                        <p>Figma, Adobe XD, user research, prototyping</p>
+                        <div class="trending-stats">
+                            <span><i class="fa-solid fa-chart-line"></i> +18% growth</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> 4-15 LPA</span>
+                        </div>
+                    </div>
+                    <div class="trending-glow"></div>
+                </div>
+
+                <div class="trending-card blockchain-card" data-skill="Blockchain">
+                    <div class="trending-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <div class="trending-content">
+                        <h3>Blockchain Technology</h3>
+                        <p>Web3, Solidity, smart contracts, NFTs</p>
+                        <div class="trending-stats">
+                            <span><i class="fa-solid fa-chart-line"></i> +28% growth</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> 10-30 LPA</span>
+                        </div>
+                    </div>
+                    <div class="trending-glow"></div>
+                </div>
+            </div>
+            
+            <div class="trending-cta">
+                <p>Click on any skill to explore related courses</p>
+                <i class="fa-solid fa-arrow-down bounce"></i>
+            </div>
+        </section>
+
+        <!-- Course Catalog Grid -->
+        <section class="catalog-section">
+            <div class="catalog-header">
+                <h2 id="resultCount">Showing all courses</h2>
+            </div>
+            
+            <div class="course-grid-wrapper">
+                <div class="course-grid" id="courseGrid">
+                    <!-- Course Cards injected by JS -->
+                </div>
+            </div>
+             
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fa-regular fa-face-frown"></i>
+                <h3>No courses found</h3>
+                <p>Try adjusting your search or filters to find what you're looking for.</p>
+                <button class="btn btn-outline" id="clearFiltersBtn">Clear Filters</button>
+            </div>
+        </section>
+        
+        </div><!-- End catalog-content -->
+
+    </main>
+
+    <!-- Feature Cards Row -->
+    <section class="feature-section" id="featureSection">
+        <div class="feature-cards-row">
+            <!-- Coursera Card -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <div class="feature-content">
+                    <h2>Financial Aid in Coursera</h2>
+                    <p>Get free access to top courses! Apply for financial aid and earn certificates.</p>
+                    <div class="feature-scroll">
+                        <div class="scroll-item">
+                            <i class="fa-solid fa-check-circle"></i> Free
+                        </div>
+                        <div class="scroll-item">
+                            <i class="fa-solid fa-check-circle"></i> Certificates
+                        </div>
+                        <div class="scroll-item">
+                            <i class="fa-solid fa-check-circle"></i> Top Universities
+                        </div>
+                    </div>
+                    <a href="coursera-guide.html" class="btn-view">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Udemy Card -->
+            <div class="feature-card udemy-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-tag"></i>
+                </div>
+                <div class="feature-content">
+                    <h2>Udemy Coupons & Discounts</h2>
+                    <p>Get huge discounts! Grab the best deals and start learning today.</p>
+                    <div class="feature-scroll">
+                        <div class="scroll-item">
+                            <i class="fa-solid fa-fire"></i> 90% Off
+                        </div>
+                        <div class="scroll-item">
+                            <i class="fa-solid fa-check-circle"></i> Lifetime Access
+                        </div>
+                        <div class="scroll-item">
+                            <i class="fa-solid fa-check-circle"></i> Expert Instructors
+                        </div>
+                    </div>
+                    <a href="udemy-guide.html" class="btn-view">Get Coupons <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- NPTEL Card -->
+            <div class="feature-card nptel-card">
+                <div class="feature-icon">
+                    <i class="fa-brands fa-npm"></i>
+                </div>
+                <div class="feature-content">
+                    <h2>NPTEL Courses</h2>
+                    <p>Free online courses from IITs! Learn from top Indian institutions.</p>
+                    <div class="feature-scroll">
+                        <div class="scroll-item">
+                            <i class="fa-solid fa-graduation-cap"></i> IIT Courses
+                        </div>
+                        <div class="scroll-item">
+                            <i class="fa-solid fa-chalkboard-teacher"></i> IIT Professors
+                        </div>
+                    </div>
+                    <a href="nptel-guide.html" class="btn-view">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Infosys Springboard Card -->
+            <div class="feature-card infosys-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div class="feature-content">
+                    <h2>Infosys Springboard</h2>
+                    <p>Digital learning platform with free courses for skill development.</p>
+                    <div class="feature-scroll">
+                        <div class="scroll-item">
+                            <i class="fa-solid fa-rocket"></i> Tech Skills
+                        </div>
+                        <div class="scroll-item">
+                            <i class="fa-solid fa-check-circle"></i> Free Access
+                        </div>
+                        <div class="scroll-item women-tag">
+                            <i class="fa-solid fa-venus"></i> Women Offer
+                        </div>
+                    </div>
+                    <a href="infosys-guide.html" class="btn-view">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>CourseHub</span>
+            </div>
+            <p>&copy; 2026 CourseHub. "Quality education doesn’t have to be expensive."</p>
+        </div>
+    </footer>
+
+    <!-- Course Modal -->
+    <div id="courseModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModalBtn">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Content injected by JS -->
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="enrollBtn" class="btn btn-primary btn-animated" target="_blank">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Courses Modal -->
+    <div id="companyModal" class="company-modal-overlay">
+        <div class="company-modal-content">
+            <div class="company-modal-header">
+                <div class="company-header-info">
+                    <div class="company-logo" id="companyLogo">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+                    <div>
+                        <h2 id="companyTitle">Google Courses</h2>
+                        <p id="companySubtitle">Professional Certificates & Free Training</p>
+                    </div>
+                </div>
+                <div class="company-header-actions">
+                    <a href="https://www.coursera.org/google" target="_blank" class="enroll-btn-top">
+                        <i class="fa-solid fa-rocket"></i> How to Enroll
+                    </a>
+                    <button class="company-modal-close" id="closeCompanyModal">&times;</button>
+                </div>
+            </div>
+            
+            <div class="company-modal-filters">
+                <button class="filter-btn active" data-filter="all">All Courses</button>
+                <button class="filter-btn" data-filter="free">Free</button>
+                <button class="filter-btn" data-filter="paid">Paid</button>
+            </div>
+            
+            <div class="company-courses-grid" id="companyCoursesGrid">
+                <!-- Company courses injected by JS -->
+            </div>
+            
+            <div class="company-modal-footer">
+                <p class="company-note">
+                    <i class="fa-solid fa-info-circle"></i> 
+                    All courses can be audited for free. Certificates require paid enrollment.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <style>
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: floatUp 15s linear infinite;
+            opacity: 0;
+        }
+        .particle:nth-child(1) { left: 10%; background: #8b5cf6; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; background: #06b6d4; animation-delay: 2s; }
+        .particle:nth-child(3) { left: 35%; background: #f472b6; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 50%; background: #8b5cf6; animation-delay: 1s; }
+        .particle:nth-child(5) { left: 65%; background: #06b6d4; animation-delay: 3s; }
+        .particle:nth-child(6) { left: 80%; background: #f472b6; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 90%; background: #8b5cf6; animation-delay: 2.5s; }
+        .particle:nth-child(8) { left: 5%; background: #06b6d4; animation-delay: 6s; }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <!-- Custom Logic -->
+    <script src="app.js"></script>
+    
+    <!-- Slideshow Script -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+        const slideshowContainer = document.querySelector('.slideshow-container');
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (index + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+        
+        setInterval(() => changeSlide(1), 5000);
+    </script>
+</body>
+</html>
