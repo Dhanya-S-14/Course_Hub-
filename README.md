@@ -175,10 +175,6 @@ Feel free to submit a pull request.
 
 ---
 
-## 📬 Contact
-
-- **GitHub:** [Your GitHub Profile](https://github.com/YOUR_USERNAME)
-- **Project Link:** [CourseHub](#)
 
 ---
 
