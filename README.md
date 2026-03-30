@@ -2,9 +2,7 @@
 
 > Your Complete Job Preparation Portal - From Courses to Placements!
 
-![CourseHub Banner](https://img.shields.io/badge/CourseHub-Job%20Prep-blue?style=for-the-badge&logo=graduation-cap)
-![Status](https://img.shields.io/badge/status-Live-success?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+
 
 ---
 
