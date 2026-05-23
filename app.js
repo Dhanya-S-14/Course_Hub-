@@ -152,7 +152,7 @@ async function fetchCourses() {
 
     try {
         const res = await fetch(
-            `http://localhost:5000/api/courses?search=${search}&cost=${selectedCost}&category=${category}`
+            `/api/courses?search=${search}&cost=${selectedCost}&category=${category}`
         );
 
         const data = await res.json();
@@ -553,7 +553,7 @@ async function openCompanyModal(company) {
     document.body.style.overflow = 'hidden';
     
     try {
-        const res = await fetch(`http://localhost:5000/api/company-courses`);
+        const res = await fetch(`/api/company-courses`);
         const allCourses = await res.json();
         console.log('All courses from API:', allCourses.length);
         const courses = allCourses.filter(c => c.company && c.company.toLowerCase().includes(company.toLowerCase()));
@@ -679,7 +679,7 @@ async function fetchYouTubeCourses() {
     if (!grid) return;
     
     try {
-        const res = await fetch('http://localhost:5000/api/youtube-courses');
+        const res = await fetch('/api/youtube-courses');
         const data = await res.json();
         youtubeCoursesData = data.courses || [];
         displayYoutubeCourses(youtubeCoursesData);
