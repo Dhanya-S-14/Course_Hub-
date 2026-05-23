@@ -1,0 +1,1081 @@
+[{
+  "_id": {
+    "$oid": "69bb75f76221041f6240929a"
+  },
+  "title": "Full Stack Web Development",
+  "provider": "Udemy",
+  "category": "Web Development",
+  "cost": "paid",
+  "rating": 4.6,
+  "students": 120000,
+  "image": "https://img-c.udemycdn.com/course/480x270/1565838_e54e_16.jpg",
+  "link": "https://www.udemy.com/course/the-complete-web-development-bootcamp/"
+},
+{
+  "_id": {
+    "$oid": "69bb7bc86221041f6240929c"
+  },
+  "title": "Full Stack JavaScript (The Odin Project)",
+  "provider": "The Odin Project",
+  "category": "Web Development",
+  "cost": "free",
+  "rating": 4.8,
+  "students": 50000,
+  "image": "https://www.theodinproject.com/assets/meta-image-9f0b79e88c8b6a6ff1eb1e988137aaf5.png",
+  "link": "https://www.theodinproject.com/paths/full-stack-javascript"
+},
+{
+  "_id": {
+    "$oid": "69bb7bda6221041f6240929e"
+  },
+  "title": "Certified Full-Stack Developer Curriculum",
+  "provider": "freeCodeCamp",
+  "category": "Web Development",
+  "cost": "free",
+  "rating": 4.8,
+  "students": 1000000,
+  "image": "https://www.freecodecamp.org/news/content/images/2025/01/fullstack-v9.png",
+  "link": "https://www.freecodecamp.org/learn/full-stack-developer-v9"
+},
+{
+  "_id": {
+    "$oid": "69bb7be96221041f624092a0"
+  },
+  "title": "Free Full Stack Developer Course with Certificate",
+  "provider": "Simplilearn",
+  "category": "Web Development",
+  "cost": "free-cert",
+  "rating": 4.5,
+  "students": 50000,
+  "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/Full_Stack_Developer_Training.jpg",
+  "link": "https://www.simplilearn.com/learn-full-stack-development-free-skillup"
+},
+{
+  "_id": {
+    "$oid": "69bb7bf66221041f624092a2"
+  },
+  "title": "Free Full Stack Web Development Course",
+  "provider": "Board Infinity",
+  "category": "Web Development",
+  "cost": "free-cert",
+  "rating": 4.6,
+  "students": 30000,
+  "image": "https://www.boardinfinity.com/assets/images/fullstack.png",
+  "link": "https://www.boardinfinity.com/micro-learning/full-stack-development-course-with-certification"
+},
+{
+  "_id": {
+    "$oid": "69bb7c1b6221041f624092a4"
+  },
+  "title": "Free Full Stack Web Development Course with Certificate",
+  "provider": "Skillwaala",
+  "category": "Web Development",
+  "cost": "free-cert",
+  "rating": 4.5,
+  "students": 20000,
+  "image": "https://www.skillwaala.com/web-development-course-thumbnail.jpg",
+  "link": "https://www.skillwaala.com/web-development-course"
+},
+{
+  "_id": {
+    "$oid": "69bb7c2a6221041f624092a6"
+  },
+  "title": "The Complete Web Development Bootcamp",
+  "provider": "Udemy",
+  "category": "Web Development",
+  "cost": "paid",
+  "rating": 4.6,
+  "students": 376699,
+  "image": "https://img-c.udemycdn.com/course/480x270/1565838_e54e_16.jpg",
+  "link": "https://www.udemy.com/course/the-complete-web-development-bootcamp/"
+},
+{
+  "_id": {
+    "$oid": "69bb7c386221041f624092a8"
+  },
+  "title": "The Web Developer Bootcamp 2025",
+  "provider": "Udemy (Colt Steele)",
+  "category": "Web Development",
+  "cost": "paid",
+  "rating": 4.6,
+  "students": 900000,
+  "image": "https://img-c.udemycdn.com/course/480x270/1212378_8d95_5.jpg",
+  "link": "https://www.udemy.com/course/the-web-developer-bootcamp/"
+},
+{
+  "_id": {
+    "$oid": "69bb7c436221041f624092aa"
+  },
+  "title": "IBM Full Stack Software Developer Professional Certificate",
+  "provider": "Coursera",
+  "category": "Web Development",
+  "cost": "paid",
+  "rating": 4.6,
+  "students": 100000,
+  "image": "https://www.coursera.org/api/brand-assets.v1/6abd1228-09bb-4e49-861d-bdc9e85ee00e/IBM_logo_185x50.svg",
+  "link": "https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer"
+},
+{
+  "_id": {
+    "$oid": "69bb7da26221041f624092ac"
+  },
+  "title": "Java Programming MOOC I",
+  "provider": "University of Helsinki (MOOC.fi)",
+  "category": "Programming",
+  "cost": "free",
+  "rating": 4.9,
+  "students": 1000000,
+  "image": "https://java-programming.mooc.fi/static/img/meta-image.jpg",
+  "link": "https://java-programming.mooc.fi/part-1"
+},
+{
+  "_id": {
+    "$oid": "69bb7db26221041f624092ae"
+  },
+  "title": "Programming Foundations with JavaScript, HTML and CSS",
+  "provider": "Duke University (Coursera Audit)",
+  "category": "Programming",
+  "cost": "free",
+  "rating": 4.7,
+  "students": 300000,
+  "image": "https://www.coursera.org/api/brand-assets.v1/867b7db8-5578-4af9-844e-f89db5789660/duke-university.svg",
+  "link": "https://www.coursera.org/learn/duke-programming-web"
+},
+{
+  "_id": {
+    "$oid": "69bb7dc46221041f624092b0"
+  },
+  "title": "Free Java Course with Certificate",
+  "provider": "Intellipaat",
+  "category": "Programming",
+  "cost": "free-cert",
+  "rating": 4.5,
+  "students": 7896,
+  "image": "https://intellipaat.com/academy/wp-content/uploads/2024/01/java-free-course.jpg",
+  "link": "https://intellipaat.com/academy/course/java-free-course/"
+},
+{
+  "_id": {
+    "$oid": "69bb7dd26221041f624092b2"
+  },
+  "title": "Free Java Certification Course",
+  "provider": "DataFlair",
+  "category": "Programming",
+  "cost": "free-cert",
+  "rating": 4.6,
+  "students": 50000,
+  "image": "https://data-flair.training/blogs/wp-content/uploads/sites/2/2025/06/free-java-course.jpg",
+  "link": "https://data-flair.training/courses/free-java-course/"
+},
+{
+  "_id": {
+    "$oid": "69bb7de66221041f624092b4"
+  },
+  "title": "Free Java Course - Mastering the Fundamentals",
+  "provider": "Scaler",
+  "category": "Programming",
+  "cost": "free-cert",
+  "rating": 4.7,
+  "students": 20000,
+  "image": "https://www.scaler.com/topics/wp-content/uploads/2022/07/java-course-scaler.jpg",
+  "link": "https://www.scaler.com/topics/course/java-beginners/"
+},
+{
+  "_id": {
+    "$oid": "69bb7df66221041f624092b6"
+  },
+  "title": "Java Programming: Solving Problems with Software",
+  "provider": "Coursera (Duke University)",
+  "category": "Programming",
+  "cost": "paid",
+  "rating": 4.6,
+  "students": 323901,
+  "image": "https://www.coursera.org/api/brand-assets.v1/867b7db8-5578-4af9-844e-f89db5789660/duke-university.svg",
+  "link": "https://www.coursera.org/learn/java-programming"
+},
+{
+  "_id": {
+    "$oid": "69c1719c7b6159bbab0b3c7d"
+  },
+  "title": "Data Analyst Skillpath: Zero to Hero in Excel, SQL & Python",
+  "provider": "Udemy",
+  "category": "Data Analyst",
+  "cost": "paid",
+  "rating": 4.5,
+  "students": 83889,
+  "image": "https://img-c.udemycdn.com/course/480x270/4316674_7708.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/data-analyst-skillpath-zero-to-hero-in-excel-sql-python/"
+},
+{
+  "_id": {
+    "$oid": "69c171bb7b6159bbab0b3c7f"
+  },
+  "title": "Data Analysis with Pandas and Python",
+  "provider": "Udemy",
+  "category": "Data Analyst",
+  "cost": "paid",
+  "rating": 4.7,
+  "students": 221708,
+  "image": "https://img-c.udemycdn.com/course/480x270/932344_e14a_2.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/data-analysis-with-pandas/"
+},
+{
+  "_id": {
+    "$oid": "69c171d77b6159bbab0b3c81"
+  },
+  "title": "Tableau Tutorial for Absolute Beginners, Data Analysis & BI",
+  "provider": "Udemy",
+  "category": "Data Analyst",
+  "cost": "paid",
+  "rating": 4.7,
+  "students": 184,
+  "image": "https://img-c.udemycdn.com/course/480x270/3843498_7448_2.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/tableau-tutorial-for-absolute-beginners-for-data-analysis/"
+},
+{
+  "_id": {
+    "$oid": "69c172b07b6159bbab0b3c83"
+  },
+  "title": "SQL for Data Analysis",
+  "provider": "Udacity",
+  "category": "Data Analyst",
+  "cost": "free",
+  "rating": 4.7,
+  "students": "400",
+  "image": "https://www.udacity.com/_next/image?url=https://video.udacity-data.com/topher/2024/October/67098866_ud198/ud198.jpg&w=3840&q=80",
+  "link": "https://www.udacity.com/course/sql-for-data-analysis--ud198"
+},
+{
+  "_id": {
+    "$oid": "69c172d97b6159bbab0b3c85"
+  },
+  "title": "R Programming",
+  "provider": "Coursera",
+  "category": "Data Analyst",
+  "cost": "free",
+  "rating": 4.5,
+  "students": "unknown",
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+  "link": "https://www.coursera.org/learn/r-programming"
+},
+{
+  "_id": {
+    "$oid": "69c172ec7b6159bbab0b3c87"
+  },
+  "title": "Python for Data Science, AI & Development",
+  "provider": "Coursera",
+  "category": "Data Analyst",
+  "cost": "free",
+  "rating": 4.7,
+  "students": "unknown",
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+  "link": "https://www.coursera.org/learn/python-for-data-science-ai-development"
+},
+{
+  "_id": {
+    "$oid": "69c173ad7b6159bbab0b3c8a"
+  },
+  "title": "Introduction to Data Analytics",
+  "provider": "Simplilearn",
+  "category": "Data Analyst",
+  "cost": "free",
+  "rating": 4.5,
+  "students": "unknown",
+  "image": "https://img-c.udemycdn.com/course/480x270/1565838_e54e_16.jpg",
+  "link": "https://www.simplilearn.com/learn-data-analytics-for-beginners-skillup"
+},
+{
+  "_id": {
+    "$oid": "69c173ed7b6159bbab0b3c8c"
+  },
+  "title": "Foundations: Data, Data, Everywhere",
+  "provider": "Coursera",
+  "category": "Data Analyst",
+  "cost": "free",
+  "rating": 4.8,
+  "students": "4000+",
+  "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+  "link": "https://www.coursera.org/learn/foundations-data"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2621"
+  },
+  "title": "Artificial intelligence and Machine learning course",
+  "provider": "Udemy",
+  "category": "AI & ML",
+  "cost": "paid",
+  "rating": 4,
+  "students": 32,
+  "image": "https://img-c.udemycdn.com/course/480x270/321828_9ae1.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/artificial-intelligence-and-machine-learning-course/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2622"
+  },
+  "title": "Machine Learning A-Z: AI, Python & R + ChatGPT Prize [2026]",
+  "provider": "Udemy",
+  "category": "AI & ML",
+  "cost": "paid",
+  "rating": 4.5,
+  "students": 1182341,
+  "image": "https://img-c.udemycdn.com/course/480x270/950390_270f_3.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/machinelearning/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2623"
+  },
+  "title": "Artificial Intelligence A-Z 2026: Agentic AI, Gen AI, and RL",
+  "provider": "Udemy",
+  "category": "Agentic AI",
+  "cost": "paid",
+  "rating": 4.4,
+  "students": 344085,
+  "image": "https://img-c.udemycdn.com/course/480x270/1219332_bdd7.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/artificial-intelligence-az/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2624"
+  },
+  "title": "Introduction to Cloud Computing",
+  "provider": "Udemy",
+  "category": "Cloud Computing",
+  "cost": "paid",
+  "rating": 4.5,
+  "students": 413514,
+  "image": "https://img-c.udemycdn.com/course/480x270/742114_9596_3.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/introduction-to-cloud-computing/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2625"
+  },
+  "title": "Cloud Computing for Beginners",
+  "provider": "FutureLearn",
+  "category": "Cloud Computing",
+  "cost": "paid",
+  "rating": null,
+  "students": 100,
+  "image": "https://prod-media.s3.amazonaws.com/uploads/7cc768b4-02d9-4dcf-b5bb-8ab13a4b99d5/1_1Key.jpg",
+  "link": "https://www.futurelearn.com/courses/cloud-computing-for-beginners",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2626"
+  },
+  "title": "C Programming For Beginners - Master the C Language",
+  "provider": "Udemy",
+  "category": "C Programming",
+  "cost": "paid",
+  "rating": 4.4,
+  "students": 186063,
+  "image": "https://img-c.udemycdn.com/course/480x270/744644_7c6d_9.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/c-programming-for-beginners-/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2627"
+  },
+  "title": "The Complete Python Bootcamp From Zero to Hero in Python",
+  "provider": "Udemy",
+  "category": "Python Programming",
+  "cost": "paid",
+  "rating": 4.6,
+  "students": 2139323,
+  "image": "https://img-c.udemycdn.com/course/480x270/750564_ce3a_3.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/complete-python-bootcamp/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2628"
+  },
+  "title": "Programming for Everybody (Getting Started with Python)",
+  "provider": "Coursera",
+  "category": "Python Programming",
+  "cost": "free",
+  "rating": 4.8,
+  "students": 3534633,
+  "image": "https://img-c.udemycdn.com/course/480x270/701482_fa5d_2.jpg?w=3840&q=75",
+  "link": "https://www.coursera.org/learn/python",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2629"
+  },
+  "title": "C++ Tutorial for Complete Beginners",
+  "provider": "Udemy",
+  "category": "C++ Programming",
+  "cost": "paid",
+  "rating": 4.6,
+  "students": 703420,
+  "image": "https://img-c.udemycdn.com/course/480x270/1342012_a4b4_13.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/free-learn-c-tutorial-beginners/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e262a"
+  },
+  "title": "The Complete Data Structures and Algorithms Course in Python",
+  "provider": "Udemy",
+  "category": "DSA (beginner)",
+  "cost": "paid",
+  "rating": 4.5,
+  "students": 99273,
+  "image": "https://img-c.udemycdn.com/course/480x270/3975264_8d10_2.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/data-structures-and-algorithms-bootcamp-in-python/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e262b"
+  },
+  "title": "Data Structures and Algorithms C++ : Zero to Mastery in 2026",
+  "provider": "Udemy",
+  "category": "DSA (advanced)",
+  "cost": "paid",
+  "rating": 4.4,
+  "students": 14947,
+  "image": "https://img-c.udemycdn.com/course/480x270/851612_b3bf_6.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/data-structures-algorithms-using-c-zero-to-mastery/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e262c"
+  },
+  "title": "Data Science for Healthcare",
+  "provider": "Udemy",
+  "category": "Health Science & Medical",
+  "cost": "paid",
+  "rating": 4.2,
+  "students": 82,
+  "image": "https://img-c.udemycdn.com/course/480x270/3925072_8ecb_2.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/data-science-for-healthcare/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e262d"
+  },
+  "title": "Getting Started with Healthcare Data Analytics",
+  "provider": "Udemy",
+  "category": "Health Science & Medical",
+  "cost": "paid",
+  "rating": 4.5,
+  "students": 113,
+  "image": "https://img-c.udemycdn.com/course/480x270/4086772_14b8.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/getting-started-with-healthcare-data-analytics/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e262e"
+  },
+  "title": "Real-World AI for Everyone",
+  "provider": "Coursera",
+  "category": "Anthropic AI",
+  "cost": "free",
+  "rating": 4.8,
+  "students": 4045,
+  "image": "https://img-c.udemycdn.com/course/480x270/3724888_8bc0_7.jpg?w=3840&q=75",
+  "link": "https://www.coursera.org/specializations/real-world-ai-for-everyone",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e262f"
+  },
+  "title": "Introduction to MongoDB ( DATA)",
+  "provider": "Coursera",
+  "category": "MongoDB",
+  "cost": "free",
+  "rating": 4.6,
+  "students": 22631,
+  "image": "https://img-c.udemycdn.com/course/480x270/701482_fa5d_2.jpg?w=3840&q=75",
+  "link": "https://www.coursera.org/learn/introduction-to-mongodb",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2630"
+  },
+  "title": "The Complete SQL Bootcamp: Go from Zero to Hero",
+  "provider": "Udemy",
+  "category": "SQL",
+  "cost": "paid",
+  "rating": 4.7,
+  "students": 1000539,
+  "image": "https://img-c.udemycdn.com/course/480x270/701482_fa5d_2.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/the-complete-sql-bootcamp/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2631"
+  },
+  "title": "SQL for Data Science",
+  "provider": "Coursera",
+  "category": "SQL",
+  "cost": "free",
+  "rating": 4.6,
+  "students": 711460,
+  "image": "https://img-c.udemycdn.com/course/480x270/3724888_8bc0_7.jpg?w=3840&q=75",
+  "link": "https://www.coursera.org/learn/sql-for-data-science",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2632"
+  },
+  "title": "The Complete Digital Marketing Course - 12 Courses in 1",
+  "provider": "Udemy",
+  "category": "Digital Marketing",
+  "cost": "paid",
+  "rating": 4.4,
+  "students": 824528,
+  "image": "https://img-c.udemycdn.com/course/480x270/1000514_382e.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/learn-digital-marketing-course/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22622b002ec70ba1e2633"
+  },
+  "title": "Digital Marketing Masterclass: 45-in-1 with AI Marketing",
+  "provider": "Udemy",
+  "category": "Digital Marketing",
+  "cost": "paid",
+  "rating": 4.4,
+  "students": 278688,
+  "image": "https://img-c.udemycdn.com/course/480x270/3724888_8bc0_7.jpg?w=3840&q=75",
+  "link": "https://www.udemy.com/course/digital-marketing-masterclass/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c22895334fbab11b2e1665"
+  },
+  "title": "Python for Data Science",
+  "provider": "NPTEL + free to learn +certificat must write exam pay 1000 look our webpage how to enroll NPTEL course",
+  "category": "Python Programming",
+  "cost": "free",
+  "rating": 4.5,
+  "students": 200000,
+  "image": "https://img-c.udemycdn.com/course/480x270/750564_ce3a_3.jpg",
+  "link": "https://onlinecourses.nptel.ac.in/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c229a7334fbab11b2e166d"
+  },
+  "title": "AI for All",
+  "provider": "NPTEL + refer our webpage how to enroll nptel courses",
+  "category": "Agentic AI",
+  "cost": "free+certificate",
+  "rating": 4.4,
+  "students": 150000,
+  "image": "https://img-c.udemycdn.com/course/480x270/321828_9ae1.jpg",
+  "link": "https://onlinecourses.nptel.ac.in/",
+  "status": "working"
+},
+{
+  "_id": {
+    "$oid": "69c3fd043b16e48f7c8a3fdf"
+  },
+  "title": "Generative AI ",
+  "provider": "Microsoft",
+  "category": "Generative AI Basics",
+  "cost": "Free",
+  "note": "Completely free course, no certificate provided",
+  "rating": 4.5,
+  "students": 50000,
+  "image": "https://learn.microsoft.com/training/achievements/generic-badge.svg",
+  "link": "https://learn.microsoft.com/en-us/shows/generative-ai-for-beginners/"
+},
+{
+  "_id": {
+    "$oid": "69c3fdef3b16e48f7c8a3fe1"
+  },
+  "title": "Introduction to Generative AI-(BASIC)",
+  "provider": "Google Cloud",
+  "category": "Generative AI",
+  "cost": "Free",
+  "note": "Free to learn, certificate available after completing full path",
+  "rating": 4.6,
+  "students": 120000,
+  "image": "https://cdn.qwiklabs.com/placeholder.jpg",
+  "link": "https://www.cloudskillsboost.google/course_templates/536"
+},
+{
+  "_id": {
+    "$oid": "69c3fe423b16e48f7c8a3fe3"
+  },
+  "title": "Generative AI for Everyone",
+  "provider": "Coursera",
+  "subprovider": "Deeplearning AI",
+  "category": "Generative AI",
+  "cost": "Free +  refer our financial aid section to get this course mostly free",
+  "note": "Free to learn, but certificate is paid. Refer our Coursera Financial Aid section to get it for free",
+  "rating": 4.8,
+  "students": 300000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~1a3f.jpg",
+  "link": "https://www.coursera.org/learn/generative-ai-for-everyone"
+},
+{
+  "_id": {
+    "$oid": "69c3ff713b16e48f7c8a3fe5"
+  },
+  "title": "Generative AI with Large Language Models",
+  "provider": "DeepLearning.AI",
+  "subprovider": "Coursera",
+  "category": "Generative AI",
+  "cost": "Free + Refer our coursera financial aid section ",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.8,
+  "students": 200000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~llm.jpg",
+  "link": "https://www.coursera.org/learn/generative-ai-with-llms"
+},
+{
+  "_id": {
+    "$oid": "69c3ff933b16e48f7c8a3fe7"
+  },
+  "title": "Complete Generative AI Bootcamp learn to build real AI agent",
+  "provider": "Udemy",
+  "category": "Generative AI",
+  "cost": "Paid",
+  "note": "Paid course. Refer our Udemy Coupon section to get discounts or free offers",
+  "rating": 4.6,
+  "students": 150000,
+  "image": "https://img-c.udemycdn.com/course/480x270/5678280_8c7b.jpg",
+  "link": "https://www.udemy.com/course/generative-ai-bootcamp/"
+},
+{
+  "_id": {
+    "$oid": "69c402903b16e48f7c8a3fe9"
+  },
+  "title": "Introduction to Cybersecurity",
+  "provider": "Cisco",
+  "category": "Cyber Security",
+  "cost": "Free",
+  "note": "Completely free course with certificate",
+  "rating": 4.7,
+  "students": 300000,
+  "image": "https://www.netacad.com/sites/default/files/styles/large/public/2021-04/introduction-to-cybersecurity.png",
+  "link": "https://www.netacad.com/courses/cybersecurity/introduction-cybersecurity"
+},
+{
+  "_id": {
+    "$oid": "69c402b93b16e48f7c8a3feb"
+  },
+  "title": "Cybersecurity for Everyone",
+  "provider": "University of Maryland",
+  "subprovider": "Coursera",
+  "category": "Cyber Security",
+  "cost": "Freemium",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.8,
+  "students": 250000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~cyber.jpg",
+  "link": "https://www.coursera.org/learn/cybersecurity-for-everyone"
+},
+{
+  "_id": {
+    "$oid": "69c403ab3b16e48f7c8a3fed"
+  },
+  "title": "Complete Cyber Security Course: Hackers Exposed",
+  "provider": "Udemy",
+  "category": "Cyber Security",
+  "cost": "Paid",
+  "note": "Paid course. Refer our Udemy Coupon section to get discounts or free offers",
+  "rating": 4.6,
+  "students": 200000,
+  "image": "https://img-c.udemycdn.com/course/480x270/857010_8239.jpg",
+  "link": "https://www.udemy.com/course/the-complete-internet-security-privacy-course-volume-1/"
+},
+{
+  "_id": {
+    "$oid": "69c404ab3b16e48f7c8a3fef"
+  },
+  "title": "Blockchain Basics",
+  "provider": "University at Buffalo",
+  "subprovider": "Coursera",
+  "category": "Blockchain Technology",
+  "cost": "Freemium",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.7,
+  "students": 180000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~blockchain.jpg",
+  "link": "https://www.coursera.org/learn/blockchain-basics"
+},
+{
+  "_id": {
+    "$oid": "69c404f23b16e48f7c8a3ff1"
+  },
+  "title": "Introduction to Blockchain",
+  "provider": "Great Learning",
+  "category": "Blockchain Technology",
+  "cost": "Free",
+  "note": "Free course with certificate",
+  "rating": 4.5,
+  "students": 90000,
+  "image": "https://d1vwxdpzbgdqj.cloudfront.net/s3-public-images/images/intro-blockchain.png",
+  "link": "https://www.mygreatlearning.com/academy/learn-for-free/courses/blockchain-basics"
+},
+{
+  "_id": {
+    "$oid": "69c4050f3b16e48f7c8a3ff3"
+  },
+  "title": "Ethereum and Solidity: The Complete Developer Guide",
+  "provider": "Udemy",
+  "category": "Blockchain Technology",
+  "cost": "Paid",
+  "note": "Paid course. Refer our Udemy Coupon section to get discounts or free offers",
+  "rating": 4.7,
+  "students": 150000,
+  "image": "https://img-c.udemycdn.com/course/480x270/902418_0e96.jpg",
+  "link": "https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/"
+},
+{
+  "_id": {
+    "$oid": "69c405cb3b16e48f7c8a3ff5"
+  },
+  "title": "Android App Development for Beginners",
+  "provider": "Meta",
+  "subprovider": "Coursera",
+  "category": "Mobile App Development",
+  "cost": "Freemium",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.7,
+  "students": 220000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~android.jpg",
+  "link": "https://www.coursera.org/professional-certificates/meta-android-developer"
+},
+{
+  "_id": {
+    "$oid": "69c40743fedf6d2ffcaaa155"
+  },
+  "title": "Flutter Development Bootcamp",
+  "provider": "Udemy",
+  "category": "Mobile App Development",
+  "cost": "Paid",
+  "link": "https://www.udemy.com/course/flutter-bootcamp-with-dart/",
+  "note": "Paid course. Refer our Udemy Coupon section",
+  "rating": 4.7,
+  "students": 300000
+},
+{
+  "_id": {
+    "$oid": "69c407453b16e48f7c8a3ff7"
+  },
+  "title": "Google UX Design Professional Certificate",
+  "provider": "Google",
+  "subprovider": "Coursera",
+  "category": "UI/UX Design",
+  "cost": "Freemium",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.8,
+  "students": 500000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~ux.jpg",
+  "link": "https://www.coursera.org/professional-certificates/google-ux-design"
+},
+{
+  "_id": {
+    "$oid": "69c4074f0e2f40baf03e9eb6"
+  },
+  "title": "Kotlin for Android Beginners",
+  "provider": "Google",
+  "category": "Mobile App Development",
+  "cost": "Free",
+  "note": "Completely free course with learning resources",
+  "link": "https://developer.android.com/courses",
+  "rating": 4.6,
+  "students": 100000
+},
+{
+  "_id": {
+    "$oid": "69c407623b16e48f7c8a3ff9"
+  },
+  "title": "UI/UX Design Fundamentals",
+  "provider": "Great Learning",
+  "category": "UI/UX Design",
+  "cost": "Free",
+  "note": "Free course with certificate",
+  "rating": 4.5,
+  "students": 120000,
+  "image": "https://d1vwxdpzbgdqj.cloudfront.net/s3-public-images/images/uiux.png",
+  "link": "https://www.mygreatlearning.com/academy/learn-for-free/courses/ui-ux-design"
+},
+{
+  "_id": {
+    "$oid": "69c407743b16e48f7c8a3ffb"
+  },
+  "title": "User Experience Design Essentials",
+  "provider": "Udemy",
+  "category": "UI/UX Design",
+  "cost": "Paid",
+  "note": "Paid course. Refer our Udemy Coupon section to get discounts or free offers",
+  "rating": 4.6,
+  "students": 300000,
+  "image": "https://img-c.udemycdn.com/course/480x270/611804_64a1_4.jpg",
+  "link": "https://www.udemy.com/course/ui-ux-web-design-using-adobe-xd/"
+},
+{
+  "_id": {
+    "$oid": "69c4080b3b16e48f7c8a3ffd"
+  },
+  "title": "Introduction to DevOps",
+  "provider": "IBM",
+  "subprovider": "Coursera",
+  "category": "DevOps & Automation",
+  "cost": "Freemium",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.7,
+  "students": 150000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~devops.jpg",
+  "link": "https://www.coursera.org/learn/introduction-to-devops"
+},
+{
+  "_id": {
+    "$oid": "69c408253b16e48f7c8a3fff"
+  },
+  "title": "DevOps Beginners to Advanced with Projects",
+  "provider": "Udemy",
+  "category": "DevOps & Automation",
+  "cost": "Paid",
+  "note": "Paid course. Refer our Udemy Coupon section to get discounts or free offers",
+  "rating": 4.6,
+  "students": 200000,
+  "image": "https://img-c.udemycdn.com/course/480x270/1565838_e54e_16.jpg",
+  "link": "https://www.udemy.com/course/decodingdevops/"
+},
+{
+  "_id": {
+    "$oid": "69c408413b16e48f7c8a4001"
+  },
+  "title": "Docker Essentials",
+  "provider": "IBM",
+  "category": "DevOps & Automation",
+  "cost": "Free",
+  "note": "Free course with certificate available",
+  "rating": 4.5,
+  "students": 100000,
+  "image": "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/assets/logos/IBM_logo.png",
+  "link": "https://cognitiveclass.ai/courses/docker-essentials"
+},
+{
+  "_id": {
+    "$oid": "69c408bb3b16e48f7c8a4003"
+  },
+  "title": "Full Stack Web Development with MERN",
+  "provider": "freeCodeCamp",
+  "category": "Full Stack Development",
+  "cost": "Free",
+  "note": "Completely free course with certification available after completion",
+  "rating": 4.8,
+  "students": 500000,
+  "image": "https://design-style-guide.freecodecamp.org/downloads/fcc_secondary_small.svg",
+  "link": "https://www.freecodecamp.org/learn/"
+},
+{
+  "_id": {
+    "$oid": "69c408e33b16e48f7c8a4005"
+  },
+  "id": 502,
+  "title": "The Complete Web Development Bootcamp",
+  "provider": "Dr. Angela Yu",
+  "subprovider": "Udemy",
+  "category": "Full Stack Development",
+  "cost": "Paid",
+  "note": "Paid course. Refer our Udemy Coupon section to get discounts or free offers",
+  "rating": 4.7,
+  "students": 1000000,
+  "image": "https://img-c.udemycdn.com/course/480x270/1565838_e54e_16.jpg",
+  "link": "https://www.udemy.com/course/the-complete-web-development-bootcamp/"
+},
+{
+  "_id": {
+    "$oid": "69c408f23b16e48f7c8a4007"
+  },
+  "title": "Full Stack Open",
+  "provider": "University of Helsinki",
+  "category": "Full Stack Development",
+  "cost": "Free",
+  "note": "Completely free course with certificate",
+  "rating": 4.8,
+  "students": 150000,
+  "image": "https://fullstackopen.com/static/logo.svg",
+  "link": "https://fullstackopen.com/en/"
+},
+{
+  "_id": {
+    "$oid": "69c4090f3b16e48f7c8a4009"
+  },
+  "title": "Full Stack Open",
+  "provider": "University of Helsinki",
+  "category": "Full Stack Development",
+  "cost": "Free",
+  "note": "Completely free course with certificate",
+  "rating": 4.8,
+  "students": 150000,
+  "image": "https://fullstackopen.com/static/logo.svg",
+  "link": "https://fullstackopen.com/en/"
+},
+{
+  "_id": {
+    "$oid": "69c409233b16e48f7c8a400b"
+  },
+  "title": "Meta Full Stack Developer Professional Certificate",
+  "provider": "Meta",
+  "subprovider": "Coursera",
+  "category": "Full Stack Development",
+  "cost": "Freemium",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.7,
+  "students": 300000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~meta.jpg",
+  "link": "https://www.coursera.org/professional-certificates/meta-full-stack-developer"
+},
+{
+  "_id": {
+    "$oid": "69c40bc2b347dae306c7f375"
+  },
+  "title": "Data Analysis with Python",
+  "provider": "freeCodeCamp",
+  "category": "Data Analytics",
+  "cost": "Free",
+  "note": "Completely free course with certification",
+  "rating": 4.8,
+  "students": 400000,
+  "image": "https://design-style-guide.freecodecamp.org/downloads/fcc_secondary_small.svg",
+  "link": "https://www.freecodecamp.org/learn/data-analysis-with-python/"
+},
+{
+  "_id": {
+    "$oid": "69c40bc2b347dae306c7f376"
+  },
+  "title": "Google Data Analytics Professional Certificate",
+  "provider": "Google",
+  "subProvider": "Coursera",
+  "category": "Data Analytics",
+  "cost": "Freemium",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.8,
+  "students": 1000000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~data.jpg",
+  "link": "https://www.coursera.org/professional-certificates/google-data-analytics"
+},
+{
+  "_id": {
+    "$oid": "69c40bc2b347dae306c7f377"
+  },
+  "title": "Data Analytics for Beginners",
+  "provider": "Great Learning",
+  "category": "Data Analytics",
+  "cost": "Free",
+  "note": "Free course with certificate",
+  "rating": 4.5,
+  "students": 150000,
+  "image": "https://d1vwxdpzbgdqj.cloudfront.net/s3-public-images/images/data-analytics.png",
+  "link": "https://www.mygreatlearning.com/academy/learn-for-free/courses/data-analytics"
+},
+{
+  "_id": {
+    "$oid": "69c40bc2b347dae306c7f378"
+  },
+  "title": "IBM Data Analyst Professional Certificate",
+  "provider": "IBM",
+  "subProvider": "Coursera",
+  "category": "Data Analytics",
+  "cost": "Freemium",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.7,
+  "students": 300000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~ibm.jpg",
+  "link": "https://www.coursera.org/professional-certificates/ibm-data-analyst"
+},
+{
+  "_id": {
+    "$oid": "69c40c24e286ebc45cdf5a39"
+  },
+  "title": "Data Analysis with Pandas and Python",
+  "provider": "Udemy",
+  "category": "Data Analytics",
+  "cost": "Paid",
+  "note": "Paid course. Refer our Udemy Coupon section to get discounts or free offers",
+  "rating": 4.6,
+  "students": 250000,
+  "image": "https://img-c.udemycdn.com/course/480x270/903744_8eb2.jpg",
+  "link": "https://www.udemy.com/course/data-analysis-with-pandas/"
+},
+{
+  "_id": {
+    "$oid": "69c40c24e286ebc45cdf5a3a"
+  },
+  "title": "Excel Skills for Data Analytics",
+  "provider": "Macquarie University",
+  "subProvider": "Coursera",
+  "category": "Data Analytics",
+  "cost": "Freemium",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.7,
+  "students": 200000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~excel.jpg",
+  "link": "https://www.coursera.org/specializations/excel-data-analytics"
+},
+{
+  "_id": {
+    "$oid": "69c40c24e286ebc45cdf5a3b"
+  },
+  "title": "Data Visualization with Tableau",
+  "provider": "University of California, Davis",
+  "subProvider": "Coursera",
+  "category": "Data Analytics",
+  "cost": "Freemium",
+  "note": "Free to learn, certificate is paid. Refer our Coursera Financial Aid section",
+  "rating": 4.7,
+  "students": 180000,
+  "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~tableau.jpg",
+  "link": "https://www.coursera.org/specializations/data-visualization"
+},
+{
+  "_id": {
+    "$oid": "69c40c24e286ebc45cdf5a3c"
+  },
+  "title": "Data Analyst Bootcamp",
+  "provider": "Udemy",
+  "category": "Data Analytics",
+  "cost": "Paid",
+  "note": "Paid course. Refer our Udemy Coupon section to get discounts or free offers",
+  "rating": 4.6,
+  "students": 180000,
+  "image": "https://img-c.udemycdn.com/course/480x270/2776760_f176.jpg",
+  "link": "https://www.udemy.com/course/data-analyst-bootcamp/"
+},
+{
+  "_id": {
+    "$oid": "69c40ce23b16e48f7c8a400d"
+  },
+  "title": "Data Analyst Bootcamp",
+  "provider": "Udemy",
+  "category": "Data Analytics & Science",
+  "cost": "Paid",
+  "note": "Paid course. Refer our Udemy Coupon section to get discounts or free offers",
+  "rating": 4.6,
+  "students": 180000,
+  "image": "https://img-c.udemycdn.com/course/480x270/2776760_f176.jpg",
+  "link": "https://www.udemy.com/course/data-analyst-bootcamp/"
+}]

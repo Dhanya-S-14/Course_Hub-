@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .auth-container {
+            background: var(--clr-surface);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            width: 100%;
+            max-width: 480px;
+            border: 1px solid var(--clr-border);
+            box-shadow: var(--shadow-lg);
+            animation: fadeInUp 0.6s ease-out;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .auth-header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .auth-header p {
+            color: var(--clr-text-muted);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--clr-text-main);
+        }
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--clr-border);
+            border-radius: var(--radius-md);
+            background: var(--clr-bg);
+            color: var(--clr-text-main);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: all var(--transition-smooth);
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--clr-primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+        }
+        .btn-auth {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        .auth-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--clr-text-muted);
+        }
+        .auth-footer a {
+            color: var(--clr-primary);
+            font-weight: 600;
+        }
+        .quotes-section {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--clr-border);
+        }
+        .quotes-title {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--clr-text-muted);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .quote-card {
+            background: var(--clr-surface-light);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--clr-border);
+        }
+        .quote-text {
+            font-style: italic;
+            color: var(--clr-text-main);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+        .quote-author {
+            color: var(--clr-secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+        .logo-link i {
+            background: var(--gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-container">
+            <a href="index.html" class="logo-link">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>CourseHub</span>
+            </a>
+            
+            <div class="auth-header">
+                <h1 class="text-gradient">Welcome Back</h1>
+                <p>Continue your learning journey</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-auth">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                Don't have an account? <a href="register.html">Register here</a>
+            </div>
+            
+            <div class="quotes-section">
+                <p class="quotes-title">Daily Inspiration</p>
+                <div class="quote-card">
+                    <p class="quote-text" id="quoteText">"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice."</p>
+                    <p class="quote-author" id="quoteAuthor">— Brian Herbert</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const quotes = [
+            { text: '"The capacity to learn is a gift; the ability to learn is a skill; the willingness to learn is a choice."', author: '— Brian Herbert' },
+            { text: '"Anyone who has never made a mistake has never tried anything new."', author: '— Albert Einstein' },
+            { text: '"The expert in anything was once a beginner."', author: '— Helen Hayes' },
+            { text: '"It does not matter how slowly you go as long as you do not stop."', author: '— Confucius' },
+            { text: '"Success is not final, failure is not fatal: it is the courage to continue that counts."', author: '— Winston Churchill' },
+            { text: '"Believe you can and you\'re halfway there."', author: '— Theodore Roosevelt' },
+            { text: '"The journey of a thousand miles begins with one step."', author: '— Lao Tzu' },
+            { text: '"What we learn with pleasure we never forget."', author: '— Alfred Mercier' },
+            { text: '"The only person who is educated is the one who has learned how to learn and change."', author: '— Carl Rogers' },
+            { text: '"Knowledge is power. Information is liberating. Education is the premise of progress."', author: '— Kofi Annan' }
+        ];
+        
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById('quoteText').textContent = randomQuote.text;
+        document.getElementById('quoteAuthor').textContent = randomQuote.author;
+        
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const data = await response.json();
+                console.log('Response:', data);
+                
+                if (response.ok) {
+                    localStorage.setItem('currentUser', JSON.stringify(data.user));
+                    alert('Login successful! Redirecting to home...');
+                    window.location.href = 'index.html';
+                } else {
+                    alert(data.error || 'Invalid email or password!');
+                }
+            } catch (err) {
+                alert('Error connecting to server: ' + err.message);
+            }
+        });
+    </script>
+</body>
+</html>

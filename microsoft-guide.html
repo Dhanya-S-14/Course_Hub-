@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Courses Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 120, 212, 0.2) 0%, rgba(0, 150, 136, 0.2) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header i {
+            font-size: 4rem;
+            color: #00A4EF;
+            margin-bottom: 1rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: #00A4EF;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00A4EF 0%, #7FBA00 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .step-card li:last-child {
+            border-bottom: none;
+        }
+        .step-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #7FBA00;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 120, 212, 0.2) 0%, rgba(0, 150, 136, 0.2) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #00A4EF;
+        }
+        .highlight-box.success {
+            border-left-color: #7FBA00;
+            background: rgba(127, 186, 0, 0.1);
+        }
+        .highlight-box.info {
+            border-left-color: #00A4EF;
+            background: rgba(0, 164, 239, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        .highlight-box p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .option-card {
+            background: var(--clr-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .option-card:hover {
+            border-color: #00A4EF;
+        }
+        .option-card.free {
+            border-color: #7FBA00;
+        }
+        .option-card.paid {
+            border-color: #F25022;
+        }
+        .option-card i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .option-card.free i {
+            color: #7FBA00;
+        }
+        .option-card.paid i {
+            color: #F25022;
+        }
+        .option-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .option-card p {
+            font-size: 0.85rem;
+            margin: 0;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th,
+        .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: var(--clr-surface-light);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td {
+            color: var(--clr-text-muted);
+        }
+        .platforms-table a {
+            color: #00A4EF;
+            text-decoration: none;
+        }
+        .platforms-table a:hover {
+            text-decoration: underline;
+        }
+        .bonus-box {
+            background: linear-gradient(135deg, #00A4EF 0%, #7FBA00 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .free-section {
+            background: linear-gradient(135deg, rgba(127, 186, 0, 0.2) 0%, rgba(0, 150, 136, 0.2) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border: 2px dashed #7FBA00;
+        }
+        .free-section h3 {
+            color: #7FBA00;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .intro-box {
+            background: linear-gradient(135deg, rgba(0, 120, 212, 0.15) 0%, rgba(0, 150, 136, 0.15) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .intro-box p {
+            color: var(--clr-text-main);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 {
+            color: #00A4EF;
+            margin-bottom: 1rem;
+        }
+        .quick-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+        .quick-tips li {
+            padding: 0.5rem 0;
+            color: var(--clr-text-main);
+        }
+        .quick-tips li::before {
+            content: '→ ';
+            color: #7FBA00;
+        }
+        @media (max-width: 768px) {
+            .guide-header h1 {
+                font-size: 1.8rem;
+            }
+            .step-card {
+                padding: 1.5rem;
+            }
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            .platforms-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <i class="fa-brands fa-microsoft"></i>
+                <h1>Microsoft Courses Enrollment Guide</h1>
+                <p>Step-by-step guide to enroll in Microsoft certificates on Coursera & Microsoft Learn</p>
+            </div>
+
+            <!-- Introduction -->
+            <div class="intro-box">
+                <p><strong>Microsoft</strong> offers extensive free and paid courses through <strong>Microsoft Learn</strong>, <strong>Coursera</strong>, and certification paths, ideal for CS students focusing on <strong>AI</strong>, <strong>Azure cloud</strong>, and <strong>data skills</strong>. These align well with project development and internship goals, often including hands-on labs in <strong>Python/C#</strong>.</p>
+            </div>
+            
+            <!-- Career Certificates Info -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h2>Career Certificates (Coursera)</h2>
+                <p>Professional programs (3-6 months, $49/mo after trial; audit free); beginner-friendly with practical tools like Power BI, Azure.</p>
+                <div class="highlight-box info">
+                    <h4><i class="fa-solid fa-info-circle"></i> Good for CS Students</h4>
+                    <p>Perfect for students wanting to add AI, cloud, and data visualization skills to their portfolio.</p>
+                </div>
+            </div>
+            
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h2>Create a Microsoft Account</h2>
+                <ul>
+                    <li>Go to <strong>account.microsoft.com</strong></li>
+                    <li>Click <strong>Sign in</strong> or <strong>Create one</strong></li>
+                    <li>Use your existing Microsoft account OR create a new one</li>
+                    <li>Verify your email address</li>
+                </ul>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h2>Choose Your Platform</h2>
+                <p>Microsoft offers courses on two platforms:</p>
+                
+                <div class="options-grid">
+                    <div class="option-card paid">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h4>Coursera</h4>
+                        <p>Professional Certificates</p>
+                        <p>~$49/mo for cert</p>
+                    </div>
+                    <div class="option-card free">
+                        <i class="fa-brands fa-microsoft"></i>
+                        <h4>Microsoft Learn</h4>
+                        <p>Self-Paced Modules</p>
+                        <p>100% FREE</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h2>Search for Microsoft Courses</h2>
+                <p>On Coursera, search for these popular certificates:</p>
+                <ul>
+                    <li><strong>Microsoft Azure AI Fundamentals</strong> - AI/ML basics</li>
+                    <li><strong>Microsoft Power Platform Fundamentals</strong> - Low-code automation</li>
+                    <li><strong>Microsoft Cybersecurity Analyst</strong> - Security skills</li>
+                    <li><strong>Microsoft Project Management</strong> - Project coordination</li>
+                </ul>
+                <div class="highlight-box">
+                    <h4><i class="fa-solid fa-lightbulb"></i> Tip</h4>
+                    <p>Click "Enroll for Free" to audit the course, or apply for financial aid for free certificate access.</p>
+                </div>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h2>Apply for Financial Aid</h2>
+                <ul>
+                    <li>Click <strong>"Financial Aid Available"</strong> on the course page</li>
+                    <li>Fill out the application form:
+                        <ul style="margin-top: 0.5rem; margin-left: 1rem;">
+                            <li>Why you need the aid</li>
+                            <li>Your learning goals</li>
+                        </ul>
+                    </li>
+                    <li>Submit and wait ~15 days for approval</li>
+                    <li><strong>Once approved → 100% FREE with certificate!</strong></li>
+                </ul>
+            </div>
+            
+            <!-- Microsoft Learn Section -->
+            <div class="free-section">
+                <h3><i class="fa-solid fa-star"></i> Microsoft Learn (100% FREE)</h3>
+                <p>Completely free self-paced courses with badges!</p>
+                <ul style="color: var(--clr-text-main); margin-top: 1rem;">
+                    <li>✓ Go to <strong>learn.microsoft.com</strong></li>
+                    <li>✓ Sign in with your Microsoft account</li>
+                    <li>✓ Browse learning paths by skill level</li>
+                    <li>✓ Complete modules to earn badges</li>
+                    <li>✓ Track your progress on your profile</li>
+                </ul>
+            </div>
+            
+            <!-- Popular Courses -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-fire"></i></div>
+                <h2>Popular Microsoft Learn Courses</h2>
+                <ul>
+                    <li><strong>Azure Fundamentals (AZ-900)</strong> - Cloud basics for beginners</li>
+                    <li><strong>Introduction to Generative AI</strong> - Latest AI technology</li>
+                    <li><strong>Power BI Data Analyst</strong> - Data visualization skills</li>
+                    <li><strong>.NET Developer Path</strong> - C# and app development</li>
+                </ul>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Start Tips</h3>
+                <ul>
+                    <li>Sign in with Microsoft account for easy access</li>
+                    <li>Coursera: Audit free; $49/mo for certificate</li>
+                    <li>Microsoft Learn: Fully free with badges</li>
+                    <li>Explore Azure for AI/cloud projects</li>
+                    <li>Power BI is great for data visualization in projects</li>
+                </ul>
+            </div>
+            
+            <!-- Main Platforms Table -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Platforms</h2>
+                
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Microsoft Learn Hub</strong></td>
+                            <td>All free training, paths, cert prep</td>
+                            <td><a href="https://learn.microsoft.com" target="_blank">learn.microsoft.com ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Student Hub Certifications</strong></td>
+                            <td>Free fundamentals for students</td>
+                            <td><a href="https://learn.microsoft.com/en-us/training/student-hub" target="_blank">Student Hub ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Microsoft Certifications</strong></td>
+                            <td>Exam prep and role-based paths</td>
+                            <td><a href="https://learn.microsoft.com/en-us/certifications" target="_blank">Certifications ↗</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Bonus Box -->
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-fire"></i> Why Choose Microsoft Courses?</h3>
+                <p><strong>Industry-recognized certifications + FREE learning paths = Career growth!</strong></p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

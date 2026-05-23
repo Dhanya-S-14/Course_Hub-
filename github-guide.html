@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Courses Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(36, 39, 49, 0.3) 0%, rgba(36, 39, 49, 0.5) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header .github-logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #24292e;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(36, 41, 46, 0.3);
+        }
+        .guide-header .github-logo svg {
+            width: 70px;
+            height: 70px;
+            fill: white;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .free-banner {
+            background: linear-gradient(135deg, #238636 0%, #1a7f37 100%);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .free-banner h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .free-banner p {
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #238636;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #238636 0%, #1a7f37 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--clr-text-main);
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .step-card li:last-child { border-bottom: none; }
+        .step-card li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #238636;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(35, 134, 54, 0.1) 0%, rgba(26, 127, 55, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #238636;
+        }
+        .highlight-box.info {
+            border-left-color: #0969da;
+            background: rgba(9, 105, 218, 0.1);
+        }
+        .highlight-box.success {
+            border-left-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .highlight-box.warning {
+            border-left-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-text-main);
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+        .highlight-box ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        .highlight-box li {
+            border-bottom: none;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        .highlight-box li::before {
+            content: '\2022';
+            color: #238636;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th, .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: linear-gradient(135deg, #238636 0%, #1a7f37 100%);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td { color: var(--clr-text-muted); }
+        .platforms-table a {
+            color: #238636;
+            text-decoration: none;
+        }
+        .platforms-table a:hover { text-decoration: underline; }
+        .bonus-box {
+            background: linear-gradient(135deg, #238636 0%, #1a7f37 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 { color: #238636; margin-bottom: 1rem; }
+        .quick-tips ul { list-style: none; padding: 0; }
+        .quick-tips li { padding: 0.5rem 0; color: var(--clr-text-main); }
+        .quick-tips li::before { content: '\2192 '; color: #238636; }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .skill-item {
+            background: rgba(35, 134, 54, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .skill-item i {
+            font-size: 2rem;
+            color: #238636;
+            margin-bottom: 0.5rem;
+        }
+        .paid-section {
+            border: 2px dashed #f59e0b;
+            background: rgba(245, 158, 11, 0.05);
+        }
+        .financial-aid-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+            border: 2px solid #10b981;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .financial-aid-box h3 {
+            color: #10b981;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .financial-aid-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .financial-aid-box li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .financial-aid-box li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+        }
+        .certification-box {
+            background: linear-gradient(135deg, rgba(9, 105, 218, 0.1) 0%, rgba(9, 105, 218, 0.05) 100%);
+            border: 2px solid #0969da;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        .certification-box h3 {
+            color: #0969da;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 768px) {
+            .guide-header h1 { font-size: 1.8rem; }
+            .step-card { padding: 1.5rem; }
+            .platforms-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <div class="github-logo">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </div>
+                <h1>GitHub Courses Enrollment Guide</h1>
+                <p>Learn GitHub for FREE with hands-on projects. Master version control, collaboration, and real-world coding workflows.</p>
+            </div>
+
+            <div class="free-banner">
+                <h3><i class="fa-solid fa-code"></i> Free Ways to Learn GitHub</h3>
+                <p>GitHub learning is mostly FREE - focus on skills, pay only if you want certification!</p>
+            </div>
+            
+            <!-- GitHub Skills -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h2>GitHub Skills (Official & Best)</h2>
+                <p><strong>100% FREE + Hands-on practice</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit skills.github.com</li>
+                    <li>Sign in with your GitHub account</li>
+                    <li>Choose a course (like "Introduction to GitHub")</li>
+                    <li>Click <strong>Start Course</strong></li>
+                    <li>Learn by doing (real projects + auto feedback)</li>
+                </ul>
+                <div class="highlight-box success">
+                    <h4>Includes:</h4>
+                    <ul>
+                        <li>Git & GitHub basics</li>
+                        <li>Pull requests</li>
+                        <li>Markdown</li>
+                        <li>CI/CD basics</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- GitHub Learning Lab -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h2>GitHub Learning Lab (Interactive Bot Learning)</h2>
+                <p><strong>Learn by doing with GitHub bot</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Login to GitHub</li>
+                    <li>Start a Learning Lab course</li>
+                    <li>Follow instructions via GitHub bot</li>
+                    <li>Complete tasks directly in repositories</li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>Best for:</h4>
+                    <p>Beginners who want practical learning</p>
+                </div>
+            </div>
+            
+            <!-- Free Courses on Coursera -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h2>Free Courses on Coursera</h2>
+                <p><strong>Version Control & Git courses</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Search "GitHub" or "Version Control"</li>
+                    <li>Enroll in course</li>
+                    <li>Choose <strong>Audit for Free</strong></li>
+                </ul>
+                <div class="highlight-box warning">
+                    <h4>Note:</h4>
+                    <p>Certificate = Paid (optional)</p>
+                </div>
+            </div>
+            
+            <!-- Free Courses on edX -->
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h2>Free Courses on edX</h2>
+                <p><strong>Same method as Coursera</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Search Git/GitHub courses</li>
+                    <li>Enroll in course</li>
+                    <li>Choose <strong>Free Audit Track</strong></li>
+                </ul>
+            </div>
+            
+            <!-- GitHub Docs -->
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h2>GitHub Docs (Self-Learning)</h2>
+                <p><strong>Best for quick learning + reference</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Open docs.github.com</li>
+                    <li>Follow tutorials step-by-step</li>
+                    <li>Practice in your own repositories</li>
+                </ul>
+            </div>
+            
+            <!-- YouTube Learning -->
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <h2>YouTube Learning (No Login Needed)</h2>
+                <p><strong>Great for beginners</strong></p>
+                <p>Search:</p>
+                <ul>
+                    <li><strong>"GitHub full course for beginners"</strong></li>
+                    <li><strong>"Git tutorial full course"</strong></li>
+                </ul>
+            </div>
+            
+            <!-- Skills Grid -->
+            <div class="highlight-box success">
+                <h4>Skills You Will Learn:</h4>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fa-brands fa-git-alt"></i>
+                    <p>Git</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-brands fa-github"></i>
+                    <p>GitHub</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-code-branch"></i>
+                    <p>Branching</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-code-merge"></i>
+                    <p>Pull Requests</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-file-code"></i>
+                    <p>Markdown</p>
+                </div>
+            </div>
+            
+            <!-- Paid Section -->
+            <div class="step-card paid-section">
+                <div class="step-number" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">$</div>
+                <h2>Paid Learning (Optional)</h2>
+                <p><strong>GitHub itself is mostly FREE, but paid learning comes from:</strong></p>
+                <ul>
+                    <li>Coursera</li>
+                    <li>Udemy</li>
+                </ul>
+                <p><strong>Cost:</strong> $10 - $50 (approx)</p>
+            </div>
+            
+            <!-- Certification Box -->
+            <div class="certification-box">
+                <h3><i class="fa-solid fa-certificate"></i> Certification Options</h3>
+                <p>GitHub offers official certifications:</p>
+                <ul>
+                    <li><strong>GitHub Foundations</strong></li>
+                    <li><strong>GitHub Actions</strong></li>
+                </ul>
+                <p><strong>Exam Cost:</strong> Paid (around $99)</p>
+            </div>
+            
+            <!-- Financial Aid Box -->
+            <div class="financial-aid-box">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Financial Aid / Free Certificate Trick</h3>
+                <p><strong>On Coursera</strong></p>
+                <ul>
+                    <li>Select Git/GitHub course</li>
+                    <li>Click <strong>Financial Aid Available</strong></li>
+                    <li>Apply with your details</li>
+                    <li>Get <strong>FREE certificate</strong></li>
+                </ul>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Tips</h3>
+                <ul>
+                    <li>GitHub Skills - Best for structured learning</li>
+                    <li>Start with "Introduction to GitHub" course</li>
+                    <li>Practice daily with small commits</li>
+                    <li>Use GitHub CLI for faster workflow</li>
+                    <li>Build a portfolio with your repositories</li>
+                    <li>Connect GitHub to LinkedIn for job opportunities</li>
+                </ul>
+            </div>
+            
+            <!-- Resources Table -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Resources</h2>
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>GitHub Skills</strong></td>
+                            <td>Free interactive courses</td>
+                            <td><a href="https://skills.github.com" target="_blank">skills.github.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>GitHub Docs</strong></td>
+                            <td>Official documentation</td>
+                            <td><a href="https://docs.github.com" target="_blank">docs.github.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>GitHub CLI</strong></td>
+                            <td>Command line tools</td>
+                            <td><a href="https://cli.github.com" target="_blank">cli.github.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>First Contributions</strong></td>
+                            <td>Beginner guide</td>
+                            <td><a href="https://github.com/firstcontributions/first-contributions" target="_blank">first-contributions</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>GitHub on Coursera</strong></td>
+                            <td>Free audit courses</td>
+                            <td><a href="https://www.coursera.org/search?query=github" target="_blank">coursera.org</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-rocket"></i> Start Learning GitHub Today!</h3>
+                <p><strong>GitHub learning is mostly FREE - focus on skills, pay only if you want certification!</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

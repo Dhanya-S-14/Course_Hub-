@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortinet Courses Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header i {
+            font-size: 4rem;
+            color: #EB1933;
+            margin-bottom: 1rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #EB1933;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #EB1933 0%, #C41422 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--clr-text-main);
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .step-card li:last-child { border-bottom: none; }
+        .step-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #EB1933;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(235, 25, 51, 0.1) 0%, rgba(196, 20, 34, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #EB1933;
+        }
+        .highlight-box.info {
+            border-left-color: #00A5FF;
+            background: rgba(0, 165, 255, 0.1);
+        }
+        .highlight-box.success {
+            border-left-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-text-main);
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+        .highlight-box ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        .highlight-box li {
+            border-bottom: none;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        .highlight-box li::before {
+            content: '•';
+            color: #EB1933;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th, .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: var(--clr-surface-light);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td { color: var(--clr-text-muted); }
+        .platforms-table a {
+            color: #EB1933;
+            text-decoration: none;
+        }
+        .platforms-table a:hover { text-decoration: underline; }
+        .bonus-box {
+            background: linear-gradient(135deg, #EB1933 0%, #C41422 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 { color: #EB1933; margin-bottom: 1rem; }
+        .quick-tips ul { list-style: none; padding: 0; }
+        .quick-tips li { padding: 0.5rem 0; color: var(--clr-text-main); }
+        .quick-tips li::before { content: '→ '; color: #EB1933; }
+        @media (max-width: 768px) {
+            .guide-header h1 { font-size: 1.8rem; }
+            .step-card { padding: 1.5rem; }
+            .platforms-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h1>Fortinet Courses Enrollment Guide</h1>
+                <p>Learn network security and Fortinet technologies</p>
+            </div>
+
+            <div class="bonus-box" style="margin-bottom: 2rem;">
+                <h3>🛡️ Enroll in Fortinet Courses Today</h3>
+            </div>
+            
+            <!-- Fortinet NSE Institute -->
+            <div class="step-card">
+                <div class="step-number">1️⃣</div>
+                <h2>Fortinet NSE Institute (Best Free Option)</h2>
+                <p><strong>The official free training platform</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit Fortinet NSE Institute</li>
+                    <li>Create a free account</li>
+                    <li>Browse available courses</li>
+                    <li>Enroll in NSE courses</li>
+                    <li>Complete assessments</li>
+                </ul>
+                <div class="highlight-box success">
+                    <h4>💡 NSE Levels Available:</h4>
+                    <ul>
+                        <li>NSE 1 - Security Fundamentals</li>
+                        <li>NSE 2 - Threat Landscape</li>
+                        <li>NSE 3 - Fortinet Products</li>
+                        <li>NSE 4 - FortiOS</li>
+                        <li>NSE 5 - FortiAnalyzer</li>
+                        <li>NSE 6 - Advanced</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Fortinet Self-Paced -->
+            <div class="step-card">
+                <div class="step-number">2️⃣</div>
+                <h2>Fortinet Self-Paced Training</h2>
+                <p><strong>Learn at your own pace</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Log into NSE Institute</li>
+                    <li>Select self-paced courses</li>
+                    <li>Complete video lessons</li>
+                    <li>Take quizzes</li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>💡 Topics Covered:</h4>
+                    <ul>
+                        <li>FortiGate firewall</li>
+                        <li>Network security</li>
+                        <li>SD-WAN</li>
+                        <li>Zero Trust</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Fortinet Documentation -->
+            <div class="step-card">
+                <div class="step-number">3️⃣</div>
+                <h2>Fortinet Documentation Hub</h2>
+                <p><strong>Free technical resources</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit Fortinet docs</li>
+                    <li>Access admin guides</li>
+                    <li>Read configuration docs</li>
+                    <li>Learn FortiOS features</li>
+                </ul>
+            </div>
+            
+            <!-- Instructor-Led -->
+            <div class="step-card">
+                <div class="step-number">4️⃣</div>
+                <h2>Fortinet Instructor-Led Training (Paid)</h2>
+                <p><strong>Structured learning with experts</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Browse available schedules</li>
+                    <li>Register for courses</li>
+                    <li>Attend virtual or in-person</li>
+                    <li>Complete certification</li>
+                </ul>
+                <div class="highlight-box">
+                    <h4>⚠️ Note:</h4>
+                    <p>ILT courses require payment; NSE 1-8 can be completed free</p>
+                </div>
+            </div>
+            
+            <!-- Fortinet Community -->
+            <div class="step-card">
+                <div class="step-number">5️⃣</div>
+                <h2>Fortinet Community & Forums</h2>
+                <p><strong>Community support and learning</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Join Fortinet community</li>
+                    <li>Participate in discussions</li>
+                    <li>Learn from experts</li>
+                    <li>Share knowledge</li>
+                </ul>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Tips</h3>
+                <ul>
+                    <li>NSE 1-8 are completely free on the NSE Institute</li>
+                    <li>Start with NSE 1 and NSE 2 for fundamentals</li>
+                    <li>NSE 4 is most valuable for job seekers</li>
+                    <li>Complete labs for hands-on experience</li>
+                    <li>Join Fortinet community for support</li>
+                    <li>Use FortiGate VM for practice</li>
+                </ul>
+            </div>
+            
+            <!-- Resources Table -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Resources</h2>
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>NSE Institute</strong></td>
+                            <td>Free courses & certs</td>
+                            <td><a href="https://training.fortinet.com" target="_blank">training.fortinet.com ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>NSE 1-3 Free</strong></td>
+                            <td>Beginner courses</td>
+                            <td><a href="https://www.fortinet.com/training/free-nse-courses" target="_blank">Free access ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fortinet Docs</strong></td>
+                            <td>Technical documentation</td>
+                            <td><a href="https://docs.fortinet.com" target="_blank">docs.fortinet.com ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fortinet Community</strong></td>
+                            <td>User forums</td>
+                            <td><a href="https://community.fortinet.com" target="_blank">community.fortinet.com ↗</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-trophy"></i> Start Your Fortinet Learning Journey!</h3>
+                <p><strong>NSE 1-8 certifications are FREE - start your cybersecurity career today!</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

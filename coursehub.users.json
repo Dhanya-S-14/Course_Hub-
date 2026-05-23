@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "69bea829c5ded4c29dc279dc"
+  },
+  "name": "mega varun",
+  "email": "mehra143@gmail.com",
+  "password": "Siet@123",
+  "createdAt": {
+    "$date": "2026-03-21T14:16:09.244Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69beac32c5ded4c29dc279f0"
+  },
+  "name": "mehrahu",
+  "email": "mehrahuy143@gmail.com",
+  "password": "Siet@123",
+  "createdAt": {
+    "$date": "2026-03-21T14:33:22.508Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bead5cc5ded4c29dc279fa"
+  },
+  "name": "mehir",
+  "email": "madhu123@gmail.com",
+  "password": "Siet@123",
+  "createdAt": {
+    "$date": "2026-03-21T14:38:20.082Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69beb082c5ded4c29dc27a0d"
+  },
+  "name": "dhantyaq",
+  "email": "mehrahuy14358@gmail.com",
+  "password": "Siet@123",
+  "createdAt": {
+    "$date": "2026-03-21T14:51:46.435Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69beb2e7c5ded4c29dc27a13"
+  },
+  "name": "dhanya s",
+  "email": "mehrahuy143hju@gmail.com",
+  "password": "Siet@123",
+  "createdAt": {
+    "$date": "2026-03-21T15:01:59.822Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69beb6dd9f327396b4dd6a15"
+  },
+  "name": "malli",
+  "email": "malli123@gmail.com",
+  "password": "Siet@123",
+  "createdAt": {
+    "$date": "2026-03-21T15:18:53.127Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCS Courses Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 84, 182, 0.1) 0%, rgba(0, 51, 136, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header i {
+            font-size: 4rem;
+            color: #005587;
+            margin-bottom: 1rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .free-banner {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .free-banner h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .free-banner p {
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #005587;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #005587 0%, #003388 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--clr-text-main);
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .step-card li:last-child { border-bottom: none; }
+        .step-card li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #005587;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 85, 135, 0.1) 0%, rgba(0, 51, 136, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #005587;
+        }
+        .highlight-box.info {
+            border-left-color: #00A5FF;
+            background: rgba(0, 165, 255, 0.1);
+        }
+        .highlight-box.success {
+            border-left-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .highlight-box.warning {
+            border-left-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-text-main);
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+        .highlight-box ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        .highlight-box li {
+            border-bottom: none;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        .highlight-box li::before {
+            content: '\2022';
+            color: #005587;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th, .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: linear-gradient(135deg, #005587 0%, #003388 100%);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td { color: var(--clr-text-muted); }
+        .platforms-table a {
+            color: #005587;
+            text-decoration: none;
+        }
+        .platforms-table a:hover { text-decoration: underline; }
+        .bonus-box {
+            background: linear-gradient(135deg, #005587 0%, #003388 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 { color: #005587; margin-bottom: 1rem; }
+        .quick-tips ul { list-style: none; padding: 0; }
+        .quick-tips li { padding: 0.5rem 0; color: var(--clr-text-main); }
+        .quick-tips li::before { content: '\2192 '; color: #005587; }
+        .paid-section {
+            border: 2px dashed #f59e0b;
+            background: rgba(245, 158, 11, 0.05);
+        }
+        .certification-box {
+            background: linear-gradient(135deg, rgba(0, 85, 135, 0.1) 0%, rgba(0, 51, 136, 0.1) 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .nqt-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(217, 119, 6, 0.1) 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        .nqt-box h3 {
+            color: #d97706;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .skill-item {
+            background: rgba(0, 85, 135, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .skill-item i {
+            font-size: 2rem;
+            color: #005587;
+            margin-bottom: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .guide-header h1 { font-size: 1.8rem; }
+            .step-card { padding: 1.5rem; }
+            .platforms-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <i class="fa-solid fa-building"></i>
+                <h1>Learn with TCS - Enrollment Guide</h1>
+                <p>Build career-ready skills with TCS. Learn communication, aptitude, and IT basics - many courses are free with certification.</p>
+            </div>
+
+            <div class="free-banner">
+                <h3><i class="fa-solid fa-building"></i> Free Ways to Enroll in TCS Courses</h3>
+                <p>TCS focuses on job-ready skills - perfect for students preparing for placements!</p>
+            </div>
+            
+            <!-- TCS iON Digital Learning -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h2>TCS iON Digital Learning (Main Platform)</h2>
+                <p><strong>Many courses are FREE (with or without certificate)</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit TCS iON website</li>
+                    <li>Click <strong>Sign Up / Login</strong></li>
+                    <li>Go to Digital Learning Hub</li>
+                    <li>Browse courses</li>
+                    <li>Select course - Click Enroll</li>
+                </ul>
+                <div class="highlight-box success">
+                    <h4>Includes:</h4>
+                    <ul>
+                        <li>Soft skills</li>
+                        <li>IT fundamentals</li>
+                        <li>Communication skills</li>
+                        <li>Career readiness</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Career Edge Courses -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h2>Free Career Edge Courses (Highly Recommended)</h2>
+                <p><strong>Offered by Tata Consultancy Services - FREE + Certificate</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Go to TCS iON</li>
+                    <li>Search "Career Edge"</li>
+                    <li>Click course</li>
+                    <li>Enroll for free</li>
+                </ul>
+                <div class="highlight-box success">
+                    <h4>Popular Courses:</h4>
+                    <ul>
+                        <li>Career Edge - Young Professional</li>
+                        <li>Resume & Interview Prep</li>
+                        <li>Soft Skills Training</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- TCS iON YouTube -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h2>TCS iON YouTube Learning</h2>
+                <p><strong>Free video tutorials</strong></p>
+                <p>Search:</p>
+                <ul>
+                    <li><strong>"TCS iON Career Edge"</strong></li>
+                    <li><strong>"TCS aptitude training"</strong></li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>Good for:</h4>
+                    <ul>
+                        <li>Aptitude preparation</li>
+                        <li>Interview prep</li>
+                        <li>Career guidance</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Skills Grid -->
+            <div class="highlight-box success">
+                <h4>Skills You Will Learn:</h4>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fa-solid fa-comments"></i>
+                    <p>Communication</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-brain"></i>
+                    <p>Aptitude</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <p>IT Basics</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-file-alt"></i>
+                    <p>Resume Prep</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <p>Soft Skills</p>
+                </div>
+            </div>
+            
+            <!-- Paid Section -->
+            <div class="step-card paid-section">
+                <div class="step-number" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">$</div>
+                <h2>Paid Courses (Advanced Learning)</h2>
+                <p><strong>Available on TCS iON</strong></p>
+                <p><strong>Cost:</strong> $10 - $100 (approx)</p>
+                <div class="highlight-box warning">
+                    <h4>Includes:</h4>
+                    <ul>
+                        <li>Industry-specific skills</li>
+                        <li>Advanced IT training</li>
+                        <li>Certification programs</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Certification Section -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-certificate"></i></div>
+                <h2>Certification Programs</h2>
+                <p><strong>Through TCS iON</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Choose course with certificate</li>
+                    <li>Complete learning modules</li>
+                    <li>Take assessment</li>
+                    <li>Get TCS recognized certificate</li>
+                </ul>
+            </div>
+            
+            <!-- TCS NQT Section -->
+            <div class="nqt-box">
+                <h3><i class="fa-solid fa-briefcase"></i> Special Programs - Placement Focus</h3>
+                <h4 style="color: #005587; margin-bottom: 0.5rem;">TCS NQT (National Qualifier Test)</h4>
+                <p>Steps:</p>
+                <ul>
+                    <li>Register for NQT</li>
+                    <li>Prepare via TCS courses</li>
+                    <li>Take test</li>
+                    <li>Use score for jobs</li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>Helps in:</h4>
+                    <ul>
+                        <li>Getting jobs in TCS & other companies</li>
+                        <li>Industry-recognized certification</li>
+                        <li>Career advancement</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Financial Aid -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-hand-holding-usd"></i></div>
+                <h2>Financial Aid / Free Access Tips</h2>
+                <ul>
+                    <li>Many TCS courses are already <strong>FREE</strong></li>
+                    <li>Watch for <strong>limited-time free offers</strong></li>
+                    <li>Check <strong>student programs</strong></li>
+                    <li>Look for <strong>college partnerships</strong></li>
+                </ul>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Tips</h3>
+                <ul>
+                    <li>TCS iON - Best platform for external learners</li>
+                    <li>Start with Career Edge courses (FREE with certificate)</li>
+                    <li>Prepare for TCS NQT for placement opportunities</li>
+                    <li>Build resume & soft skills alongside technical skills</li>
+                    <li>Practice aptitude regularly</li>
+                    <li>Network through TCS communities</li>
+                </ul>
+            </div>
+            
+            <!-- Resources Table -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Resources</h2>
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>TCS iON</strong></td>
+                            <td>Main learning platform</td>
+                            <td><a href="https://www.tcsion.com" target="_blank">tcsion.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Career Edge</strong></td>
+                            <td>Free career courses</td>
+                            <td><a href="https://tcsion.com/courses" target="_blank">TCS iON Courses</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>TCS NQT</strong></td>
+                            <td>Placement test</td>
+                            <td><a href="https://www.tcs.com/careers" target="_blank">TCS Careers</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Campus Commune</strong></td>
+                            <td>Student platform</td>
+                            <td><a href="https://campuscommune.tcs.com" target="_blank">campuscommune.tcs.com</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-rocket"></i> Start Learning with TCS Today!</h3>
+                <p><strong>TCS focuses on job-ready skills - perfect for students preparing for placements!</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

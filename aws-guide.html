@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Courses Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 153, 0, 0.1) 0%, rgba(255, 87, 34, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header i {
+            font-size: 4rem;
+            color: #FF9900;
+            margin-bottom: 1rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #FF9900;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #FF9900 0%, #FF5733 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--clr-text-main);
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .step-card li:last-child {
+            border-bottom: none;
+        }
+        .step-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FF9900;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 153, 0, 0.1) 0%, rgba(255, 87, 34, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #FF9900;
+        }
+        .highlight-box.info {
+            border-left-color: #00A5FF;
+            background: rgba(0, 165, 255, 0.1);
+        }
+        .highlight-box.success {
+            border-left-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-text-main);
+        }
+        .highlight-box p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .highlight-box ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        .highlight-box li {
+            border-bottom: none;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        .highlight-box li::before {
+            content: '•';
+            color: #FF9900;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th,
+        .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: var(--clr-surface-light);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td {
+            color: var(--clr-text-muted);
+        }
+        .platforms-table a {
+            color: #FF9900;
+            text-decoration: none;
+        }
+        .platforms-table a:hover {
+            text-decoration: underline;
+        }
+        .bonus-box {
+            background: linear-gradient(135deg, #FF9900 0%, #FF5733 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 {
+            color: #FF9900;
+            margin-bottom: 1rem;
+        }
+        .quick-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+        .quick-tips li {
+            padding: 0.5rem 0;
+            color: var(--clr-text-main);
+        }
+        .quick-tips li::before {
+            content: '→ ';
+            color: #FF9900;
+        }
+        .emojis {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .guide-header h1 {
+                font-size: 1.8rem;
+            }
+            .step-card {
+                padding: 1.5rem;
+            }
+            .platforms-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <i class="fa-brands fa-aws"></i>
+                <h1>AWS Courses Enrollment Guide</h1>
+                <p>Free ways to enroll in Amazon Web Services courses</p>
+            </div>
+
+            <!-- Free Ways Banner -->
+            <div class="bonus-box" style="margin-bottom: 2rem;">
+                <h3>☁️ Free Ways to Enroll in Amazon (AWS) Courses</h3>
+            </div>
+            
+            <!-- Option 1: AWS Training -->
+            <div class="step-card">
+                <div class="step-number">1️⃣</div>
+                <h2>Official Free Training Platform</h2>
+                <p><strong>Use AWS Training and Certification</strong></p>
+                <p><span class="emojis">👉</span> Steps:</p>
+                <ul>
+                    <li>Visit AWS Training site</li>
+                    <li>Click <strong>"Get Started for Free"</strong></li>
+                    <li>Create / login with Amazon account</li>
+                    <li>Access free digital courses</li>
+                </ul>
+                <div class="highlight-box">
+                    <h4>💡 Includes:</h4>
+                    <ul>
+                        <li>Cloud Practitioner Essentials</li>
+                        <li>AWS Basics</li>
+                        <li>Security Fundamentals</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Option 2: AWS Skill Builder -->
+            <div class="step-card">
+                <div class="step-number">2️⃣</div>
+                <h2>AWS Skill Builder (Best Free Option)</h2>
+                <p><strong>Use AWS Skill Builder</strong></p>
+                <p><span class="emojis">👉</span> Steps:</p>
+                <ul>
+                    <li>Go to AWS Skill Builder</li>
+                    <li>Sign up for free</li>
+                    <li>Filter → <strong>"Free Courses"</strong></li>
+                    <li>Start learning instantly</li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>💡 Extra:</h4>
+                    <ul>
+                        <li>Learning paths</li>
+                        <li>Practice quizzes</li>
+                        <li>Beginner → Advanced levels</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Option 3: Coursera -->
+            <div class="step-card">
+                <div class="step-number">3️⃣</div>
+                <h2>Free Courses on Coursera (AWS Content)</h2>
+                <p><span class="emojis">👉</span> Steps:</p>
+                <ul>
+                    <li>Search <strong>"AWS"</strong> courses</li>
+                    <li>Click on desired course</li>
+                    <li>Choose <strong>"Audit for Free"</strong></li>
+                    <li>Learn without paying</li>
+                </ul>
+                <div class="highlight-box">
+                    <h4>⚠️ Note:</h4>
+                    <p>Certificate = Paid (optional)</p>
+                </div>
+            </div>
+            
+            <!-- Option 4: edX -->
+            <div class="step-card">
+                <div class="step-number">4️⃣</div>
+                <h2>Free AWS Courses on edX</h2>
+                <p><span class="emojis">👉</span> Same method:</p>
+                <ul>
+                    <li>Enroll → Select <strong>"Free Audit Track"</strong></li>
+                    <li>Access course content for free</li>
+                </ul>
+            </div>
+            
+            <!-- Option 5: YouTube -->
+            <div class="step-card">
+                <div class="step-number">5️⃣</div>
+                <h2>YouTube Free Learning (No Login Needed)</h2>
+                <p><span class="emojis">👉</span> Search:</p>
+                <ul>
+                    <li><strong>"AWS Full Course for Beginners"</strong></li>
+                    <li><strong>"Cloud Practitioner Full Course"</strong></li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>💡 Channels often used:</h4>
+                    <ul>
+                        <li>AWS official</li>
+                        <li>Tech educators</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Option 6: AWS Educate -->
+            <div class="step-card">
+                <div class="step-number">6️⃣</div>
+                <h2>AWS Educate (For Students 🎓)</h2>
+                <p><strong>Use AWS Educate</strong></p>
+                <p><span class="emojis">👉</span> Steps:</p>
+                <ul>
+                    <li>Sign up with student email</li>
+                    <li>Get free learning content</li>
+                    <li>Earn badges & career pathways</li>
+                </ul>
+                <div class="highlight-box success">
+                    <h4>💡 Best for:</h4>
+                    <p>College students!</p>
+                </div>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Tips</h3>
+                <ul>
+                    <li>AWS Skill Builder - Best for free structured learning</li>
+                    <li>Use student email for AWS Educate access</li>
+                    <li>Audit courses on Coursera for free content</li>
+                    <li>YouTube is great for quick tutorials</li>
+                    <li>Practice with AWS Free Tier for hands-on experience</li>
+                    <li>Earn badges to add to your resume</li>
+                </ul>
+            </div>
+            
+            <!-- Resources Table -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Resources</h2>
+                
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>AWS Training</strong></td>
+                            <td>Official training platform</td>
+                            <td><a href="https://aws.amazon.com/training/" target="_blank">aws.amazon.com/training ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AWS Skill Builder</strong></td>
+                            <td>Best free learning option</td>
+                            <td><a href="https://explore.aws.training" target="_blank">explore.aws.training ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AWS Educate</strong></td>
+                            <td>For students (free)</td>
+                            <td><a href="https://www.awseducate.com" target="_blank">awseducate.com ↗</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AWS Free Tier</strong></td>
+                            <td>Practice hands-on for free</td>
+                            <td><a href="https://aws.amazon.com/free" target="_blank">aws.amazon.com/free ↗</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Bonus Box -->
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-trophy"></i> Start Learning Today!</h3>
+                <p><strong>AWS offers extensive free resources - start with AWS Skill Builder for the best free experience!</strong></p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

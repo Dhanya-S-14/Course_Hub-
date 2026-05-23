@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM Courses Enrollment Guide | CourseHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guide-page {
+            min-height: 100vh;
+            background: var(--clr-bg);
+            padding: 2rem;
+        }
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .guide-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 99, 220, 0.1) 0%, rgba(0, 65, 145, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--clr-border);
+        }
+        .guide-header .ibm-logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0530ad 0%, #001872 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(5, 48, 173, 0.3);
+        }
+        .guide-header .ibm-logo svg {
+            width: 80px;
+            height: 80px;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: #0530ad;
+        }
+        .guide-header p {
+            color: var(--clr-text-muted);
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--clr-surface);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--clr-border);
+        }
+        .back-btn:hover {
+            background: var(--clr-primary);
+            transform: translateX(-5px);
+        }
+        .free-banner {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .free-banner h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .free-banner p {
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+        }
+        .step-card {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--clr-border);
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #0530ad;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0530ad 0%, #001872 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .step-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--clr-text-main);
+        }
+        .step-card p {
+            color: var(--clr-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .step-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--clr-text-main);
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .step-card li:last-child { border-bottom: none; }
+        .step-card li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #0530ad;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(5, 48, 173, 0.1) 0%, rgba(0, 24, 114, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #0530ad;
+        }
+        .highlight-box.info {
+            border-left-color: #00A5FF;
+            background: rgba(0, 165, 255, 0.1);
+        }
+        .highlight-box.success {
+            border-left-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .highlight-box.warning {
+            border-left-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+        }
+        .highlight-box h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--clr-text-main);
+        }
+        .highlight-box p { margin: 0; font-size: 0.95rem; }
+        .highlight-box ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        .highlight-box li {
+            border-bottom: none;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+        .highlight-box li::before {
+            content: '\2022';
+            color: #0530ad;
+        }
+        .platforms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .platforms-table th, .platforms-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--clr-border);
+        }
+        .platforms-table th {
+            background: linear-gradient(135deg, #0530ad 0%, #001872 100%);
+            font-weight: 600;
+            color: white;
+        }
+        .platforms-table td { color: var(--clr-text-muted); }
+        .platforms-table a {
+            color: #0530ad;
+            text-decoration: none;
+        }
+        .platforms-table a:hover { text-decoration: underline; }
+        .bonus-box {
+            background: linear-gradient(135deg, #0530ad 0%, #001872 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .bonus-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        .bonus-box p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .quick-tips {
+            background: var(--clr-surface);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .quick-tips h3 { color: #0530ad; margin-bottom: 1rem; }
+        .quick-tips ul { list-style: none; padding: 0; }
+        .quick-tips li { padding: 0.5rem 0; color: var(--clr-text-main); }
+        .quick-tips li::before { content: '\2192 '; color: #0530ad; }
+        .paid-section {
+            border: 2px dashed #f59e0b;
+            background: rgba(245, 158, 11, 0.05);
+        }
+        .financial-aid-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+            border: 2px solid #10b981;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .financial-aid-box h3 {
+            color: #10b981;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .financial-aid-box h4 {
+            color: var(--clr-text-main);
+            margin-top: 1rem;
+        }
+        .financial-aid-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .financial-aid-box li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .financial-aid-box li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+        }
+        .best-courses-box {
+            background: linear-gradient(135deg, rgba(5, 48, 173, 0.1) 0%, rgba(0, 24, 114, 0.1) 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .best-courses-box h3 {
+            color: #0530ad;
+            margin-bottom: 1rem;
+        }
+        .course-tag {
+            display: inline-block;
+            background: #0530ad;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .guide-header h1 { font-size: 1.8rem; }
+            .step-card { padding: 1.5rem; }
+            .platforms-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-page">
+        <div class="guide-container">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to CourseHub
+            </a>
+            
+            <div class="guide-header">
+                <div class="ibm-logo">
+                    <svg viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                </div>
+                <h1>IBM Courses Enrollment Guide</h1>
+                <p>Build job-ready tech skills with IBM. Learn AI, Data Science, and Cloud.</p>
+            </div>
+
+            <div class="free-banner">
+                <h3><i class="fa-solid fa-coins"></i> Free Ways to Enroll in IBM Courses</h3>
+                <p>Start learning today without spending a penny!</p>
+            </div>
+            
+            <!-- IBM SkillsBuild -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h2>IBM SkillsBuild (Best Free Platform)</h2>
+                <p><strong>Use IBM SkillsBuild - Completely FREE + Certificates included</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit IBM SkillsBuild website</li>
+                    <li>Click <strong>"Get Started"</strong></li>
+                    <li>Create a free account</li>
+                    <li>Choose your learning path</li>
+                    <li>Start courses instantly</li>
+                </ul>
+                <div class="highlight-box success">
+                    <h4>What You Get:</h4>
+                    <ul>
+                        <li>AI Fundamentals</li>
+                        <li>Cybersecurity Basics</li>
+                        <li>Data Analytics</li>
+                        <li>Cloud Computing</li>
+                        <li>Blockchain Introduction</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Free IBM Courses on Coursera -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h2>Free IBM Courses on Coursera</h2>
+                <p><strong>Audit for Free - Full video access & learning materials</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Search <strong>"IBM courses"</strong></li>
+                    <li>Select course (e.g., IBM Data Science)</li>
+                    <li>Click <strong>"Enroll"</strong></li>
+                    <li>Choose <strong>"Audit for Free"</strong></li>
+                </ul>
+                <div class="highlight-box info">
+                    <h4>What You Get:</h4>
+                    <ul>
+                        <li>Full video access</li>
+                        <li>Learning materials</li>
+                        <li>Practice quizzes</li>
+                    </ul>
+                </div>
+                <div class="highlight-box warning">
+                    <h4>Note:</h4>
+                    <p>Certificate = Paid (or use financial aid - see below)</p>
+                </div>
+            </div>
+            
+            <!-- IBM Courses on edX -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h2>IBM Courses on edX</h2>
+                <p><strong>University-quality IBM content - Free Audit Track</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Search IBM programs on edX</li>
+                    <li>Click <strong>"Enroll"</strong></li>
+                    <li>Choose <strong>"Free Audit Track"</strong></li>
+                    <li>Access video lectures & readings</li>
+                </ul>
+            </div>
+            
+            <!-- YouTube Learning -->
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h2>YouTube Learning (Totally Free)</h2>
+                <p><strong>No login needed - Great for basics</strong></p>
+                <p>Search:</p>
+                <ul>
+                    <li><strong>"IBM Data Science full course"</strong></li>
+                    <li><strong>"IBM AI course for beginners"</strong></li>
+                    <li><strong>"IBM Cloud tutorials"</strong></li>
+                </ul>
+            </div>
+            
+            <!-- Paid Enrollment Section -->
+            <div class="step-card paid-section">
+                <div class="step-number" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">$</div>
+                <h2>Paid Enrollment (with Certificate)</h2>
+                <p><strong>Platforms:</strong> Coursera | edX</p>
+                <p><strong>Cost:</strong> $20 - $100 per course (approx)</p>
+                <p><strong>Professional certificates may cost more</strong></p>
+                <div class="best-courses-box">
+                    <h3>Best IBM Courses to Show on Your Resume</h3>
+                    <span class="course-tag">IBM Data Science Professional Certificate</span>
+                    <span class="course-tag">IBM AI Engineering</span>
+                    <span class="course-tag">IBM Cybersecurity Analyst</span>
+                    <span class="course-tag">IBM Cloud Fundamentals</span>
+                </div>
+            </div>
+            
+            <!-- Financial Aid Section -->
+            <div class="financial-aid-box">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Financial Aid - Study FREE with Certificate</h3>
+                <p><strong>Available on Coursera</strong></p>
+                
+                <h4>Steps to Apply:</h4>
+                <ul>
+                    <li>Open IBM course on Coursera</li>
+                    <li>Click <strong>"Financial Aid Available"</strong></li>
+                    <li>Fill application (basic questions)</li>
+                    <li>Wait ~15 days for approval</li>
+                    <li>Get <strong>100% FREE access + certificate</strong></li>
+                </ul>
+                
+                <h4>Tips for Application:</h4>
+                <ul>
+                    <li>Write why you need financial help</li>
+                    <li>Mention your student status</li>
+                    <li>Explain your career goals</li>
+                    <li>Keep it genuine and concise</li>
+                </ul>
+            </div>
+            
+            <!-- IBM Developer -->
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h2>IBM Developer Website</h2>
+                <p><strong>Free technical tutorials and code patterns</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Visit IBM Developer</li>
+                    <li>Browse by technology</li>
+                    <li>Follow hands-on tutorials</li>
+                    <li>Practice with sample code</li>
+                </ul>
+            </div>
+            
+            <!-- IBM Academic Initiative -->
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <h2>IBM Academic Initiative</h2>
+                <p><strong>For students and educators - Free resources</strong></p>
+                <p>Steps:</p>
+                <ul>
+                    <li>Sign up with your university email (.edu)</li>
+                    <li>Get free access to IBM software</li>
+                    <li>Access learning resources</li>
+                    <li>Get cloud credits for practice</li>
+                </ul>
+            </div>
+            
+            <!-- Quick Tips -->
+            <div class="quick-tips">
+                <h3><i class="fa-solid fa-bolt"></i> Quick Tips</h3>
+                <ul>
+                    <li>IBM SkillsBuild - Best starting point for beginners</li>
+                    <li>Use Financial Aid on Coursera for FREE certificates</li>
+                    <li>Earn IBM badges to showcase on LinkedIn</li>
+                    <li>Use IBM Cloud free tier for hands-on practice</li>
+                    <li>Start with Data Science or AI courses</li>
+                    <li>Join IBM communities for support</li>
+                </ul>
+            </div>
+            
+            <!-- Resources Table -->
+            <div class="step-card">
+                <div class="step-number"><i class="fa-solid fa-globe"></i></div>
+                <h2>Key Resources</h2>
+                <table class="platforms-table">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>IBM SkillsBuild</strong></td>
+                            <td>Free courses & badges</td>
+                            <td><a href="https://skillsbuild.org" target="_blank">skillsbuild.org</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>IBM on Coursera</strong></td>
+                            <td>Professional certificates</td>
+                            <td><a href="https://www.coursera.org/ibm" target="_blank">coursera.org/ibm</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>IBM on edX</strong></td>
+                            <td>University courses</td>
+                            <td><a href="https://www.edx.org/school/ibm" target="_blank">edx.org/ibm</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>IBM Developer</strong></td>
+                            <td>Tutorials & code</td>
+                            <td><a href="https://developer.ibm.com" target="_blank">developer.ibm.com</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>IBM Academic</strong></td>
+                            <td>Student resources</td>
+                            <td><a href="https://www.ibm.com/academic" target="_blank">ibm.com/academic</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bonus-box">
+                <h3><i class="fa-solid fa-rocket"></i> Build Job-Ready Tech Skills with IBM!</h3>
+                <p><strong>Start FREE with SkillsBuild or apply for Financial Aid on Coursera to earn certificates without paying!</strong></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

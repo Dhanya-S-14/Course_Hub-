@@ -1,0 +1,956 @@
+[{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34c4"
+  },
+  "title": "Google Data Analytics Certificate",
+  "provider": "Google (Coursera)",
+  "subProvider": "Coursera",
+  "category": "Data Analytics",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.8,
+  "suitableFor": "CS students learning data skills for AI/ML projects",
+  "link": "https://www.coursera.org/professional-certificates/google-data-analytics",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34c5"
+  },
+  "title": "Google Project Management Certificate",
+  "provider": "Google (Coursera)",
+  "subProvider": "Coursera",
+  "category": "Project Management",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.7,
+  "suitableFor": "Students managing group projects/coding contests",
+  "link": "https://www.coursera.org/professional-certificates/google-project-management",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34c6"
+  },
+  "title": "Google Cybersecurity Certificate",
+  "provider": "Google (Coursera)",
+  "subProvider": "Coursera",
+  "category": "Cybersecurity",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.7,
+  "suitableFor": "CS undergrads entering security/internships",
+  "link": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34c7"
+  },
+  "title": "Google Digital Marketing & E-commerce Certificate",
+  "provider": "Google (Coursera)",
+  "subProvider": "Coursera",
+  "category": "Digital Marketing",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.8,
+  "suitableFor": "Students exploring app/web promotion",
+  "link": "https://www.coursera.org/professional-certificates/google-digital-marketing-ecommerce",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34c8"
+  },
+  "title": "Google IT Support Certificate",
+  "provider": "Google (Coursera)",
+  "subProvider": "Coursera",
+  "category": "IT Support",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.7,
+  "suitableFor": "Beginners building sysadmin basics",
+  "link": "https://www.coursera.org/professional-certificates/google-it-support",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34c9"
+  },
+  "title": "Google UX Design Certificate",
+  "provider": "Google (Coursera)",
+  "subProvider": "Coursera",
+  "category": "UX Design",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.8,
+  "suitableFor": "CS students in HCI/UI for software projects",
+  "link": "https://www.coursera.org/professional-certificates/google-ux-design",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34ca"
+  },
+  "title": "Google AI Professional Certificate",
+  "provider": "Google (Coursera)",
+  "subProvider": "Coursera",
+  "category": "AI Skills",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.7,
+  "suitableFor": "AI enthusiasts like you for practical ML",
+  "link": "https://grow.google/certificates-coursera",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34cb"
+  },
+  "title": "Fundamentals of Digital Marketing",
+  "provider": "Google Digital Garage",
+  "subProvider": "Digital Garage",
+  "category": "Digital Marketing",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "All students promoting personal projects",
+  "link": "https://skillshop.exceedlms.com/student/path/111399-fundamentals-of-digital-marketing",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34cc"
+  },
+  "title": "Get a Business Online",
+  "provider": "Google Digital Garage",
+  "subProvider": "Digital Garage",
+  "category": "Business Online",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "CS students launching apps/websites",
+  "link": "https://skillshop.exceedlms.com",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34cd"
+  },
+  "title": "Promote a Business with Content",
+  "provider": "Google Digital Garage",
+  "subProvider": "Digital Garage",
+  "category": "Content Marketing",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "Students sharing coding portfolios",
+  "link": "https://skillshop.exceedlms.com",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfb0873ed1edb4c5bb34ce"
+  },
+  "title": "Land Your Next Job",
+  "provider": "Google Digital Garage",
+  "subProvider": "Digital Garage",
+  "category": "Career Development",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "Undergrads prepping IIT internships",
+  "link": "https://skillshop.exceedlms.com",
+  "company": "Google",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69bfc858a5ec88182dce653e"
+  },
+  "title": "Microsoft Azure AI Fundamentals",
+  "provider": "Microsoft (Coursera)",
+  "subProvider": "Coursera",
+  "category": "AI/ML",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.6,
+  "suitableFor": "CS students starting AI projects",
+  "link": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/?practice-assessment-type=certification",
+  "company": "Microsoft"
+},
+{
+  "_id": {
+    "$oid": "69bfc869a5ec88182dce6540"
+  },
+  "title": "Microsoft Power Platform Fundamentals",
+  "provider": "Microsoft (Coursera)",
+  "subProvider": "Coursera",
+  "category": "Low-Code Development",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.7,
+  "suitableFor": "Undergrads automating workflows",
+  "link": "https://www.coursera.org/learn/microsoft-power-platform-fundamentals",
+  "company": "Microsoft"
+},
+{
+  "_id": {
+    "$oid": "69bfc878a5ec88182dce6542"
+  },
+  "title": "Microsoft Cybersecurity Analyst",
+  "provider": "Microsoft (Coursera)",
+  "subProvider": "Coursera",
+  "category": "Cybersecurity",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.6,
+  "suitableFor": "Security for coding contests/internships",
+  "link": "https://www.coursera.org/professional-certificates/microsoft-cybersecurity-analyst",
+  "company": "Microsoft"
+},
+{
+  "_id": {
+    "$oid": "69bfc887a5ec88182dce6544"
+  },
+  "title": "Microsoft Project Management",
+  "provider": "Microsoft (Coursera)",
+  "subProvider": "Coursera",
+  "category": "Project Management",
+  "cost": "$49/mo (audit free)",
+  "rating": 4.7,
+  "suitableFor": "Group projects and MLOps",
+  "link": "https://www.coursera.org/professional-certificates/microsoft-project-management",
+  "company": "Microsoft"
+},
+{
+  "_id": {
+    "$oid": "69bfc8a0a5ec88182dce6546"
+  },
+  "title": "Azure Fundamentals (AZ-900)",
+  "provider": "Microsoft Learn",
+  "subProvider": "Microsoft Learn",
+  "category": "Cloud Computing",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "CS basics for cloud/AI deployment",
+  "link": "https://learn.microsoft.com/en-us/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/",
+  "company": "Microsoft"
+},
+{
+  "_id": {
+    "$oid": "69bfc8b8a5ec88182dce6548"
+  },
+  "title": "Introduction to Generative AI",
+  "provider": "Microsoft Learn",
+  "subProvider": "Microsoft Learn",
+  "category": "AI",
+  "cost": "Free",
+  "rating": 4.8,
+  "suitableFor": "Your AI research interests",
+  "link": "https://learn.microsoft.com/en-us/training/paths/fundamentals-generative-ai",
+  "company": "Microsoft"
+},
+{
+  "_id": {
+    "$oid": "69bfc8c9a5ec88182dce654a"
+  },
+  "title": "Power BI Data Analyst",
+  "provider": "Microsoft Learn",
+  "subProvider": "Microsoft Learn",
+  "category": "Data Analytics",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "Data viz for projects like Google cert",
+  "link": "https://learn.microsoft.com/en-us/training/paths/data-analyst-associate",
+  "company": "Microsoft"
+},
+{
+  "_id": {
+    "$oid": "69c0b4660ed32924ec27910d"
+  },
+  "title": "AWS Cloud Practitioner Essentials",
+  "provider": "Amazon AWS",
+  "subprovider": "AWS Skill Builder",
+  "category": "Cloud Computing",
+  "cost": "Free",
+  "rating": 4.8,
+  "suitableFor": "Beginners interested in cloud computing",
+  "link": "https://aws.amazon.com/training/learn-about/cloud-practitioner/",
+  "company": "Amazon AWS"
+},
+{
+  "_id": {
+    "$oid": "69c0b52a0ed32924ec279111"
+  },
+  "title": "Google Data Analytics",
+  "provider": "Google",
+  "subprovider": "Coursera",
+  "category": "Data Science",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "Students interested in data analysis",
+  "link": "https://grow.google/certificates/data-analytics/",
+  "company": "Google"
+},
+{
+  "_id": {
+    "$oid": "69c0b5be0ed32924ec279113"
+  },
+  "title": "IBM Data Science Fundamentals",
+  "provider": "IBM",
+  "subprovider": "IBM Skills",
+  "category": "Data Science",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "Beginners in data science",
+  "link": "https://www.ibm.com/training/",
+  "company": "IBM"
+},
+{
+  "_id": {
+    "$oid": "69c0b60d0ed32924ec279117"
+  },
+  "title": "Cisco Networking Basics",
+  "provider": "Cisco",
+  "subprovider": "NetAcad",
+  "category": "Networking",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "Networking beginners",
+  "link": "https://www.netacad.com/",
+  "company": "Cisco"
+},
+{
+  "_id": {
+    "$oid": "69c0b6290ed32924ec279119"
+  },
+  "title": "Oracle Database Foundations",
+  "provider": "Oracle",
+  "subprovider": "Oracle University",
+  "category": "Database",
+  "cost": "Free",
+  "rating": 4.5,
+  "suitableFor": "Students learning databases",
+  "link": "https://education.oracle.com/",
+  "company": "Oracle"
+},
+{
+  "_id": {
+    "$oid": "69c0b6440ed32924ec27911b"
+  },
+  "title": "Salesforce Admin Beginner",
+  "provider": "Salesforce",
+  "subprovider": "Trailhead",
+  "category": "CRM",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "Beginners in CRM tools",
+  "link": "https://trailhead.salesforce.com/",
+  "company": "Salesforce"
+},
+{
+  "_id": {
+    "$oid": "69c0b66c0ed32924ec27911d"
+  },
+  "title": "GitHub Foundations",
+  "provider": "GitHub",
+  "subprovider": "GitHub Skills",
+  "category": "Development Tools",
+  "cost": "Free",
+  "rating": 4.8,
+  "suitableFor": "Students learning Git and version control",
+  "link": "https://skills.github.com/",
+  "company": "GitHub"
+},
+{
+  "_id": {
+    "$oid": "69c0b6950ed32924ec27911f"
+  },
+  "title": "Google UX Design",
+  "provider": "Google",
+  "subprovider": "Coursera",
+  "category": "Design",
+  "cost": "Free",
+  "rating": 4.8,
+  "suitableFor": "Beginners interested in UI/UX design",
+  "link": "https://grow.google/certificates/ux-design/",
+  "company": "Google"
+},
+{
+  "_id": {
+    "$oid": "69c0b6b10ed32924ec279121"
+  },
+  "title": "AWS DevOps Fundamentals",
+  "provider": "Amazon AWS",
+  "subprovider": "AWS Training",
+  "category": "DevOps",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "Students learning DevOps basics",
+  "link": "https://aws.amazon.com/training/",
+  "company": "Amazon AWS"
+},
+{
+  "_id": {
+    "$oid": "69c0b6e70ed32924ec279123"
+  },
+  "title": "IBM AI Engineering",
+  "provider": "IBM",
+  "subprovider": "IBM Skills",
+  "category": "Artificial Intelligence",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "Intermediate learners in AI",
+  "link": "https://www.ibm.com/training/",
+  "company": "IBM"
+},
+{
+  "_id": {
+    "$oid": "69c0b6f80ed32924ec279125"
+  },
+  "title": "Cisco Cybersecurity Essentials",
+  "provider": "Cisco",
+  "subprovider": "NetAcad",
+  "category": "Cybersecurity",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "Beginners in cybersecurity",
+  "link": "https://www.netacad.com/",
+  "company": "Cisco"
+},
+{
+  "_id": {
+    "$oid": "69c0b76f0ed32924ec279127"
+  },
+  "title": "Google Cybersecurity Professional",
+  "provider": "Google",
+  "subprovider": "Coursera",
+  "category": "Cybersecurity",
+  "cost": "Free",
+  "rating": 4.8,
+  "suitableFor": "Students interested in security",
+  "link": "https://grow.google/certificates/cybersecurity/",
+  "company": "Google"
+},
+{
+  "_id": {
+    "$oid": "69c0b7880ed32924ec279129"
+  },
+  "title": "Oracle SQL Advanced",
+  "provider": "Oracle",
+  "subprovider": "Oracle University",
+  "category": "Database",
+  "cost": "Free",
+  "rating": 4.5,
+  "suitableFor": "Advanced SQL learners",
+  "link": "https://education.oracle.com/",
+  "company": "Oracle"
+},
+{
+  "_id": {
+    "$oid": "69c0bba60ed32924ec27912b"
+  },
+  "title": "GitHub Actions CI/CD",
+  "provider": "GitHub",
+  "subprovider": "GitHub Skills",
+  "category": "DevOps",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "Students learning CI/CD pipelines",
+  "link": "https://skills.github.com/",
+  "company": "GitHub"
+},
+{
+  "_id": {
+    "$oid": "69c0bec60ed32924ec27912e"
+  },
+  "title": "Google IT Support Professional",
+  "provider": "Google",
+  "subprovider": "Coursera",
+  "category": "IT Support",
+  "cost": "Free",
+  "rating": 4.8,
+  "suitableFor": "Beginners in IT support",
+  "link": "https://grow.google/certificates/it-support/",
+  "company": "Google"
+},
+{
+  "_id": {
+    "$oid": "69c0bf2c0ed32924ec279130"
+  },
+  "title": "Microsoft Excel Data Analysis",
+  "provider": "Microsoft",
+  "subprovider": "Microsoft Learn",
+  "category": "Data Analytics",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "Beginners in Excel analytics",
+  "link": "https://learn.microsoft.com/",
+  "company": "Microsoft"
+},
+{
+  "_id": {
+    "$oid": "69c0bf460ed32924ec279132"
+  },
+  "title": "IBM Business Analytics",
+  "provider": "IBM",
+  "subprovider": "IBM Skills",
+  "category": "Business Analytics",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "Students interested in analytics",
+  "link": "https://www.ibm.com/training/",
+  "company": "IBM"
+},
+{
+  "_id": {
+    "$oid": "69c0bf580ed32924ec279134"
+  },
+  "title": "Meta Android Developer",
+  "provider": "Meta",
+  "subprovider": "Coursera",
+  "category": "Mobile Development",
+  "cost": "Paid (refer coursera finanacial - aid)",
+  "rating": 4.7,
+  "suitableFor": "Students learning Android apps",
+  "link": "https://www.coursera.org/professional-certificates/meta-android-developer?msockid=31bc3edd98ed654e0f502a6a994064aa",
+  "company": "Meta"
+},
+{
+  "_id": {
+    "$oid": "69c0bf7b0ed32924ec279136"
+  },
+  "title": "Cisco Network Security",
+  "provider": "Cisco",
+  "subprovider": "NetAcad",
+  "category": "Cybersecurity",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "Intermediate learners in networking security",
+  "link": "https://www.netacad.com/",
+  "company": "Cisco"
+},
+{
+  "_id": {
+    "$oid": "69c0bf9a0ed32924ec279138"
+  },
+  "title": "Oracle Cloud Infrastructure Foundations",
+  "provider": "Oracle",
+  "subprovider": "Oracle University",
+  "category": "Cloud Computing",
+  "cost": "Free",
+  "rating": 4.5,
+  "suitableFor": "Beginners in cloud infrastructure",
+  "link": "https://education.oracle.com/",
+  "company": "Oracle"
+},
+{
+  "_id": {
+    "$oid": "69c0bfb10ed32924ec27913a"
+  },
+  "title": "Salesforce Apex Programming",
+  "provider": "Salesforce",
+  "subprovider": "Trailhead",
+  "category": "Programming",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "Developers learning Salesforce coding",
+  "link": "https://trailhead.salesforce.com/",
+  "company": "Salesforce"
+},
+{
+  "_id": {
+    "$oid": "69c0bfc00ed32924ec27913c"
+  },
+  "title": "GitHub Open Source Guide",
+  "provider": "GitHub",
+  "subprovider": "GitHub Skills",
+  "category": "Development Tools",
+  "cost": "Free",
+  "rating": 4.8,
+  "suitableFor": "Students contributing to open source",
+  "link": "https://skills.github.com/",
+  "company": "GitHub"
+},
+{
+  "_id": {
+    "$oid": "69c0bfd30ed32924ec27913e"
+  },
+  "title": "Google Cloud Engineer Basics",
+  "provider": "Google",
+  "subprovider": "Google Cloud Skills Boost",
+  "category": "Cloud Computing",
+  "cost": "Free",
+  "rating": 4.8,
+  "suitableFor": "Cloud beginners",
+  "link": "https://cloud.google.com/training",
+  "company": "Google"
+},
+{
+  "_id": {
+    "$oid": "69c0bfe80ed32924ec279140"
+  },
+  "title": "AWS Database Migration",
+  "provider": "Amazon AWS",
+  "subprovider": "AWS Training",
+  "category": "Database",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "Students learning database migration",
+  "link": "https://aws.amazon.com/training/",
+  "company": "Amazon AWS"
+},
+{
+  "_id": {
+    "$oid": "69c0bff90ed32924ec279142"
+  },
+  "title": "Microsoft Cybersecurity Analyst",
+  "provider": "Microsoft",
+  "subprovider": "Microsoft Learn",
+  "category": "Cybersecurity",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "Students entering cybersecurity",
+  "link": "https://learn.microsoft.com/",
+  "company": "Microsoft"
+},
+{
+  "_id": {
+    "$oid": "69c0c00f0ed32924ec279144"
+  },
+  "title": "IBM Full Stack Cloud Developer",
+  "provider": "IBM",
+  "subprovider": "IBM Skills",
+  "category": "Web Development",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "Students learning full stack",
+  "link": "https://www.ibm.com/training/",
+  "company": "IBM"
+},
+{
+  "_id": {
+    "$oid": "69c0c0200ed32924ec279146"
+  },
+  "title": "Meta iOS Developer",
+  "provider": "Meta",
+  "subprovider": "Coursera",
+  "category": "Mobile Development",
+  "cost": "Paid (Refer coursera financial - aid )",
+  "rating": 4.7,
+  "suitableFor": "Students building iOS apps",
+  "link": "https://www.coursera.org/professional-certificates/meta-ios-developer?msockid=31bc3edd98ed654e0f502a6a994064aa",
+  "company": "Meta"
+},
+{
+  "_id": {
+    "$oid": "69c0c0320ed32924ec279148"
+  },
+  "title": "Cisco Packet Tracer Basics",
+  "provider": "Cisco",
+  "subprovider": "NetAcad",
+  "category": "Networking",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "Beginners practicing networking",
+  "link": "https://www.netacad.com/",
+  "company": "Cisco"
+},
+{
+  "_id": {
+    "$oid": "69c0c0470ed32924ec27914a"
+  },
+  "title": "Salesforce Lightning Experience",
+  "provider": "Salesforce",
+  "subprovider": "Trailhead",
+  "category": "CRM",
+  "cost": "Free",
+  "rating": 4.6,
+  "suitableFor": "CRM beginners",
+  "link": "https://trailhead.salesforce.com/",
+  "company": "Salesforce"
+},
+{
+  "_id": {
+    "$oid": "69c0c05c0ed32924ec27914c"
+  },
+  "title": "GitHub DevOps Basics",
+  "provider": "GitHub",
+  "subprovider": "GitHub Skills",
+  "category": "DevOps",
+  "cost": "Free",
+  "rating": 4.7,
+  "suitableFor": "Students learning DevOps workflows",
+  "link": "https://skills.github.com/",
+  "company": "GitHub"
+},
+{
+  "_id": {
+    "$oid": "69c0fd5424fcd80c9a401df7"
+  },
+  "title": "Learning MongoDB",
+  "url": "https://www.linkedin.com/learning/learning-mongodb-17360744",
+  "instructor": "Justin Jenkins",
+  "duration": "2h 52m",
+  "skill_level": "Beginner",
+  "release_date": "12/16/2022",
+  "type": "paid",
+  "description": "Get started with MongoDB. Learn CRUD operations, indexing, and integration with Python, PHP, Node.js, Golang [web:11]."
+},
+{
+  "_id": {
+    "$oid": "69c0fdbb24fcd80c9a401df9"
+  },
+  "title": "Learning Full-Stack JavaScript Development: MongoDB, Node, and React",
+  "url": "https://www.linkedin.com/learning/learning-full-stack-javascript-development-mongodb-node-and-react-15581237",
+  "instructor": "Samer Buna",
+  "duration": "3h 35m",
+  "skill_level": "Advanced",
+  "release_date": "12/21/2022",
+  "type": "paid",
+  "description": "Build full-stack app with MongoDB, Node.js, React.js [web:12]."
+},
+{
+  "_id": {
+    "$oid": "69c0fde524fcd80c9a401dfb"
+  },
+  "title": "MongoDB Essential Training",
+  "url": "https://www.linkedin.com/learning/mongodb-essential-training",
+  "instructor": "Naomi Pentrel",
+  "duration": "3h 49m",
+  "skill_level": "Beginner",
+  "release_date": "5/13/2022",
+  "type": "paid",
+  "description": "CRUD, aggregation pipelines, drivers, advanced features [web:15]."
+},
+{
+  "_id": {
+    "$oid": "69c0ff1024fcd80c9a401dfe"
+  },
+  "title": "Learning MongoDB",
+  "url": "https://www.linkedin.com/learning/learning-mongodb-17360744",
+  "instructor": "Justin Jenkins",
+  "duration": "2h 52m",
+  "skill_level": "Beginner",
+  "release_date": "12/16/2022",
+  "type": "paid",
+  "description": "Get started with MongoDB. Learn CRUD operations, indexing, and integration with Python, PHP, Node.js, Golang [web:11]."
+},
+{
+  "_id": {
+    "$oid": "69c0ff2824fcd80c9a401e00"
+  },
+  "title": "Learning MongoDB",
+  "url": "https://www.linkedin.com/learning/learning-mongodb-17360744",
+  "instructor": "Justin Jenkins",
+  "duration": "2h 52m",
+  "skill_level": "Beginner",
+  "release_date": "12/16/2022",
+  "type": "paid",
+  "description": "Get started with MongoDB. Learn CRUD operations, indexing, and integration with Python, PHP, Node.js, Golang [web:11]."
+},
+{
+  "_id": {
+    "$oid": "69c0ffb824fcd80c9a401e02"
+  },
+  "title": "Learning MongoDB",
+  "provider": "LinkedIn Learning",
+  "subProvider": "LinkedIn",
+  "category": "Database",
+  "cost": "Paid",
+  "rating": 4.5,
+  "suitableFor": "Beginners learning MongoDB basics",
+  "link": "https://www.linkedin.com/learning/learning-mongodb-17360744",
+  "company": "LinkedIn"
+},
+{
+  "_id": {
+    "$oid": "69c1006924fcd80c9a401e04"
+  },
+  "title": "Learning MongoDB",
+  "provider": "LinkedIn Learning",
+  "subProvider": "LinkedIn",
+  "category": "Database",
+  "cost": "Paid",
+  "rating": 4.5,
+  "suitableFor": "Beginners learning MongoDB - CRUD operations, indexing, integration with Python, PHP, Node.js, Golang",
+  "link": "https://www.linkedin.com/learning/learning-mongodb-17360744",
+  "company": "LinkedIn"
+},
+{
+  "_id": {
+    "$oid": "69c100ce24fcd80c9a401e06"
+  },
+  "title": "Learning Full-Stack JavaScript Development: MongoDB, Node, and React",
+  "provider": "LinkedIn Learning",
+  "subProvider": "LinkedIn",
+  "category": "Full-Stack Development",
+  "cost": "Paid",
+  "rating": 4.5,
+  "suitableFor": "Advanced developers building full-stack apps with MongoDB, Node.js, React.js",
+  "link": "https://www.linkedin.com/learning/learning-full-stack-javascript-development-mongodb-node-and-react-15581237",
+  "company": "LinkedIn"
+},
+{
+  "_id": {
+    "$oid": "69c1019424fcd80c9a401e08"
+  },
+  "title": "Introduction to MongoDB",
+  "provider": "LinkedIn Learning",
+  "subProvider": "LinkedIn",
+  "category": "Database Fundamentals",
+  "cost": "Paid",
+  "rating": 4.5,
+  "suitableFor": "Beginners - MongoDB Atlas, data modeling with JSON-like documents",
+  "link": "https://www.linkedin.com/learning/introduction-to-mongodb-22120765",
+  "company": "LinkedIn"
+},
+{
+  "_id": {
+    "$oid": "69c101bb24fcd80c9a401e0a"
+  },
+  "title": "MongoDB Essential Training",
+  "provider": "LinkedIn Learning",
+  "subProvider": "LinkedIn",
+  "category": "Database",
+  "cost": "Paid",
+  "rating": 4.5,
+  "suitableFor": "Beginners - CRUD, aggregation pipelines, drivers, advanced features",
+  "link": "https://www.linkedin.com/learning/mongodb-essential-training",
+  "company": "LinkedIn"
+},
+{
+  "_id": {
+    "$oid": "69c101eb24fcd80c9a401e0c"
+  },
+  "title": "Data Modeling in MongoDB",
+  "provider": "LinkedIn Learning",
+  "subProvider": "LinkedIn",
+  "category": "Database Design",
+  "cost": "Paid",
+  "rating": 4.5,
+  "suitableFor": "Intermediate - Complex data modeling techniques and cloud deployments",
+  "link": "https://www.linkedin.com/learning/data-modeling-in-mongodb",
+  "company": "LinkedIn"
+},
+{
+  "_id": {
+    "$oid": "69c137caf7c6d57265ffd7a9"
+  },
+  "title": "Create Your First MongoDB Database",
+  "platform": "Cognitive Class",
+  "type": "free",
+  "duration": "30 minutes",
+  "level": "beginner",
+  "link": "https://cognitiveclass.ai/courses/course-v1:IBM+GPXX06RFEN+v1",
+  "who_can_study": "Absolute beginners, high school/college students, anyone curious about databases",
+  "company": "IBM"
+},
+{
+  "_id": {
+    "$oid": "69c13911f7c6d57265ffd7b0"
+  },
+  "title": "Intermediate Back-end Development with Node.js & MongoDB",
+  "platform": "Coursera",
+  "type": "paid (audit free)",
+  "duration": "several weeks",
+  "level": "intermediate",
+  "link": "https://www.coursera.org/learn/intermediate-back-end-development-with-node-js-mongodb",
+  "who_can_study": "CS students with basic programming, junior developers, back-end learners",
+  "company": "IBM"
+},
+{
+  "_id": {
+    "$oid": "69c13fa9f7c6d57265ffd7b2"
+  },
+  "title": "AI for Beginners",
+  "provider": "HP LIFE",
+  "subprovider": "HP Foundation",
+  "category": "Artificial Intelligence",
+  "cost": "Free (with certificate)",
+  "rating": "widely popular",
+  "suitableFor": "CS students learning AI basics",
+  "link": "https://www.life-global.org/course/391-ai-for-beginners",
+  "company": "HP"
+},
+{
+  "_id": {
+    "$oid": "69c13fddf7c6d57265ffd7b4"
+  },
+  "title": "Introduction to Cybersecurity",
+  "provider": "HP LIFE",
+  "subprovider": "HP Foundation",
+  "category": "Cybersecurity",
+  "cost": "Free (with certificate)",
+  "rating": "widely popular",
+  "suitableFor": "CS students in security projects",
+  "link": "https://www.life-global.org/course/346-introduction-to-cybersecurity-awareness",
+  "company": "HP"
+},
+{
+  "_id": {
+    "$oid": "69c1434bf7c6d57265ffd7b6"
+  },
+  "title": "Career Edge - Young Professional",
+  "provider": "TCS iON",
+  "subprovider": "Tata Consultancy Services",
+  "category": "Career Development",
+  "cost": "Free (with certificate)",
+  "rating": "4.7",
+  "suitableFor": "CS students preparing for jobs",
+  "link": "https://www.tcsion.com/courses/career-edge-young-professional/",
+  "company": "TCS"
+},
+{
+  "_id": {
+    "$oid": "69c1437df7c6d57265ffd7b8"
+  },
+  "title": "Job Primer",
+  "provider": "TCS iON",
+  "subprovider": "Tata Consultancy Services",
+  "category": "Job Readiness",
+  "cost": "Free (with certificate)",
+  "rating": "4.6",
+  "suitableFor": "CS graduates seeking employment",
+  "link": "https://www.tcsion.com/hub/job-primer/",
+  "company": "TCS"
+},
+{
+  "_id": {
+    "$oid": "69c14395f7c6d57265ffd7ba"
+  },
+  "title": "Introduction to Soft Skills",
+  "provider": "TCS iON",
+  "subprovider": "Tata Consultancy Services",
+  "category": "Soft Skills",
+  "cost": "Free (with certificate)",
+  "rating": "4.5",
+  "suitableFor": "CS students improving communication",
+  "link": "https://www.tcsion.com/courses/interview-and-job-prep/introduction-to-soft-skills/",
+  "company": "TCS"
+},
+{
+  "_id": {
+    "$oid": "69c14434f7c6d57265ffd7bc"
+  },
+  "title": "GitHub Actions: CI/CD Automation",
+  "provider": "GitHub Skills",
+  "subprovider": "GitHub",
+  "category": "DevOps",
+  "cost": "Free (with completion badge)",
+  "rating": "4.8",
+  "suitableFor": "CS students learning CI/CD pipelines",
+  "link": "https://skills.github.com",
+  "company": "GitHub"
+},
+{
+  "_id": {
+    "$oid": "69c145a5f7c6d57265ffd7be"
+  },
+  "title": "Time Management Fundamentals",
+  "provider": "LinkedIn Learning",
+  "subprovider": "LinkedIn",
+  "category": "Productivity",
+  "cost": "Free (1-month trial) after paid",
+  "rating": "4.5",
+  "suitableFor": "CS students managing projects",
+  "link": "https://www.linkedin.com/learning/time-management-fundamentals",
+  "company": "LinkedIn"
+}]

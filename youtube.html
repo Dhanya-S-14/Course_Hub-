@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Courses | CourseHub</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="youtube-styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="yt-navbar">
+        <div class="yt-nav-container">
+            <a href="index.html" class="yt-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span class="yt-logo-text">
+                    <span class="yt-logo-char" style="--i:0">C</span>
+                    <span class="yt-logo-char" style="--i:1">o</span>
+                    <span class="yt-logo-char" style="--i:2">u</span>
+                    <span class="yt-logo-char" style="--i:3">r</span>
+                    <span class="yt-logo-char" style="--i:4">s</span>
+                    <span class="yt-logo-char" style="--i:5">e</span>
+                    <span class="yt-logo-char" style="--i:6">H</span>
+                    <span class="yt-logo-char" style="--i:7">u</span>
+                    <span class="yt-logo-char" style="--i:8">b</span>
+                </span>
+            </a>
+            <div class="yt-nav-links">
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="yt-hero">
+        <div class="yt-hero-content">
+            <div class="yt-hero-icon">
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <h1>Free YouTube Programming Courses</h1>
+            <p>Learn programming from the best YouTube channels - 100% Free!</p>
+            <div class="yt-stats">
+                <div class="yt-stat">
+                    <span class="yt-stat-number">19</span>
+                    <span class="yt-stat-label">Courses</span>
+                </div>
+                <div class="yt-stat">
+                    <span class="yt-stat-number">9</span>
+                    <span class="yt-stat-label">Domains</span>
+                </div>
+                <div class="yt-stat">
+                    <span class="yt-stat-number">100%</span>
+                    <span class="yt-stat-label">Free</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filter Buttons -->
+    <section class="yt-filters-section">
+        <div class="yt-container">
+            <div class="yt-filter-buttons">
+                <button class="yt-filter-btn active" data-filter="all">
+                    <i class="fa-solid fa-globe"></i> All
+                </button>
+                <button class="yt-filter-btn" data-filter="DSA">
+                    <i class="fa-solid fa-layer-group"></i> DSA
+                </button>
+                <button class="yt-filter-btn" data-filter="JAVA">
+                    <i class="fa-brands fa-java"></i> Java
+                </button>
+                <button class="yt-filter-btn" data-filter="C">
+                    <i class="fa-solid fa-code"></i> C
+                </button>
+                <button class="yt-filter-btn" data-filter="PYTHON">
+                    <i class="fa-brands fa-python"></i> Python
+                </button>
+                <button class="yt-filter-btn" data-filter="WEB">
+                    <i class="fa-solid fa-globe"></i> Web Dev
+                </button>
+                <button class="yt-filter-btn" data-filter="AI">
+                    <i class="fa-solid fa-brain"></i> AI / ML
+                </button>
+                <button class="yt-filter-btn" data-filter="DBMS">
+                    <i class="fa-solid fa-database"></i> DBMS
+                </button>
+                <button class="yt-filter-btn" data-filter="OS">
+                    <i class="fa-solid fa-desktop"></i> OS
+                </button>
+                <button class="yt-filter-btn" data-filter="CN">
+                    <i class="fa-solid fa-wifi"></i> CN
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="yt-main">
+        <div class="yt-container">
+            
+            <!-- DSA Section -->
+            <section class="yt-category" id="dsa-section" data-category="DSA">
+                <div class="yt-category-header">
+                    <div class="yt-category-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <div class="yt-category-info">
+                        <h2>Data Structures & Algorithms</h2>
+                        <p>Master DSA fundamentals and problem solving</p>
+                    </div>
+                    <span class="yt-category-badge">DSA</span>
+                </div>
+                <div class="yt-grid" id="DSA-grid"></div>
+            </section>
+
+            <!-- Java Section -->
+            <section class="yt-category" id="java-section" data-category="JAVA">
+                <div class="yt-category-header">
+                    <div class="yt-category-icon"><i class="fa-brands fa-java"></i></div>
+                    <div class="yt-category-info">
+                        <h2>Java Programming</h2>
+                        <p>Learn Java from basics to advanced concepts</p>
+                    </div>
+                    <span class="yt-category-badge">Java</span>
+                </div>
+                <div class="yt-grid" id="JAVA-grid"></div>
+            </section>
+
+            <!-- C Programming Section -->
+            <section class="yt-category" id="c-section" data-category="C">
+                <div class="yt-category-header">
+                    <div class="yt-category-icon"><i class="fa-solid fa-terminal"></i></div>
+                    <div class="yt-category-info">
+                        <h2>C Programming</h2>
+                        <p>Master C programming from scratch</p>
+                    </div>
+                    <span class="yt-category-badge">C</span>
+                </div>
+                <div class="yt-grid" id="C-grid"></div>
+            </section>
+
+            <!-- Python Section -->
+            <section class="yt-category" id="python-section" data-category="PYTHON">
+                <div class="yt-category-header">
+                    <div class="yt-category-icon"><i class="fa-brands fa-python"></i></div>
+                    <div class="yt-category-info">
+                        <h2>Python Programming</h2>
+                        <p>Learn Python from basics to projects</p>
+                    </div>
+                    <span class="yt-category-badge">Python</span>
+                </div>
+                <div class="yt-grid" id="PYTHON-grid"></div>
+            </section>
+
+            <!-- Web Development Section -->
+            <section class="yt-category" id="web-section" data-category="WEB">
+                <div class="yt-category-header">
+                    <div class="yt-category-icon"><i class="fa-solid fa-globe"></i></div>
+                    <div class="yt-category-info">
+                        <h2>Web Development</h2>
+                        <p>Build modern websites with HTML, CSS, JavaScript</p>
+                    </div>
+                    <span class="yt-category-badge">Web Dev</span>
+                </div>
+                <div class="yt-grid" id="WEB-grid"></div>
+            </section>
+
+            <!-- AI / ML Section -->
+            <section class="yt-category" id="ai-section" data-category="AI">
+                <div class="yt-category-header">
+                    <div class="yt-category-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div class="yt-category-info">
+                        <h2>AI & Machine Learning</h2>
+                        <p>Learn AI concepts and ML fundamentals</p>
+                    </div>
+                    <span class="yt-category-badge">AI / ML</span>
+                </div>
+                <div class="yt-grid" id="AI-grid"></div>
+            </section>
+
+            <!-- DBMS Section -->
+            <section class="yt-category" id="dbms-section" data-category="DBMS">
+                <div class="yt-category-header">
+                    <div class="yt-category-icon"><i class="fa-solid fa-database"></i></div>
+                    <div class="yt-category-info">
+                        <h2>Database Management (DBMS)</h2>
+                        <p>Learn SQL, MySQL and database concepts</p>
+                    </div>
+                    <span class="yt-category-badge">DBMS</span>
+                </div>
+                <div class="yt-grid" id="DBMS-grid"></div>
+            </section>
+
+            <!-- Operating System Section -->
+            <section class="yt-category" id="os-section" data-category="OS">
+                <div class="yt-category-header">
+                    <div class="yt-category-icon"><i class="fa-solid fa-desktop"></i></div>
+                    <div class="yt-category-info">
+                        <h2>Operating System</h2>
+                        <p>Understand OS concepts and fundamentals</p>
+                    </div>
+                    <span class="yt-category-badge">OS</span>
+                </div>
+                <div class="yt-grid" id="OS-grid"></div>
+            </section>
+
+            <!-- Computer Networks Section -->
+            <section class="yt-category" id="cn-section" data-category="CN">
+                <div class="yt-category-header">
+                    <div class="yt-category-icon"><i class="fa-solid fa-wifi"></i></div>
+                    <div class="yt-category-info">
+                        <h2>Computer Networks</h2>
+                        <p>Learn networking concepts and protocols</p>
+                    </div>
+                    <span class="yt-category-badge">CN</span>
+                </div>
+                <div class="yt-grid" id="CN-grid"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="yt-footer">
+        <div class="yt-footer-content">
+            <div class="yt-footer-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>CourseHub</span>
+            </div>
+            <p>Free programming courses from YouTube - Quality education doesn't have to be expensive.</p>
+        </div>
+    </footer>
+
+    <script src="youtube-script.js"></script>
+</body>
+</html>
