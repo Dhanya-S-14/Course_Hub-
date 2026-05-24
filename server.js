@@ -666,18 +666,22 @@ app.get("/api/sync-youtube", async (req, res) => {
 });
 
 const startCronJob = () => {
-    console.log('⏰ Setting up cron job (every 6 hours)...');
-    cron.schedule('0 */6 * * *', async () => {
-        console.log('🔄 Running scheduled YouTube sync...');
-        try {
-            const syncPort = process.env.PORT || 5000;
-            const res = await axios.get(`http://127.0.0.1:${syncPort}/api/sync-youtube`);
-            console.log('✅ Auto-sync complete:', res.data);
-        } catch (err) {
-            console.log('❌ Auto-sync failed:', err.message);
-        }
-    });
-    console.log('✓ Cron job: runs every 6 hours');
+    try {
+        console.log('⏰ Setting up cron job (every 6 hours)...');
+        cron.schedule('0 */6 * * *', async () => {
+            console.log('🔄 Running scheduled YouTube sync...');
+            try {
+                const syncPort = process.env.PORT || 5000;
+                const res = await axios.get(`http://127.0.0.1:${syncPort}/api/sync-youtube`);
+                console.log('✅ Auto-sync complete:', res.data);
+            } catch (err) {
+                console.log('❌ Auto-sync failed:', err.message);
+            }
+        });
+        console.log('✓ Cron job: runs every 6 hours');
+    } catch (err) {
+        console.log('⚠️ Cron job setup warning:', err.message);
+    }
 };
 
 // Serve static files
