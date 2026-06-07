@@ -3,8 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CourseHub | Open Course Catalog</title>
-    
+    <title>CourseHub | Discover Free Online Courses - Programming, AI, DSA & More</title>
+    <meta name="description" content="CourseHub helps students discover, compare, and enroll in free online courses across programming, AI, data science, web development, cybersecurity, and more. Explore courses from Google, Microsoft, Meta, Coursera, Udemy & top universities.">
+    <meta name="keywords" content="free online courses, programming courses, AI courses, data science, web development, cybersecurity, FAANG preparation, Coursera, Udemy, NPTEL, Skill India, Google courses, Microsoft courses, learn coding online, computer science courses">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CourseHub">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://course-hub-.vercel.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://course-hub-.vercel.app/">
+    <meta property="og:title" content="CourseHub | Discover Free Online Courses">
+    <meta property="og:description" content="Discover, compare, and enroll in free online courses from top companies and universities. Programming, AI, Data Science & more.">
+    <meta property="og:image" content="https://course-hub-.vercel.app/first.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://course-hub-.vercel.app/">
+    <meta name="twitter:title" content="CourseHub | Discover Free Online Courses">
+    <meta name="twitter:description" content="Discover, compare, and enroll in free online courses from top companies and universities.">
+    <meta name="twitter:image" content="https://course-hub-.vercel.app/first.png">
+
+    <!-- JSON-LD Schema: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CourseHub",
+        "url": "https://course-hub-.vercel.app/",
+        "logo": "https://course-hub-.vercel.app/first.png",
+        "description": "Free online course catalog helping students discover and enroll in courses from top providers.",
+        "foundingDate": "2025",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "support",
+            "email": "support@coursehub.app"
+        },
+        "sameAs": [
+            "https://github.com/Dhanya-S-14/Course_Hub-"
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD Schema: WebSite with Search Action -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CourseHub",
+        "url": "https://course-hub-.vercel.app/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://course-hub-.vercel.app/?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- JSON-LD Schema: FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is CourseHub completely free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, CourseHub is 100% free. We curate and catalog free and paid courses from top providers so you can find the best learning resources."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What courses can I find on CourseHub?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can find courses in Programming (Python, Java, C++), AI & Machine Learning, Data Science, Web Development, Cybersecurity, Cloud Computing (AWS, Azure), DSA, and more from providers like Coursera, Udemy, NPTEL, Google, Microsoft, and Skill India."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the FAANG preparation section help?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The FAANG section provides curated LeetCode questions, coding interview guides, and company-wise problem lists from Google, Amazon, Meta, and more — all free after login."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Registration is free and unlocks the Job Preparation Portal with company-specific guides. Browsing the course catalog does not require an account."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are certificates provided for these courses?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Many courses offer certificates upon completion. Skill India courses provide government-recognized certificates. Coursera courses offer certificates via financial aid."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD Schema: Course List (Sample) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Featured Courses on CourseHub",
+        "description": "Top free and paid courses curated from leading platforms",
+        "numberOfItems": 5,
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "Course",
+                    "name": "Machine Learning Specialization",
+                    "description": "Comprehensive machine learning course from Stanford University",
+                    "provider": { "@type": "Organization", "name": "Coursera" },
+                    "url": "https://www.coursera.org/specializations/machine-learning-introduction"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "Course",
+                    "name": "Google Data Analytics Professional Certificate",
+                    "description": "Professional data analytics certification by Google",
+                    "provider": { "@type": "Organization", "name": "Google" },
+                    "url": "https://www.coursera.org/professional-certificates/google-data-analytics"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "Course",
+                    "name": "AWS Certified Solutions Architect",
+                    "description": "Cloud computing certification training by Amazon AWS",
+                    "provider": { "@type": "Organization", "name": "AWS" },
+                    "url": "https://aws.amazon.com/training/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "Course",
+                    "name": "CS50's Introduction to Computer Science",
+                    "description": "Harvard's famous introductory computer science course",
+                    "provider": { "@type": "Organization", "name": "Harvard University" },
+                    "url": "https://cs50.harvard.edu/"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                    "@type": "Course",
+                    "name": "Python for Everybody",
+                    "description": "University of Michigan's Python programming course",
+                    "provider": { "@type": "Organization", "name": "Coursera" },
+                    "url": "https://www.coursera.org/learn/python"
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -927,6 +1107,72 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>Frequently Asked <span class="text-gradient">Questions</span></h2>
+                <p>Everything you need to know about CourseHub</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is CourseHub completely free to use?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, CourseHub is 100% free. We curate and catalog courses from top providers so you can find the best learning resources without any cost.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What courses can I find on CourseHub?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can find courses in Programming (Python, Java, C++), AI & Machine Learning, Data Science, Web Development, Cybersecurity, Cloud Computing (AWS, Azure), DSA, and more from Coursera, Udemy, NPTEL, Google, Microsoft, and Skill India.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>How does the FAANG preparation section help?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The FAANG section provides curated LeetCode questions, coding interview guides, and company-wise problem lists from Google, Amazon, Meta, and more — all free after login.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do I need to create an account?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Registration is free and unlocks the Job Preparation Portal with company-specific guides. Browsing the course catalog does not require an account.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Are certificates provided for these courses?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Many courses offer certificates upon completion. Skill India courses provide government-recognized certificates. Coursera courses offer certificates via financial aid.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What is Skill India and how do I enroll?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Skill India is a Government of India initiative offering free skill development courses with certificates. Click the Skill India section on our homepage and follow the step-by-step enrollment guide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- YouTube Courses Button (Centered CTA) -->
     <div class="youtube-btn-wrapper">
         <a href="youtube.html" class="btn-youtube-main" target="_blank">
@@ -1039,7 +1285,18 @@
         <div class="particle"></div>
     </div>
 
-    <!-- Custom Logic -->
+    <!-- FAQ Toggle Script -->
+    <script>
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        }
+    </script>
+
+    </body>
+    </html>
     <script src="app.js"></script>
     
     <!-- Slideshow Script -->

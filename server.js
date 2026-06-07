@@ -684,6 +684,28 @@ const startCronJob = () => {
     }
 };
 
+// Dynamic Sitemap Route
+app.get("/sitemap.xml", async (req, res) => {
+    try {
+        const courses = await Course.find({}).select('title').lean();
+        let urls = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url><loc>https://course-hub-.vercel.app/</loc><priority>1.0</priority></url>
+    <url><loc>https://course-hub-.vercel.app/youtube.html</loc><priority>0.9</priority></url>
+    <url><loc>https://course-hub-.vercel.app/jobs.html</loc><priority>0.8</priority></url>
+    <url><loc>https://course-hub-.vercel.app/about.html</loc><priority>0.7</priority></url>`;
+        for (const c of courses) {
+            const slug = encodeURIComponent(c.title.toLowerCase().replace(/\s+/g, '-'));
+            urls += `\n    <url><loc>https://course-hub-.vercel.app/course/${slug}</loc><priority>0.5</priority></url>`;
+        }
+        urls += `\n</urlset>`;
+        res.header('Content-Type', 'application/xml');
+        res.send(urls);
+    } catch (err) {
+        res.sendFile(path.join(__dirname, 'sitemap.xml'));
+    }
+});
+
 // Serve static files
 app.use(express.static(path.join(__dirname)));
 
