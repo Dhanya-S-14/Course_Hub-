@@ -155,12 +155,38 @@ async function fetchCourses() {
             `/api/courses?search=${search}&cost=${selectedCost}&category=${category}`
         );
 
+        const ct = res.headers.get('content-type') || '';
+        if (!ct.includes('application/json') && !ct.includes('application/json')) {
+            throw new Error('Not JSON');
+        }
+
         const data = await res.json();
         allCoursesCache = data;
         displayCourses(data);
         updateSearchPanel(data);
     } catch (err) {
-        console.log(err);
+        console.log('API unavailable, loading from static JSON');
+        try {
+            const fallbackRes = await fetch('courses.json');
+            let data = await fallbackRes.json();
+            if (search) {
+                data = data.filter(c => 
+                    c.title.toLowerCase().includes(search.toLowerCase()) ||
+                    c.category.toLowerCase().includes(search.toLowerCase())
+                );
+            }
+            if (category) {
+                data = data.filter(c => c.category.toLowerCase().includes(category.toLowerCase()));
+            }
+            if (selectedCost && selectedCost !== 'all') {
+                data = data.filter(c => c.cost.toLowerCase() === selectedCost.toLowerCase());
+            }
+            allCoursesCache = data;
+            displayCourses(data);
+            updateSearchPanel(data);
+        } catch (fallbackErr) {
+            console.log('Fallback also failed:', fallbackErr);
+        }
     }
 }
 
@@ -554,6 +580,8 @@ async function openCompanyModal(company) {
     
     try {
         const res = await fetch(`/api/company-courses`);
+        const ct = res.headers.get('content-type') || '';
+        if (!ct.includes('json')) throw new Error('Not JSON');
         const allCourses = await res.json();
         console.log('All courses from API:', allCourses.length);
         const courses = allCourses.filter(c => c.company && c.company.toLowerCase().includes(company.toLowerCase()));
@@ -561,8 +589,17 @@ async function openCompanyModal(company) {
         allCompanyCourses = courses;
         displayCompanyCourses(courses, 'all');
     } catch (err) {
-        console.error('Error:', err);
-        companyCoursesGrid.innerHTML = '<p class="error-message">Failed to load courses. Please try again.</p>';
+        console.error('API failed, trying static JSON:', err);
+        try {
+            const fallbackRes = await fetch('company_courses.json');
+            const allCourses = await fallbackRes.json();
+            const courses = allCourses.filter(c => c.company && c.company.toLowerCase().includes(company.toLowerCase()));
+            allCompanyCourses = courses;
+            displayCompanyCourses(courses, 'all');
+        } catch (fbErr) {
+            console.error('Fallback also failed:', fbErr);
+            companyCoursesGrid.innerHTML = '<p class="error-message">Failed to load courses. Please try again.</p>';
+        }
     }
 }
 
@@ -680,11 +717,13 @@ async function fetchYouTubeCourses() {
     
     try {
         const res = await fetch('/api/youtube-courses');
+        const ct = res.headers.get('content-type') || '';
+        if (!ct.includes('json')) throw new Error('Not JSON');
         const data = await res.json();
-        youtubeCoursesData = data.courses || [];
+        youtubeCoursesData = data.courses || data || [];
         displayYoutubeCourses(youtubeCoursesData);
     } catch (err) {
-        grid.innerHTML = '<p class="loading-courses">Failed to load courses. Make sure server is running!</p>';
+        grid.innerHTML = '<div class="loading-courses"><p>YouTube courses unavailable on static deployment.</p><a href="youtube.html" style="color:#10b981;">Visit YouTube Courses page →</a></div>';
     }
 }
 
