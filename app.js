@@ -13,6 +13,7 @@ let allCoursesCache = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchYouTubeCourses();
+    showLazyLoadPlaceholder();
     const companiesScroll = document.querySelector('.companies-scroll');
     const companyCards = document.querySelectorAll('.company-card');
     
@@ -145,21 +146,41 @@ if (currentUser) {
     if (jobsBtnLocked) jobsBtnLocked.style.display = 'flex';
 }
 
-/* 🚀 Fetch Courses from Backend */
-async function fetchCourses() {
+function showLazyLoadPlaceholder() {
+    if (courseGrid) {
+        courseGrid.innerHTML = `
+            <div class="lazy-placeholder" style="grid-column:1/-1;text-align:center;padding:3rem 1rem;">
+                <div style="font-size:3rem;margin-bottom:1rem;">🔍</div>
+                <h3 style="font-size:1.3rem;margin-bottom:0.5rem;color:#e2e8f0;">Browse Our Course Catalog</h3>
+                <p style="color:#64748b;margin-bottom:1.5rem;max-width:400px;margin-left:auto;margin-right:auto;">
+                    Click a <strong>trending skill</strong> above, type in the search bar, or load all courses below.
+                </p>
+                <button onclick="loadAllCourses()" style="padding:12px 28px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;">
+                    <i class="fa-solid fa-list"></i> Browse All Courses
+                </button>
+            </div>
+        `;
+    }
+    if (resultCount) resultCount.innerText = 'Browse courses by skill or search';
+}
+
+async function loadAllCourses() {
+    selectedCost = 'all';
+    document.querySelectorAll('input[name="costFilter"]').forEach(r => r.checked = false);
+    searchInput.value = '';
+    searchInput.removeAttribute('data-category');
+    await fetchCourses();
+}
+
+async function fetchCoursesInternal() {
     const search = searchInput.value;
     const category = searchInput.getAttribute('data-category') || '';
-
     try {
         const res = await fetch(
             `/api/courses?search=${search}&cost=${selectedCost}&category=${category}`
         );
-
         const ct = res.headers.get('content-type') || '';
-        if (!ct.includes('application/json') && !ct.includes('application/json')) {
-            throw new Error('Not JSON');
-        }
-
+        if (!ct.includes('json')) throw new Error('Not JSON');
         const data = await res.json();
         allCoursesCache = data;
         displayCourses(data);
@@ -170,7 +191,7 @@ async function fetchCourses() {
             const fallbackRes = await fetch('courses.json');
             let data = await fallbackRes.json();
             if (search) {
-                data = data.filter(c => 
+                data = data.filter(c =>
                     c.title.toLowerCase().includes(search.toLowerCase()) ||
                     c.category.toLowerCase().includes(search.toLowerCase())
                 );
@@ -179,15 +200,21 @@ async function fetchCourses() {
                 data = data.filter(c => c.category.toLowerCase().includes(category.toLowerCase()));
             }
             if (selectedCost && selectedCost !== 'all') {
-                data = data.filter(c => c.cost.toLowerCase() === selectedCost.toLowerCase());
+                data = data.filter(c => String(c.cost).toLowerCase() === selectedCost.toLowerCase());
             }
             allCoursesCache = data;
             displayCourses(data);
             updateSearchPanel(data);
-        } catch (fallbackErr) {
-            console.log('Fallback also failed:', fallbackErr);
+        } catch (fbErr) {
+            console.log('Fallback also failed:', fbErr);
         }
     }
+}
+
+/* 🚀 Fetch Courses from Backend - delegates to internal */
+async function fetchCourses() {
+    coursesLoaded = true;
+    await fetchCoursesInternal();
 }
 
 function updateSearchPanel(courses) {
@@ -503,8 +530,10 @@ radios.forEach(radio => {
     });
 });
 
-/* 🚀 First Load */
-fetchCourses();
+/* 🚀 First Load - Lazy: don't load all courses until user interacts */
+let coursesLoaded = false;
+const catalogSection = document.querySelector('.catalog-section');
+const trendingSection = document.querySelector('.trending-section');
 
 /* 🏢 Company Courses Modal */
 const companyModal = document.getElementById('companyModal');
