@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin.html
 Disallow: /admin-login.html
 
-Sitemap: https://course-hub-.vercel.app/sitemap.xml
+Sitemap: https://course-hub-aa3t.onrender.com/sitemap.xml
